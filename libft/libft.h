@@ -6,7 +6,7 @@
 /*   By: obouhlel <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/07 13:05:19 by obouhlel          #+#    #+#             */
-/*   Updated: 2022/12/04 11:51:19 by obouhlel         ###   ########.fr       */
+/*   Updated: 2022/12/04 15:50:23 by obouhlel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,6 @@
 # include <stddef.h>
 # include <stdlib.h>
 # include <unistd.h>
-# define INT_MIN -2147483648
 
 //type of char
 int		ft_isascii(int c);
@@ -28,7 +27,7 @@ int		ft_toupper(int c);
 
 //conversion
 int		ft_atoi(const char *nptr);
-char	*ft_itoa(int n);
+ssize_t	ft_atoi_long(const char *nptr);
 
 //print
 void	ft_putchar_fd(char c, int fd);

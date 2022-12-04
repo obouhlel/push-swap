@@ -6,7 +6,7 @@
 /*   By: obouhlel <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/03 14:10:03 by obouhlel          #+#    #+#             */
-/*   Updated: 2022/12/04 11:53:00 by obouhlel         ###   ########.fr       */
+/*   Updated: 2022/12/04 15:54:24 by obouhlel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,6 +21,7 @@
 
 //error.c
 void	ft_error_push_swap_double(t_list *lst);
+void	ft_error_push_swap_int(char **nstr, int n);
 void	ft_error_push_swap_digit(char **strs);
 
 //sort.c
