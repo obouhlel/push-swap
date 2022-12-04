@@ -1,33 +1,21 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main_push_swap.c                                   :+:      :+:    :+:   */
+/*   ft_isdigit.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: obouhlel <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/12/03 15:43:23 by obouhlel          #+#    #+#             */
-/*   Updated: 2022/12/04 11:47:32 by obouhlel         ###   ########.fr       */
+/*   Created: 2022/11/07 10:53:44 by obouhlel          #+#    #+#             */
+/*   Updated: 2022/12/03 14:59:57 by obouhlel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "../libft.h"
 
-int	main(int ac, char **av)
+//if it's digit
+int	ft_isdigit(int c)
 {
-	int		i;
-	t_list	*lst_a;
-	t_list	*lst_b;
-
-	lst_a = NULL;
-	lst_b = NULL;
-	i = 1;
-	ft_error_push_swap_digit(&av[1]);
-	while (i < ac)
-	{
-		ft_lstadd_back(&lst_a, ft_lstnew(ft_atoi(av[i])));
-		i++;
-	}
-	ft_error_push_swap_double(lst_a);
-	ft_lstprint(lst_a);
+	if (c >= '0' && c <= '9')
+		return (1);
 	return (0);
 }
