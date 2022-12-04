@@ -6,7 +6,7 @@
 /*   By: obouhlel <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/03 14:10:03 by obouhlel          #+#    #+#             */
-/*   Updated: 2022/12/04 15:54:24 by obouhlel         ###   ########.fr       */
+/*   Updated: 2022/12/04 16:53:45 by obouhlel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,5 +29,22 @@ void	swap_of_2_top(t_list **lst);
 void	swap_top_1_to_2(t_list **lst1, t_list **lst2);
 void	swap_to_the_top(t_list **lst);
 void	swap_to_the_bot(t_list **lst);
+
+//sort_a.c
+void	push_swap_sa(t_list **lst);
+void	push_swap_pa(t_list **lst_b, t_list **lst_a);
+void	push_swap_ra(t_list **lst);
+void	push_swap_rra(t_list **lst);
+
+//sort_b.c
+void	push_swap_sb(t_list **lst);
+void	push_swap_pb(t_list **lst_a, t_list **lst_b);
+void	push_swap_rb(t_list **lst);
+void	push_swap_rrb(t_list **lst);
+
+//sort_all.c
+void	push_swap_ss(t_list **lst_a, t_list **lst_b);
+void	push_swap_rr(t_list **lst_a, t_list **lst_b);
+void	push_swap_rrr(t_list **lst_a, t_list **lst_b);
 
 #endif

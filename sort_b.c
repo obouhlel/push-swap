@@ -1,31 +1,41 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main_push_swap.c                                   :+:      :+:    :+:   */
+/*   sort_b.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: obouhlel <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/12/03 15:43:23 by obouhlel          #+#    #+#             */
-/*   Updated: 2022/12/04 16:08:33 by obouhlel         ###   ########.fr       */
+/*   Created: 2022/12/03 21:43:30 by obouhlel          #+#    #+#             */
+/*   Updated: 2022/12/04 16:56:53 by obouhlel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-int	main(int ac, char **av)
+//sb
+void	push_swap_sa(t_list **lst_b)
 {
-	int		i;
-	t_list	*lst_a;
-	t_list	*lst_b;
+	swap_of_2_top(lst_b);
+	ft_putendl_fd("sb", 1);
+}
 
-	lst_a = NULL;
-	lst_b = NULL;
-	ft_error_push_swap_digit(&av[1]);
-	ft_error_push_swap_int(&av[1], (ac - 1));
-	i = 1;
-	while (i < ac)
-		ft_lstadd_back(&lst_a, ft_lstnew(ft_atoi(av[i++])));
-	ft_error_push_swap_double(lst_a);
-	ft_lstprint(lst_a);
-	return (0);
+//pb
+void	push_swap_pa(t_list **lst_a, t_list **lst_b)
+{
+	swap_top_1_to_2(lst_a, lst_b);
+	ft_putendl_fd("pb", 1);
+}
+
+//rb
+void	push_swap_ra(t_list **lst_b)
+{
+	swap_to_the_top(lst_b);
+	ft_putendl_fd("rb", 1);
+}
+
+//rrb
+void	push_swap_rra(t_list **lst_b)
+{
+	swap_to_the_bot(lst_b);
+	ft_putendl_fd("rrb", 1);
 }

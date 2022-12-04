@@ -1,31 +1,37 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main_push_swap.c                                   :+:      :+:    :+:   */
+/*   sort_all.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: obouhlel <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/12/03 15:43:23 by obouhlel          #+#    #+#             */
-/*   Updated: 2022/12/04 16:08:33 by obouhlel         ###   ########.fr       */
+/*   Created: 2022/12/04 16:46:24 by obouhlel          #+#    #+#             */
+/*   Updated: 2022/12/04 16:58:46 by obouhlel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-int	main(int ac, char **av)
+//ss
+void	push_swap_ss(t_list **lst_a, t_list **lst_b)
 {
-	int		i;
-	t_list	*lst_a;
-	t_list	*lst_b;
+	push_swap_sa(lst_a);
+	push_swap_sb(lst_b);
+	ft_putendl_fd("ss", 1);
+}
 
-	lst_a = NULL;
-	lst_b = NULL;
-	ft_error_push_swap_digit(&av[1]);
-	ft_error_push_swap_int(&av[1], (ac - 1));
-	i = 1;
-	while (i < ac)
-		ft_lstadd_back(&lst_a, ft_lstnew(ft_atoi(av[i++])));
-	ft_error_push_swap_double(lst_a);
-	ft_lstprint(lst_a);
-	return (0);
+//rr
+void	push_swap_rr(t_list **lst_a, t_list **lst_b)
+{
+	push_swap_ra(lst_a);
+	push_swap_rb(lst_b);
+	ft_putendl_fd("rr", 1);
+}
+
+//rrr
+void	push_swap_rrr(t_list **lst_a, t_list **lst_b)
+{
+	push_swap_rra(lst_a);
+	push_swap_rrb(lst_b);
+	ft_putendl_fd("rrr", 1);
 }

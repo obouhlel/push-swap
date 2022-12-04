@@ -6,7 +6,7 @@
 /*   By: obouhlel <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/03 21:43:30 by obouhlel          #+#    #+#             */
-/*   Updated: 2022/12/04 11:59:42 by obouhlel         ###   ########.fr       */
+/*   Updated: 2022/12/04 16:51:12 by obouhlel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@ void	swap_of_2_top(t_list **lst)
 	(*lst)->next->content = tmp;
 }
 
-//swap the first one on 1 pile to the 2nd in the top
+//swap the first one on 1 pile go to the 2nd in the top
 void	swap_top_1_to_2(t_list **lst1, t_list **lst2)
 {
 	t_list	*tmp_lst;
