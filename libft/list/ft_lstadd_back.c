@@ -6,7 +6,7 @@
 /*   By: obouhlel <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/07 10:57:24 by obouhlel          #+#    #+#             */
-/*   Updated: 2022/12/03 15:39:49 by obouhlel         ###   ########.fr       */
+/*   Updated: 2022/12/04 12:02:21 by obouhlel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,10 @@ void	ft_lstadd_back(t_list **lst, t_list *new)
 
 	tmp = *lst;
 	if (!lst || !new)
-		return ;
+	{
+		ft_putendl_fd("Error", 1);
+		exit(0);
+	}
 	if (!(*lst))
 	{
 		*lst = new;
