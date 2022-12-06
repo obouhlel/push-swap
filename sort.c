@@ -6,11 +6,17 @@
 /*   By: obouhlel <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/03 21:43:30 by obouhlel          #+#    #+#             */
-/*   Updated: 2022/12/06 19:38:16 by obouhlel         ###   ########.fr       */
+/*   Updated: 2022/12/06 19:46:02 by obouhlel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
+
+void	delete(int a)
+{
+	(void)a;
+	a = 0;
+}
 
 //swap the first and the second on the top
 void	swap_of_2_top(t_list **lst)
@@ -33,7 +39,7 @@ void	swap_top_1_to_2(t_list **lst1, t_list **lst2)
 		return ;
 	ft_lstadd_front(lst2, (*lst1));
 	tmp_lst = (*lst1)->next;
-	ft_lstdelone_relink(lst1);
+	ft_lstdelone((*lst1), &delete);
 	(*lst1) = tmp_lst;
 }
 
