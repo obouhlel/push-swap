@@ -6,14 +6,14 @@
 /*   By: obouhlel <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/07 12:29:57 by obouhlel          #+#    #+#             */
-/*   Updated: 2022/12/03 14:59:57 by obouhlel         ###   ########.fr       */
+/*   Updated: 2022/12/06 17:03:52 by obouhlel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../libft.h"
 
 //to create the new list
-t_list	*ft_lstnew(void *content)
+t_list	*ft_lstnew(int content)
 {
 	t_list	*lst;
 

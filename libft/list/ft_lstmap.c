@@ -6,14 +6,14 @@
 /*   By: obouhlel <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/07 12:27:52 by obouhlel          #+#    #+#             */
-/*   Updated: 2022/12/03 14:59:57 by obouhlel         ###   ########.fr       */
+/*   Updated: 2022/12/06 17:03:25 by obouhlel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../libft.h"
 
 //to map the all list, and if we have one error to erased all the list
-t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *))
+t_list	*ft_lstmap(t_list *lst, int (*f)(int), void (*del)(int))
 {
 	t_list	*new;
 	t_list	*tmp;

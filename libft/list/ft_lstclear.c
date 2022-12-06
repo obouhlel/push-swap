@@ -6,14 +6,14 @@
 /*   By: obouhlel <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/07 10:59:19 by obouhlel          #+#    #+#             */
-/*   Updated: 2022/12/03 14:59:57 by obouhlel         ###   ########.fr       */
+/*   Updated: 2022/12/06 17:01:21 by obouhlel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../libft.h"
 
 //to clear the all list
-void	ft_lstclear(t_list **lst, void (*del)(void *))
+void	ft_lstclear(t_list **lst, void (*del)(int))
 {
 	t_list	*tmp;
 

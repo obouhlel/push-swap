@@ -12,4 +12,4 @@ NAME	= push_swap
 		${CC} ${CFLAGS} -c $< -o $@
 
 all		: ${OBJS}
-		${CC}
+		${CC} ${CFLAGS} *.c libft.a -o ${NAME}

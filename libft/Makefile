@@ -1,6 +1,6 @@
 SRCS	=  char/ft_isalnum.c char/ft_isalpha.c char/ft_isascii.c char/ft_isdigit.c \
 		char/ft_isprint.c char/ft_tolower.c char/ft_toupper.c \
-		conversion/ft_atoi.c conversion/ft_itoa.c \
+		conversion/ft_atoi.c conversion/ft_atoi_long.c conversion/ft_itoa.c \
 		list/ft_lstadd_back.c list/ft_lstadd_front.c list/ft_lstclear.c list/ft_lstdelone.c \
 		list/ft_lstiter.c list/ft_lstlast.c list/ft_lstmap.c list/ft_lstnew.c list/ft_lstsize.c \
 		list/ft_lstdelone_relink.c list/ft_lstprint_num.c \
