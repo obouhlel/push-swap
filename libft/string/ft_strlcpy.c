@@ -1,32 +1,34 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lstadd_back.c                                   :+:      :+:    :+:   */
+/*   ft_strlcpy.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: obouhlel <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/11/07 10:57:24 by obouhlel          #+#    #+#             */
+/*   Created: 2022/11/07 12:51:11 by obouhlel          #+#    #+#             */
 /*   Updated: 2022/12/03 14:59:57 by obouhlel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../libft.h"
 
-//we take the last list, and we add the new list
-void	ft_lstadd_back(t_list **lst, t_list *new)
+//strlcpy it's for copy the dest and the source, and we return the lenth
+size_t	ft_strlcpy(char *dst, const char *src, size_t size)
 {
-	t_list	*tmp;
+	size_t	i;
+	size_t	len;
 
-	tmp = *lst;
-	if (!lst)
-		return ;
-	if (!(*lst))
+	i = 0;
+	len = ft_strlen(src);
+	if (size > len)
+		size = len + 1;
+	else if (size == 0)
+		return (len);
+	while (i < size - 1)
 	{
-		*lst = new;
-		return ;
+		dst[i] = src[i];
+		i++;
 	}
-	if (!new)
-		return ;
-	tmp = ft_lstlast(tmp);
-	tmp->next = new;
+	dst[i] = 0;
+	return (len);
 }

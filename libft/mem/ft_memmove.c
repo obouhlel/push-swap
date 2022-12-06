@@ -1,32 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lstadd_back.c                                   :+:      :+:    :+:   */
+/*   ft_memmove.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: obouhlel <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/11/07 10:57:24 by obouhlel          #+#    #+#             */
+/*   Created: 2022/11/07 12:39:59 by obouhlel          #+#    #+#             */
 /*   Updated: 2022/12/03 14:59:57 by obouhlel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../libft.h"
 
-//we take the last list, and we add the new list
-void	ft_lstadd_back(t_list **lst, t_list *new)
+//to copy the source in the dest
+//but if you have the dest more big than the source
+//we need to cpy at the last
+void	*ft_memmove(void *dest, const void *src, size_t n)
 {
-	t_list	*tmp;
-
-	tmp = *lst;
-	if (!lst)
-		return ;
-	if (!(*lst))
+	if (dest < src)
+		ft_memcpy(dest, src, n);
+	else
 	{
-		*lst = new;
-		return ;
+		while (n)
+		{
+			n--;
+			((char *)dest)[n] = ((const char *)src)[n];
+		}
 	}
-	if (!new)
-		return ;
-	tmp = ft_lstlast(tmp);
-	tmp->next = new;
+	return (dest);
 }

@@ -1,32 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lstadd_back.c                                   :+:      :+:    :+:   */
+/*   ft_strrchr.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: obouhlel <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/11/07 10:57:24 by obouhlel          #+#    #+#             */
+/*   Created: 2022/11/07 12:54:02 by obouhlel          #+#    #+#             */
 /*   Updated: 2022/12/03 14:59:57 by obouhlel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../libft.h"
 
-//we take the last list, and we add the new list
-void	ft_lstadd_back(t_list **lst, t_list *new)
+//to find c at the last
+char	*ft_strrchr(const char *s, int c)
 {
-	t_list	*tmp;
+	size_t	len;
 
-	tmp = *lst;
-	if (!lst)
-		return ;
-	if (!(*lst))
+	len = ft_strlen(s);
+	while (len > 0)
 	{
-		*lst = new;
-		return ;
+		if ((unsigned char)c == s[len])
+			return ((char *)&s[len]);
+		len--;
 	}
-	if (!new)
-		return ;
-	tmp = ft_lstlast(tmp);
-	tmp->next = new;
+	if ((unsigned char)c == s[0])
+		return ((char *)s);
+	return (0);
 }

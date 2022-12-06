@@ -6,7 +6,7 @@
 /*   By: obouhlel <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/07 10:45:38 by obouhlel          #+#    #+#             */
-/*   Updated: 2022/12/04 15:48:28 by obouhlel         ###   ########.fr       */
+/*   Updated: 2022/12/03 14:59:57 by obouhlel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,9 +27,9 @@ static int	ft_is_white_space(char c)
 //and we need to multiply by ten because it's ten base
 int	ft_atoi(const char *nptr)
 {
-	int		i;
-	int		n;
-	int		signe;
+	int	i;
+	int	n;
+	int	signe;
 
 	i = 0;
 	n = 0;

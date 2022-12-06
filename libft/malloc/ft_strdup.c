@@ -1,32 +1,34 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lstadd_back.c                                   :+:      :+:    :+:   */
+/*   ft_strdup.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: obouhlel <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/11/07 10:57:24 by obouhlel          #+#    #+#             */
+/*   Created: 2022/11/07 12:47:49 by obouhlel          #+#    #+#             */
 /*   Updated: 2022/12/03 14:59:57 by obouhlel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../libft.h"
 
-//we take the last list, and we add the new list
-void	ft_lstadd_back(t_list **lst, t_list *new)
+//to duplicate the string
+char	*ft_strdup(const char *s)
 {
-	t_list	*tmp;
+	char	*dup;
+	size_t	lenth;
+	size_t	i;
 
-	tmp = *lst;
-	if (!lst)
-		return ;
-	if (!(*lst))
+	lenth = ft_strlen(s);
+	dup = (char *)malloc((lenth + 1) * sizeof(char));
+	if (!dup)
+		return (0);
+	i = 0;
+	while (i < lenth)
 	{
-		*lst = new;
-		return ;
+		dup[i] = s[i];
+		i++;
 	}
-	if (!new)
-		return ;
-	tmp = ft_lstlast(tmp);
-	tmp->next = new;
+	dup[i] = 0;
+	return (dup);
 }

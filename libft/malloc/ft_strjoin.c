@@ -1,32 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lstadd_back.c                                   :+:      :+:    :+:   */
+/*   ft_strjoin.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: obouhlel <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/11/07 10:57:24 by obouhlel          #+#    #+#             */
+/*   Created: 2022/11/07 12:49:42 by obouhlel          #+#    #+#             */
 /*   Updated: 2022/12/03 14:59:57 by obouhlel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../libft.h"
 
-//we take the last list, and we add the new list
-void	ft_lstadd_back(t_list **lst, t_list *new)
+//to joint two string
+char	*ft_strjoin(char const *s1, char const *s2)
 {
-	t_list	*tmp;
+	char	*s;
+	size_t	len1;
+	size_t	len2;
 
-	tmp = *lst;
-	if (!lst)
-		return ;
-	if (!(*lst))
-	{
-		*lst = new;
-		return ;
-	}
-	if (!new)
-		return ;
-	tmp = ft_lstlast(tmp);
-	tmp->next = new;
+	len1 = ft_strlen(s1);
+	len2 = ft_strlen(s2);
+	s = (char *)ft_calloc((len1 + len2 + 1), sizeof(char));
+	if (!s)
+		return (NULL);
+	(void)ft_strlcat(s, s1, (len1 + 1));
+	(void)ft_strlcat(s, s2, (len1 + len2 + 1));
+	return (s);
 }

@@ -1,32 +1,38 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lstadd_back.c                                   :+:      :+:    :+:   */
+/*   ft_substr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: obouhlel <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/11/07 10:57:24 by obouhlel          #+#    #+#             */
+/*   Created: 2022/11/07 13:00:55 by obouhlel          #+#    #+#             */
 /*   Updated: 2022/12/03 14:59:57 by obouhlel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../libft.h"
 
-//we take the last list, and we add the new list
-void	ft_lstadd_back(t_list **lst, t_list *new)
+//to creat a new string with the old string with a start and the lenth
+char	*ft_substr(char const *s, unsigned int start, size_t len)
 {
-	t_list	*tmp;
+	char	*sub;
+	size_t	i;
+	size_t	len_check;
 
-	tmp = *lst;
-	if (!lst)
-		return ;
-	if (!(*lst))
+	len_check = ft_strlen(s);
+	if ((len + start) > len_check)
+		len = len_check - start;
+	if (start > len_check)
+		len = 0;
+	sub = (char *)malloc(sizeof(char) * (len + 1));
+	if (!sub)
+		return (0);
+	i = 0;
+	while (i < len)
 	{
-		*lst = new;
-		return ;
+		sub[i] = s[start + i];
+		i++;
 	}
-	if (!new)
-		return ;
-	tmp = ft_lstlast(tmp);
-	tmp->next = new;
+	sub[i] = 0;
+	return (sub);
 }

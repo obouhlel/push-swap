@@ -1,23 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lstprint.c                                      :+:      :+:    :+:   */
+/*   ft_lstiter.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: obouhlel <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/12/03 21:35:09 by obouhlel          #+#    #+#             */
-/*   Updated: 2022/12/03 21:38:19 by obouhlel         ###   ########.fr       */
+/*   Created: 2022/11/07 12:04:35 by obouhlel          #+#    #+#             */
+/*   Updated: 2022/12/03 14:59:57 by obouhlel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../libft.h"
 
-void	ft_lstprint(t_list *lst)
+//to iter one list
+void	ft_lstiter(t_list *lst, void (*f)(void *))
 {
+	if (!f)
+		return ;
 	while (lst)
 	{
-		ft_putnbr_fd(lst->content, 1);
-		ft_putchar_fd('\n', 1);
+		f(lst->content);
 		lst = lst->next;
 	}
 }

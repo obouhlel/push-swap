@@ -1,23 +1,36 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lstdelone_relink.c                              :+:      :+:    :+:   */
+/*   ft_strmapi.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: obouhlel <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/12/03 22:27:15 by obouhlel          #+#    #+#             */
-/*   Updated: 2022/12/03 22:34:02 by obouhlel         ###   ########.fr       */
+/*   Created: 2022/11/07 12:34:53 by obouhlel          #+#    #+#             */
+/*   Updated: 2022/12/03 14:59:57 by obouhlel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../libft.h"
 
-void	ft_lstdelone_relink(t_list **lst)
+//map the string with the index
+char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
 {
-	t_list	*tmp;
+	unsigned int	i;
+	size_t			len;
+	char			*str;
 
-	tmp = (*lst)->previous;
-	(*lst)->previous = (*lst)->next;
-	(*lst)->next = tmp;
-	free(*lst);
+	if (!s || !f)
+		return (NULL);
+	len = ft_strlen(s);
+	str = (char *)malloc((len + 1) * sizeof(char));
+	if (!str)
+		return (0);
+	i = 0;
+	while (i < len)
+	{
+		str[i] = f(i, s[i]);
+		i++;
+	}
+	str[i] = 0;
+	return (str);
 }
