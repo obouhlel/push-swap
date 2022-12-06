@@ -6,7 +6,7 @@
 /*   By: obouhlel <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/04 17:01:56 by obouhlel          #+#    #+#             */
-/*   Updated: 2022/12/06 17:41:48 by obouhlel         ###   ########.fr       */
+/*   Updated: 2022/12/06 19:04:03 by obouhlel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,5 +14,12 @@
 
 void	ft_algo_push_swap(t_list **lst_a, t_list **lst_b)
 {
-	ft_push_swap_pa(lst_b, lst_a);
+	ft_push_swap_pb(lst_a, lst_b);
+	ft_push_swap_rra(lst_a);
+	ft_putchar_fd('\n', 1);
+	ft_putstr_fd("\033[0;32m", 1);
+	ft_lstprint_num(*lst_b, 1);
+	ft_putstr_fd("\nB\n\n\033[0;31m", 1);
+	ft_lstprint_num(*lst_a, 1);
+	ft_putstr_fd("A\n", 1);
 }

@@ -6,7 +6,7 @@
 /*   By: obouhlel <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/03 15:43:23 by obouhlel          #+#    #+#             */
-/*   Updated: 2022/12/06 16:52:37 by obouhlel         ###   ########.fr       */
+/*   Updated: 2022/12/06 18:44:18 by obouhlel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,6 @@ int	main(int ac, char **av)
 	while (i < ac)
 		ft_lstadd_back(&lst_a, ft_lstnew(ft_atoi(av[i++])));
 	ft_error_push_swap_double(lst_a);
-	
 	ft_algo_push_swap(&lst_a, &lst_b);
 	return (0);
 }

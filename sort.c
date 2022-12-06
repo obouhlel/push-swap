@@ -6,7 +6,7 @@
 /*   By: obouhlel <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/03 21:43:30 by obouhlel          #+#    #+#             */
-/*   Updated: 2022/12/04 17:00:21 by obouhlel         ###   ########.fr       */
+/*   Updated: 2022/12/06 19:38:16 by obouhlel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,6 +43,7 @@ void	swap_to_the_top(t_list **lst)
 	t_list	*swap;
 	int		tmp;
 
+	swap = NULL;
 	if (!(*lst))
 		return ;
 	swap = (*lst);
@@ -66,18 +67,20 @@ void	swap_to_the_bot(t_list **lst)
 	t_list	*swap;
 	int		tmp;
 
+	swap = NULL;
 	if (!(*lst))
 		return ;
+	// swap = (*lst);
+	// swap = ft_lstlast(swap);
+	// tmp = (*lst)->content;
+	// (*lst)->content = swap->content;
+	// swap->content = tmp;
 	swap = (*lst);
-	swap = ft_lstlast(swap);
-	tmp = (*lst)->content;
-	(*lst)->content = swap->content;
-	swap->content = tmp;
-	while (swap && swap->previous->previous)
+	while (swap)
 	{
 		tmp = swap->content;
 		swap->content = swap->previous->content;
 		swap->previous->content = tmp;
-		swap = swap->previous;
+		// swap = swap->previous;
 	}
 }
