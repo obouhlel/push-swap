@@ -1,21 +1,37 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   algo.c                                             :+:      :+:    :+:   */
+/*   error_2.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: obouhlel <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/12/04 17:01:56 by obouhlel          #+#    #+#             */
-/*   Updated: 2022/12/07 16:55:54 by obouhlel         ###   ########.fr       */
+/*   Created: 2022/12/08 11:29:46 by obouhlel          #+#    #+#             */
+/*   Updated: 2022/12/08 11:30:34 by obouhlel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-// void	ft_algo_push_swap(t_list **lst_a, t_list **lst_b)
-// {
-// 	// int	len;
+void	delete(int a)
+{
+	(void)a;
+	a = 0;
+}
 
-// 	// (void)lst_b;
-// 	// len = ft_lstsize((*lst_a));
-// }
+void	ft_create_lst_a(t_list **lst, char **nbrs, int n)
+{
+	int	i;
+
+	i = 0;
+	while (i < n)
+	{
+		ft_lstadd_back(&(*lst), ft_lstnew(ft_atoi(nbrs[i])));
+		if (!(*lst))
+		{
+			free_error_free(nbrs, lst);
+			ft_putendl_fd("Error", 1);
+			return (0);
+		}
+		i++;
+	}
+}

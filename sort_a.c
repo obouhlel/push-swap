@@ -6,7 +6,7 @@
 /*   By: obouhlel <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/03 21:43:30 by obouhlel          #+#    #+#             */
-/*   Updated: 2022/12/06 17:41:07 by obouhlel         ###   ########.fr       */
+/*   Updated: 2022/12/07 13:18:56 by obouhlel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ void	ft_push_swap_sa(t_list **lst_a)
 }
 
 //pa
-void	ft_push_swap_pa(t_list **lst_b, t_list **lst_a)
+void	ft_push_swap_pa(t_list **lst_a, t_list **lst_b)
 {
 	swap_top_1_to_2(lst_b, lst_a);
 	ft_putendl_fd("pa", 1);

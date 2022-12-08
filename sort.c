@@ -6,17 +6,17 @@
 /*   By: obouhlel <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/03 21:43:30 by obouhlel          #+#    #+#             */
-/*   Updated: 2022/12/06 19:46:02 by obouhlel         ###   ########.fr       */
+/*   Updated: 2022/12/08 11:01:18 by obouhlel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void	delete(int a)
-{
-	(void)a;
-	a = 0;
-}
+// static void	delete(int a)
+// {
+// 	(void)a;
+// 	a = 0;
+// }
 
 //swap the first and the second on the top
 void	swap_of_2_top(t_list **lst)
@@ -25,22 +25,24 @@ void	swap_of_2_top(t_list **lst)
 
 	if (!(*lst) && !(*lst)->next)
 		return ;
-	tmp = (*lst)->content;
-	(*lst)->content = (*lst)->next->content;
-	(*lst)->next->content = tmp;
+	tmp = (*lst)->value;
+	(*lst)->value = (*lst)->next->value;
+	(*lst)->next->value = tmp;
 }
 
 //swap the first one on 1 pile go to the 2nd in the top
 void	swap_top_1_to_2(t_list **lst1, t_list **lst2)
 {
-	t_list	*tmp_lst;
+	int		tmp;
+	t_list	*next;
 
-	if (!(*lst1) || !(*lst2))
+	if (!(*lst1))
 		return ;
-	ft_lstadd_front(lst2, (*lst1));
-	tmp_lst = (*lst1)->next;
-	ft_lstdelone((*lst1), &delete);
-	(*lst1) = tmp_lst;
+	tmp = (*lst1)->value;
+	next = (*lst1)->next;
+	ft_lstdelone_relink(lst1);
+	ft_lstadd_front(lst2, ft_lstnew(tmp));
+	(*lst1) = next;
 }
 
 //all go top and the first go at the last
@@ -53,16 +55,11 @@ void	swap_to_the_top(t_list **lst)
 	if (!(*lst))
 		return ;
 	swap = (*lst);
-	swap = ft_lstlast(swap);
-	tmp = (*lst)->content;
-	(*lst)->content = swap->content;
-	swap->content = tmp;
-	swap = (*lst);
-	while (swap && swap->next->next)
+	while (swap->next)
 	{
-		tmp = swap->content;
-		swap->content = swap->next->content;
-		swap->next->content = tmp;
+		tmp = swap->value;
+		swap->value = swap->next->value;
+		swap->next->value = tmp;
 		swap = swap->next;
 	}
 }
@@ -76,17 +73,13 @@ void	swap_to_the_bot(t_list **lst)
 	swap = NULL;
 	if (!(*lst))
 		return ;
-	// swap = (*lst);
-	// swap = ft_lstlast(swap);
-	// tmp = (*lst)->content;
-	// (*lst)->content = swap->content;
-	// swap->content = tmp;
 	swap = (*lst);
-	while (swap)
+	swap = ft_lstlast(swap);
+	while (swap->previous)
 	{
-		tmp = swap->content;
-		swap->content = swap->previous->content;
-		swap->previous->content = tmp;
-		// swap = swap->previous;
+		tmp = swap->value;
+		swap->value = swap->previous->value;
+		swap->previous->value = tmp;
+		swap = swap->previous;
 	}
 }

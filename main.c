@@ -1,21 +1,36 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   algo.c                                             :+:      :+:    :+:   */
+/*   main_push_swap.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: obouhlel <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/12/04 17:01:56 by obouhlel          #+#    #+#             */
-/*   Updated: 2022/12/07 16:55:54 by obouhlel         ###   ########.fr       */
+/*   Created: 2022/12/03 15:43:23 by obouhlel          #+#    #+#             */
+/*   Updated: 2022/12/08 11:30:21 by obouhlel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-// void	ft_algo_push_swap(t_list **lst_a, t_list **lst_b)
-// {
-// 	// int	len;
+int	main(int ac, char **av)
+{
+	int		i;
+	int		n;
+	t_list	*lst_a;
+	t_list	*lst_b;
+	char	**nbrs;
 
-// 	// (void)lst_b;
-// 	// len = ft_lstsize((*lst_a));
-// }
+	lst_a = NULL;
+	lst_b = NULL;
+	(void)lst_b;
+	nbrs = ft_clear_av(&av[1], (ac - 1));
+	n = 0;
+	while (nbrs[n])
+		n++;
+	ft_error_push_swap_digit(nbrs);
+	ft_error_push_swap_int(nbrs, n);
+	ft_create_lst_a(&lst_a, nbrs, n);
+	ft_error_push_swap_double(lst_a, nbrs);
+	ft_lstprint_num(lst_a, 1);
+	return (0);
+}

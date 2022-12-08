@@ -1,21 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   algo.c                                             :+:      :+:    :+:   */
+/*   ft_printcolor.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: obouhlel <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/12/04 17:01:56 by obouhlel          #+#    #+#             */
-/*   Updated: 2022/12/07 16:55:54 by obouhlel         ###   ########.fr       */
+/*   Created: 2022/12/07 13:37:51 by obouhlel          #+#    #+#             */
+/*   Updated: 2022/12/07 13:40:26 by obouhlel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-// void	ft_algo_push_swap(t_list **lst_a, t_list **lst_b)
-// {
-// 	// int	len;
-
-// 	// (void)lst_b;
-// 	// len = ft_lstsize((*lst_a));
-// }
+void	ft_print_color(t_list *lst_a, t_list *lst_b)
+{
+	ft_putchar_fd('\n', 1);
+	ft_putstr_fd("\033[0;32m", 1);
+	ft_lstprint_num(lst_b, 1);
+	ft_putstr_fd("B\n\n\033[0;31m", 1);
+	ft_lstprint_num(lst_a, 1);
+	ft_putstr_fd("A\n", 1);
+}

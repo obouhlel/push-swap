@@ -6,7 +6,7 @@
 /*   By: obouhlel <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/03 14:10:03 by obouhlel          #+#    #+#             */
-/*   Updated: 2022/12/06 17:41:01 by obouhlel         ###   ########.fr       */
+/*   Updated: 2022/12/08 11:34:03 by obouhlel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,10 +19,16 @@
 # include <stdlib.h>
 # include <unistd.h>
 
-//error.c
-void	ft_error_push_swap_double(t_list *lst);
+//error_1.c
+void	free_error_free(char **nbrs, t_list *lst);
+char	**ft_clear_av(char **av, int n);
+void	ft_error_push_swap_double(t_list *lst, char **nbrs);
 void	ft_error_push_swap_int(char **nstr, int n);
 void	ft_error_push_swap_digit(char **strs);
+
+//error_2.c
+void	delete(int a);
+void	ft_create_lst_a(t_list **lst, char **nbrs, int n);
 
 //sort.c
 void	swap_of_2_top(t_list **lst);
