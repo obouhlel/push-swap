@@ -1,41 +1,43 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lstmap.c                                        :+:      :+:    :+:   */
+/*   ft_strjoin_free.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: obouhlel <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/11/07 12:27:52 by obouhlel          #+#    #+#             */
-/*   Updated: 2022/12/08 11:01:18 by obouhlel         ###   ########.fr       */
+/*   Created: 2022/11/07 12:49:42 by obouhlel          #+#    #+#             */
+/*   Updated: 2022/12/08 11:03:21 by obouhlel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../libft.h"
 
-//to map the all list, and if we have one error to erased all the list
-t_list	*ft_lstmap(t_list *lst, int (*f)(int), void (*del)(int))
+//to joint two string
+char	*ft_strjoin_free(char *s1, char *s2)
 {
-	t_list	*new;
-	t_list	*tmp;
+	char	*s;
+	size_t	len_s1;
+	size_t	len_s2;
+	int		i;
 
-	new = NULL;
-	if (!lst || !f || !del)
+	len_s1 = ft_strlen(s1);
+	len_s2 = ft_strlen(s2);
+	s = (char *)malloc(sizeof(char) * (len_s1 + len_s2 + 1));
+	if (!s)
 		return (NULL);
-	while (lst)
+	s[0] = 0;
+	i = -1;
+	while (++i < (int)len_s1)
+		s[i] = s1[i];
+	while (i < (int)(len_s1 + len_s2))
 	{
-		ft_lstadd_back(&new, ft_lstnew(lst->value));
-		if (!new)
-		{
-			ft_lstclear(&new, del);
-			return (NULL);
-		}
-		lst = lst->next;
+		s[i] = s2[i - len_s1];
+		i++;
 	}
-	tmp = new;
-	while (tmp)
-	{
-		tmp->value = f(tmp->value);
-		tmp = tmp->next;
-	}
-	return (new);
+	s[i] = 0;
+	if (s1)
+		free(s1);
+	if (s2)
+		free(s2);
+	return (s);
 }
