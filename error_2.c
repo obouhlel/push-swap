@@ -6,7 +6,7 @@
 /*   By: obouhlel <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/08 11:29:46 by obouhlel          #+#    #+#             */
-/*   Updated: 2022/12/08 11:30:34 by obouhlel         ###   ########.fr       */
+/*   Updated: 2022/12/08 11:37:34 by obouhlel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,9 +28,9 @@ void	ft_create_lst_a(t_list **lst, char **nbrs, int n)
 		ft_lstadd_back(&(*lst), ft_lstnew(ft_atoi(nbrs[i])));
 		if (!(*lst))
 		{
-			free_error_free(nbrs, lst);
+			free_error_free(nbrs, *lst);
 			ft_putendl_fd("Error", 1);
-			return (0);
+			exit(0);
 		}
 		i++;
 	}

@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main_push_swap.c                                   :+:      :+:    :+:   */
+/*   main.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: obouhlel <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/03 15:43:23 by obouhlel          #+#    #+#             */
-/*   Updated: 2022/12/08 11:30:21 by obouhlel         ###   ########.fr       */
+/*   Updated: 2022/12/08 11:38:18 by obouhlel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,11 +14,10 @@
 
 int	main(int ac, char **av)
 {
-	int		i;
-	int		n;
 	t_list	*lst_a;
 	t_list	*lst_b;
 	char	**nbrs;
+	int		n;
 
 	lst_a = NULL;
 	lst_b = NULL;
@@ -31,6 +30,5 @@ int	main(int ac, char **av)
 	ft_error_push_swap_int(nbrs, n);
 	ft_create_lst_a(&lst_a, nbrs, n);
 	ft_error_push_swap_double(lst_a, nbrs);
-	ft_lstprint_num(lst_a, 1);
 	return (0);
 }
