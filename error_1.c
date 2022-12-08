@@ -6,13 +6,13 @@
 /*   By: obouhlel <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/03 15:45:33 by obouhlel          #+#    #+#             */
-/*   Updated: 2022/12/08 11:21:58 by obouhlel         ###   ########.fr       */
+/*   Updated: 2022/12/08 11:59:00 by obouhlel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void	free_error_free(char **nbrs, t_list *lst)
+void	free_all(char **nbrs, t_list **lst)
 {
 	int	i;
 
@@ -20,7 +20,7 @@ void	free_error_free(char **nbrs, t_list *lst)
 	while (nbrs[i])
 		free(nbrs[i++]);
 	free(nbrs);
-	ft_lstclear(&lst, &delete);
+	ft_lstclear(lst, &delete);
 }
 
 char	**ft_clear_av(char **av, int n)
@@ -28,18 +28,21 @@ char	**ft_clear_av(char **av, int n)
 	char	**nbrs;
 	char	*nbr;
 	char	*tmp;
+	int		i;
 
 	nbrs = NULL;
 	nbr = NULL;
 	tmp = NULL;
-	while (n)
+	i = 0;
+	while (i < n)
 	{
-		tmp = ft_strjoin(av[n--], " ");
+		tmp = ft_strjoin(av[i], " ");
 		if (!tmp)
 			return (free(nbr), free(tmp), NULL);
-		nbr = ft_strjoin(tmp, nbr);
+		nbr = ft_strjoin_free(tmp, nbr);
 		if (!nbr)
 			return (free(nbr), free(tmp), NULL);
+		i++;
 	}
 	nbrs = ft_split(nbr, ' ');
 	free(nbr);
@@ -62,7 +65,7 @@ void	ft_error_push_swap_digit(char **strs)
 			if (!ft_isdigit(strs[i][j]))
 			{
 				ft_putendl_fd("Error", 1);
-				free_error_free(strs, NULL);
+				free_all(strs, NULL);
 				exit(0);
 			}
 			j++;
@@ -85,7 +88,7 @@ void	ft_error_push_swap_int(char **nstr, int n)
 		if (atoi != atoi_long)
 		{
 			ft_putendl_fd("Error", 1);
-			free_error_free(nstr, NULL);
+			free_all(nstr, NULL);
 			exit(0);
 		}
 		i++;
@@ -106,7 +109,7 @@ void	ft_error_push_swap_double(t_list *lst, char **nbrs)
 			if (lstcmp->value == tmp)
 			{
 				ft_putendl_fd("Error", 1);
-				free_error_free(nbrs, lst);
+				free_all(nbrs, &lst);
 				exit(0);
 			}
 			lstcmp = lstcmp->next;

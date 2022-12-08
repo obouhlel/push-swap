@@ -6,7 +6,7 @@
 /*   By: obouhlel <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/03 15:43:23 by obouhlel          #+#    #+#             */
-/*   Updated: 2022/12/08 11:38:18 by obouhlel         ###   ########.fr       */
+/*   Updated: 2022/12/08 11:57:22 by obouhlel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,6 +22,11 @@ int	main(int ac, char **av)
 	lst_a = NULL;
 	lst_b = NULL;
 	(void)lst_b;
+	if (ac == 1)
+	{
+		ft_putendl_fd("Error", 1);
+		return (0);
+	}
 	nbrs = ft_clear_av(&av[1], (ac - 1));
 	n = 0;
 	while (nbrs[n])
@@ -30,5 +35,7 @@ int	main(int ac, char **av)
 	ft_error_push_swap_int(nbrs, n);
 	ft_create_lst_a(&lst_a, nbrs, n);
 	ft_error_push_swap_double(lst_a, nbrs);
+	ft_lstprint_num(lst_a, 1);
+	free_all(nbrs, &lst_a);
 	return (0);
 }
