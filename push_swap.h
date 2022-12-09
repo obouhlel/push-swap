@@ -6,7 +6,7 @@
 /*   By: obouhlel <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/03 14:10:03 by obouhlel          #+#    #+#             */
-/*   Updated: 2022/12/09 09:17:15 by obouhlel         ###   ########.fr       */
+/*   Updated: 2022/12/09 09:25:08 by obouhlel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,6 +58,7 @@ void	ft_push_swap_rr(t_list **lst_a, t_list **lst_b);
 void	ft_push_swap_rrr(t_list **lst_a, t_list **lst_b);
 
 //algo.c
+int		ft_push_swap_check(t_list *lst);
 void	ft_algo_push_swap(t_list **lst_a, t_list **lst_b);
 
 #endif
