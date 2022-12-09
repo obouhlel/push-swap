@@ -2,3 +2,6 @@
 *.d
 *.o
 *.a
+result_50
+result_100
+result_500
