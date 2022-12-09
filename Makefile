@@ -20,7 +20,7 @@ DEP					+= ${SRCS_libft:.c=.d}
 LIB_libft			= libft.a
 
 SRCS_push_swap		= main_push_swap.c push_swap_algo.c push_swap_check.c push_swap_error_1.c push_swap_error_2.c \
-			  		push_swap_sort_a.c push_swap_sort_all.c push_swap_sort_b.c push_swap_sort.c ft_printcolor.c
+			  		push_swap_sort_a.c push_swap_sort_all.c push_swap_sort_b.c push_swap_sort.c
 
 OBJS_push_swap		= ${SRCS_push_swap:.c=.o}
 
