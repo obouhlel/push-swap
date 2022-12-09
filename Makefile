@@ -15,14 +15,20 @@ OBJS_libft			= ${SRCS_libft:.c=.o}
 
 HEADER_libft		= libft/libft.h
 
-LIB					= libft.a
+DEP					+= ${SRCS_libft:.c=.d}
 
-SRCS_push_swap		= ft_printcolor.c main_push_swap.c push_swap_algo.c push_swap_check.c push_swap_error_1.c push_swap_error_2.c \
-			  		push_swap_sort_a.c push_swap_sort_all.c push_swap_sort_b.c push_swap_sort.c
+LIB_libft			= libft.a
+
+SRCS_push_swap		= main_push_swap.c push_swap_algo.c push_swap_check.c push_swap_error_1.c push_swap_error_2.c \
+			  		push_swap_sort_a.c push_swap_sort_all.c push_swap_sort_b.c push_swap_sort.c ft_printcolor.c
 
 OBJS_push_swap		= ${SRCS_push_swap:.c=.o}
 
 HEADER_push_swap	= push_swap.h
+
+DEP					+= ${SRCS_push_swap:.c=.d}
+
+LIB_push_swap		= libpa.a
 
 CC					= gcc
 
@@ -30,21 +36,28 @@ CFLAGS				= -Wall -Wextra -Werror -g3
 
 NAME				= push_swap
 
-%.c					: %.o
-					${CC} ${CFLAGS} -c $< -o libft/$@
+%.o					: %.c
+					${CC} ${CFLAGS} -c $< -o $@
 
-all					: ${OBJS_libft} ${OBJS_push_swap}
-					ar rcs ${LIB} ${OBJS_libft}
-					${CC} ${CFLAGS} ${OBJS_push_swap} ${LIB} -o ${NAME}
+%.d					: %.c
+					${CC} ${CFLAGS} -MM $< -o $@
 
-${NAME}				: all
+${NAME}				: ${OBJS_libft} ${OBJS_push_swap} ${DEP}
+					ar rcs ${LIB_libft} ${OBJS_libft}
+					mv ${LIB_libft} ${LIB_push_swap}
+					ar rcs ${LIB_push_swap} ${OBJS_push_swap}
+					${CC} ${CFLAGS} ${LIB_push_swap} -o ${NAME}
+
+all					: ${NAME}
 
 clean				:
-					rm -f ${OBJS_libft} ${OBJS_push_swap} ${LIB}
+					rm -f ${OBJS_libft} ${OBJS_push_swap} ${DEP} ${LIB_push_swap}
 
 fclean				: clean
 					rm -f ${NAME}
 
 re					: fclean all
+
+-include $(DEP)
 
 .PHONY				: all clean fclean re
