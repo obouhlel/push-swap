@@ -6,7 +6,7 @@
 /*   By: obouhlel <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/07 12:29:57 by obouhlel          #+#    #+#             */
-/*   Updated: 2022/12/08 11:19:54 by obouhlel         ###   ########.fr       */
+/*   Updated: 2022/12/09 17:04:05 by obouhlel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,6 +20,7 @@ t_list	*ft_lstnew(int value)
 	lst = (t_list *)malloc(sizeof(t_list));
 	if (!lst)
 		return (NULL);
+	lst->previous = NULL;
 	lst->value = value;
 	lst->next = NULL;
 	return (lst);

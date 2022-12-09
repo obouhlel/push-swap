@@ -6,13 +6,13 @@
 /*   By: obouhlel <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/06 16:57:20 by obouhlel          #+#    #+#             */
-/*   Updated: 2022/12/08 11:01:18 by obouhlel         ###   ########.fr       */
+/*   Updated: 2022/12/09 14:22:49 by obouhlel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../libft.h"
 
-void	ft_lstprint_num(t_list *lst, int fd)
+void	ft_lstprint_num_fd(t_list *lst, int fd)
 {
 	while (lst)
 	{

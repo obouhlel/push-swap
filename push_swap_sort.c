@@ -6,7 +6,7 @@
 /*   By: obouhlel <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/03 21:43:30 by obouhlel          #+#    #+#             */
-/*   Updated: 2022/12/09 09:13:30 by obouhlel         ###   ########.fr       */
+/*   Updated: 2022/12/09 17:32:39 by obouhlel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,14 +28,19 @@ void	swap_of_2_top(t_list **lst)
 void	swap_top_1_to_2(t_list **lst1, t_list **lst2)
 {
 	int		tmp;
+	int		size;
 	t_list	*tmp_lst;
 	t_list	*next;
 
 	if (!(*lst1))
 		return ;
+	next = NULL;
+	tmp_lst = NULL;
+	size = ft_lstsize(*lst1);
 	tmp = (*lst1)->value;
-	next = (*lst1)->next;
-	ft_lstdelone_relink(lst1);
+	if (size > 1)
+		next = (*lst1)->next;
+	ft_lstdelone(*lst1, &delete_value);
 	tmp_lst = ft_lstnew(tmp);
 	if (!tmp_lst)
 	{

@@ -6,7 +6,7 @@
 /*   By: obouhlel <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/07 13:05:19 by obouhlel          #+#    #+#             */
-/*   Updated: 2022/12/08 11:01:40 by obouhlel         ###   ########.fr       */
+/*   Updated: 2022/12/09 14:23:19 by obouhlel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -88,6 +88,7 @@ void	ft_lstclear(t_list **lst, void (*del)(int));
 void	ft_lstiter(t_list *lst, int (*f)(int));
 t_list	*ft_lstmap(t_list *lst, int (*f)(int), void (*del)(int));
 
-void	ft_lstprint_num(t_list *lst, int fd);
+void	ft_lstprint_num_fd(t_list *lst, int fd);
+void	ft_lstprint_num_rev_fd(t_list *lst, int fd);
 
 #endif

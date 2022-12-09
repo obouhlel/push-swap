@@ -6,7 +6,7 @@
 /*   By: obouhlel <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/03 15:43:23 by obouhlel          #+#    #+#             */
-/*   Updated: 2022/12/09 12:16:05 by obouhlel         ###   ########.fr       */
+/*   Updated: 2022/12/09 17:29:51 by obouhlel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,7 +48,5 @@ int	main(int ac, char **av)
 	}
 	main_error(nbrs, &lst_a);
 	ft_algo_push_swap(&lst_a, &lst_b);
-	// ft_lstprint_num(lst_a, 1);
-	free_all_lst(&lst_a, &lst_b);
 	return (0);
 }
