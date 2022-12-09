@@ -6,7 +6,7 @@
 /*   By: obouhlel <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/03 21:43:30 by obouhlel          #+#    #+#             */
-/*   Updated: 2022/12/09 07:49:00 by obouhlel         ###   ########.fr       */
+/*   Updated: 2022/12/09 09:13:30 by obouhlel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,7 +39,7 @@ void	swap_top_1_to_2(t_list **lst1, t_list **lst2)
 	tmp_lst = ft_lstnew(tmp);
 	if (!tmp_lst)
 	{
-		free_lst_error(lst1, lst2);
+		free_all_lst(lst1, lst2);
 		ft_putendl_fd("Error", 1);
 		exit(0);
 	}

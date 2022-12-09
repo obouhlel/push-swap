@@ -6,7 +6,7 @@
 /*   By: obouhlel <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/03 14:10:03 by obouhlel          #+#    #+#             */
-/*   Updated: 2022/12/09 09:00:51 by obouhlel         ###   ########.fr       */
+/*   Updated: 2022/12/09 09:17:15 by obouhlel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,8 +30,8 @@ void	ft_error_push_swap_digit(char **strs);
 
 //error_2.c
 void	delete_value(int a);
-void	free_all(char **nbrs, t_list **lst);
-void	free_lst_error(t_list **lst_a, t_list **lst_b);
+void	free_nbrs_lst(char **nbrs, t_list **lst);
+void	free_all_lst(t_list **lst_a, t_list **lst_b);
 void	ft_create_lst_a(t_list **lst, char **nbrs, int n);
 
 //sort.c

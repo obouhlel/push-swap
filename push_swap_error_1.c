@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   error_1.c                                          :+:      :+:    :+:   */
+/*   push_swap_error_1.c                                :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: obouhlel <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/03 15:45:33 by obouhlel          #+#    #+#             */
-/*   Updated: 2022/12/09 06:30:06 by obouhlel         ###   ########.fr       */
+/*   Updated: 2022/12/09 09:17:15 by obouhlel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,7 +54,7 @@ void	ft_error_push_swap_digit(char **strs)
 			if (!ft_isdigit(strs[i][j]))
 			{
 				ft_putendl_fd("Error", 1);
-				free_all(strs, NULL);
+				free_nbrs_lst(strs, NULL);
 				exit(0);
 			}
 			j++;
@@ -77,7 +77,7 @@ void	ft_error_push_swap_int(char **nstr, int n)
 		if (atoi != atoi_long)
 		{
 			ft_putendl_fd("Error", 1);
-			free_all(nstr, NULL);
+			free_nbrs_lst(nstr, NULL);
 			exit(0);
 		}
 		i++;
@@ -98,7 +98,7 @@ void	ft_error_push_swap_double(t_list *lst, char **nbrs)
 			if (lstcmp->value == tmp)
 			{
 				ft_putendl_fd("Error", 1);
-				free_all(nbrs, &lst);
+				free_nbrs_lst(nbrs, &lst);
 				exit(0);
 			}
 			lstcmp = lstcmp->next;
