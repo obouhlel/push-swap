@@ -3,7 +3,27 @@ Green='\033[0;32m'
 Color_Off='\033[0m'
 make
 make clean
-echo "\nNombre d'essaie 50, 100, 500\n"
+echo "\nNombre d'essaie 3, 5, 50, 100, 500\n"
+echo "\t3"
+ARG="6 18 -14"; ./push_swap $ARG | wc -l
+./push_swap $ARG > result_3
+var=$(./push_swap $ARG | ./checker_linux $ARG)
+if [ ${var} = "KO" ]
+then
+   echo $Red "KO" $Color_Off;
+else
+   echo $Green "OK" $Color_Off;
+fi
+echo "\t5"
+ARG="8 2 14 15 3"; ./push_swap $ARG | wc -l
+./push_swap $ARG > result_5
+var=$(./push_swap $ARG | ./checker_linux $ARG)
+if [ ${var} = "KO" ]
+then
+   echo $Red "KO" $Color_Off;
+else
+   echo $Green "OK" $Color_Off;
+fi
 echo "\t50"
 ARG="686 -503 -861 -870 820 -849 -781 -320 68 -987 -635 204 -63 -178 -25 318 -227 510 -964 279 -49 555 -866 51 642 -965 -139 479 597 -348 115 -256 476 737 -880 -143 -399 845 144 -38 360 -860 266 786 439 -793 234 100 -627 557"; ./push_swap $ARG | wc -l
 ./push_swap $ARG > result_50
