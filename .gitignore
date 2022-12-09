@@ -21,8 +21,8 @@ push_swap
 *.pch
 
 # Libraries
-*.lib
 *.a
+*.lib
 *.la
 *.lo
 
