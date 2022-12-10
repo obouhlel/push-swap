@@ -2,4 +2,4 @@
 *.d
 *.o
 *.a
-result_*
+result*
