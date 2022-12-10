@@ -2,5 +2,4 @@
 *.d
 *.o
 *.a
-result*
 push_swap

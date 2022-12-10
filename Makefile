@@ -17,7 +17,8 @@ DEPS				+= ${SRCS_libft:.c=.d}
 
 LIB_libft			= libft.a
 
-SRCS_push_swap		= main_push_swap.c push_swap_algo.c push_swap_check.c push_swap_algo_3.c push_swap_algo_calcule.c \
+SRCS_push_swap		= main_push_swap.c push_swap_algo.c push_swap_check.c push_swap_algo_calcule.c \
+					push_swap_algo_3.c push_swap_algo_5.c push_swap_algo_100.c \
 					push_swap_error_1.c push_swap_error_2.c \
 			  		push_swap_sort_a.c push_swap_sort_all.c push_swap_sort_b.c push_swap_sort.c
 
