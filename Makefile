@@ -7,7 +7,7 @@ SRCS_libft			=  libft/char/ft_isalnum.c libft/char/ft_isalpha.c libft/char/ft_is
 					libft/malloc/ft_calloc.c libft/malloc/ft_split.c libft/malloc/ft_strdup.c libft/malloc/ft_strjoin.c libft/malloc/ft_strjoin_free.c libft/malloc/ft_strmapi.c \
 					libft/malloc/ft_strtrim.c libft/malloc/ft_substr.c libft/mem/ft_bzero.c libft/mem/ft_memchr.c libft/mem/ft_memcmp.c \
 					libft/mem/ft_memcpy.c libft/mem/ft_memmove.c libft/mem/ft_memset.c \
-					libft/print/ft_putchar_fd.c libft/print/ft_putendl_fd.c libft/print/ft_putnbr_fd.c libft/print/ft_putstr_fd.c \
+					libft/print/ft_putchar_fd.c libft/print/ft_putendl_fd.c libft/print/ft_putnbr_fd.c libft/print/ft_putstr_fd.c libft/print/ft_putstrnbr_fd.c \
 					libft/string/ft_strchr.c libft/string/ft_striteri.c libft/string/ft_strlcat.c libft/string/ft_strlcpy.c \
 					libft/string/ft_strlen.c libft/string/ft_strncmp.c libft/string/ft_strnstr.c libft/string/ft_strrchr.c
 
@@ -17,7 +17,8 @@ DEPS				+= ${SRCS_libft:.c=.d}
 
 LIB_libft			= libft.a
 
-SRCS_push_swap		= main_push_swap.c push_swap_algo.c push_swap_check.c push_swap_error_1.c push_swap_error_2.c \
+SRCS_push_swap		= main_push_swap.c push_swap_algo.c push_swap_check.c push_swap_algo_3.c push_swap_algo_calcule.c \
+					push_swap_error_1.c push_swap_error_2.c \
 			  		push_swap_sort_a.c push_swap_sort_all.c push_swap_sort_b.c push_swap_sort.c
 
 OBJS_push_swap		= ${SRCS_push_swap:.c=.o}
