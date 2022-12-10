@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   sort_a.c                                           :+:      :+:    :+:   */
+/*   push_swap_sort_a.c                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: obouhlel <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/03 21:43:30 by obouhlel          #+#    #+#             */
-/*   Updated: 2022/12/07 13:18:56 by obouhlel         ###   ########.fr       */
+/*   Updated: 2022/12/10 11:57:36 by obouhlel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ void	ft_push_swap_sa(t_list **lst_a)
 //pa
 void	ft_push_swap_pa(t_list **lst_a, t_list **lst_b)
 {
-	swap_top_1_to_2(lst_b, lst_a);
+	swap_top_1_to_2(lst_a, lst_b);
 	ft_putendl_fd("pa", 1);
 }
 

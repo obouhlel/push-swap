@@ -6,7 +6,7 @@
 /*   By: obouhlel <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/03 14:10:03 by obouhlel          #+#    #+#             */
-/*   Updated: 2022/12/09 09:25:08 by obouhlel         ###   ########.fr       */
+/*   Updated: 2022/12/10 14:41:33 by obouhlel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -57,8 +57,14 @@ void	ft_push_swap_ss(t_list **lst_a, t_list **lst_b);
 void	ft_push_swap_rr(t_list **lst_a, t_list **lst_b);
 void	ft_push_swap_rrr(t_list **lst_a, t_list **lst_b);
 
-//algo.c
-int		ft_push_swap_check(t_list *lst);
+//push_swap_algo.c
 void	ft_algo_push_swap(t_list **lst_a, t_list **lst_b);
+//push_swap_check.c
+int		ft_push_swap_check(t_list *lst);
+//push_swap_algo_calcule.c
+int		ft_algo_min(t_list *lst);
+int		ft_algo_max(t_list *lst);
+//push_swap_algo_3.c
+void	ft_algo_ps_3(t_list **lst, int min, int max);
 
 #endif

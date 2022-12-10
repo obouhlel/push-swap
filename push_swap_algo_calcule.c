@@ -1,41 +1,41 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   push_swap_sort_b.c                                 :+:      :+:    :+:   */
+/*   push_swap_algo_calcule.c                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: obouhlel <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/12/03 21:43:30 by obouhlel          #+#    #+#             */
-/*   Updated: 2022/12/10 11:56:45 by obouhlel         ###   ########.fr       */
+/*   Created: 2022/12/10 14:36:17 by obouhlel          #+#    #+#             */
+/*   Updated: 2022/12/10 14:36:42 by obouhlel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-//sb
-void	ft_push_swap_sb(t_list **lst_b)
+int	ft_algo_min(t_list *lst)
 {
-	swap_of_2_top(lst_b);
-	ft_putendl_fd("sb", 1);
+	int	min;
+
+	min = lst->value;
+	while (lst)
+	{
+		if (min > lst->value)
+			min = lst->value;
+		lst = lst->next;
+	}
+	return (min);
 }
 
-//pb
-void	ft_push_swap_pb(t_list **lst_a, t_list **lst_b)
+int	ft_algo_max(t_list *lst)
 {
-	swap_top_1_to_2(lst_b, lst_a);
-	ft_putendl_fd("pb", 1);
-}
+	int	max;
 
-//rb
-void	ft_push_swap_rb(t_list **lst_b)
-{
-	swap_to_the_top(lst_b);
-	ft_putendl_fd("rb", 1);
-}
-
-//rrb
-void	ft_push_swap_rrb(t_list **lst_b)
-{
-	swap_to_the_bot(lst_b);
-	ft_putendl_fd("rrb", 1);
+	max = lst->value;
+	while (lst)
+	{
+		if (max < lst->value)
+			max = lst->value;
+		lst = lst->next;
+	}
+	return (max);
 }
