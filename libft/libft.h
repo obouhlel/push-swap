@@ -6,7 +6,7 @@
 /*   By: obouhlel <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/07 13:05:19 by obouhlel          #+#    #+#             */
-/*   Updated: 2022/12/09 14:23:19 by obouhlel         ###   ########.fr       */
+/*   Updated: 2022/12/10 11:47:03 by obouhlel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -63,6 +63,7 @@ char	**ft_split(char *s, char c);
 void	ft_putchar_fd(char c, int fd);
 void	ft_putnbr_fd(int n, int fd);
 void	ft_putstr_fd(char *s, int fd);
+void	ft_putstrnbr_fd(char *str, int nbr, int fd);
 void	ft_putendl_fd(char *s, int fd);
 
 //list

@@ -1,25 +1,20 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lstprint_num_fd.c                               :+:      :+:    :+:   */
+/*   ft_putstrnbr_fd.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: obouhlel <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/12/06 16:57:20 by obouhlel          #+#    #+#             */
-/*   Updated: 2022/12/10 11:40:55 by obouhlel         ###   ########.fr       */
+/*   Created: 2022/12/10 11:45:21 by obouhlel          #+#    #+#             */
+/*   Updated: 2022/12/10 11:46:46 by obouhlel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../libft.h"
 
-void	ft_lstprint_num_fd(t_list *lst, int fd)
+void	ft_putstrnbr_fd(char *str, int nbr, int fd)
 {
-	if (lst == NULL)
-		ft_putendl_fd("(null)", 1);
-	while (lst)
-	{
-		ft_putnbr_fd(lst->value, fd);
-		ft_putchar_fd('\n', fd);
-		lst = lst->next;
-	}
+	ft_putstr_fd(str, fd);
+	ft_putnbr_fd(nbr, fd);
+	ft_putchar_fd('\n', fd);
 }
