@@ -6,7 +6,7 @@
 /*   By: obouhlel <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/03 14:10:03 by obouhlel          #+#    #+#             */
-/*   Updated: 2022/12/10 18:05:17 by obouhlel         ###   ########.fr       */
+/*   Updated: 2022/12/11 12:18:55 by obouhlel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,9 +18,6 @@
 # include "libft/libft.h"
 # include <stdlib.h>
 # include <unistd.h>
-
-//remove after
-void	ft_print_color(t_list *lst_a, t_list *lst_b);
 
 //error_1.c
 char	**ft_clear_av(char **av, int n);
@@ -64,8 +61,7 @@ int		ft_push_swap_check(t_list *lst);
 //push_swap_algo_calcule.c
 int		ft_algo_min(t_list *lst);
 int		ft_algo_max(t_list *lst);
-int		ft_algo_moy(int max, int min);
-int		ft_algo_med(int max, int min);
+ssize_t	ft_algo_moy(t_list *lst);
 //push_swap_algo_3.c
 void	ft_algo_ps_3(t_list **lst, int min, int max);
 //push_swap_algo_5.c

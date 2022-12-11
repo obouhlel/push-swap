@@ -6,7 +6,7 @@
 /*   By: obouhlel <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/10 14:36:17 by obouhlel          #+#    #+#             */
-/*   Updated: 2022/12/10 18:04:46 by obouhlel         ###   ########.fr       */
+/*   Updated: 2022/12/11 12:16:56 by obouhlel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,12 +40,17 @@ int	ft_algo_max(t_list *lst)
 	return (max);
 }
 
-int	ft_algo_moy(int max, int min)
+ssize_t	ft_algo_moy(t_list *lst)
 {
-	return ((max + min) / 2);
-}
+	ssize_t	moy;
+	int		size;
 
-int	ft_algo_med(int max, int min)
-{
-	return (((unsigned int)max - (unsigned int)min) / 2);
+	size = ft_lstsize(lst);
+	while (lst)
+	{
+		moy += lst->value;
+		lst = lst->next;
+	}
+	moy /= size;
+	return (moy);
 }
