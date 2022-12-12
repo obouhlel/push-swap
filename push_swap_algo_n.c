@@ -1,26 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   push_swap_check.c                                  :+:      :+:    :+:   */
+/*   push_swap_algo_n.c                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: obouhlel <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/12/09 08:14:08 by obouhlel          #+#    #+#             */
-/*   Updated: 2022/12/12 18:58:15 by obouhlel         ###   ########.fr       */
+/*   Created: 2022/12/10 17:49:07 by obouhlel          #+#    #+#             */
+/*   Updated: 2022/12/12 18:58:22 by obouhlel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-int	ft_push_swap_check(t_list *lst)
+void	ft_algo_ps_n(t_list **lst_a, t_list **lst_b)
 {
-	if (!lst)
-		return (0);
-	while (lst)
-	{
-		if (lst->next && lst->value > lst->next->value)
-			return (0);
-		lst = lst->next;
-	}
-	return (1);
+	
 }

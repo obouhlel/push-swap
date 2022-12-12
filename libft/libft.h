@@ -6,7 +6,7 @@
 /*   By: obouhlel <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/07 13:05:19 by obouhlel          #+#    #+#             */
-/*   Updated: 2022/12/10 11:47:03 by obouhlel         ###   ########.fr       */
+/*   Updated: 2022/12/12 19:06:53 by obouhlel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -69,15 +69,17 @@ void	ft_putendl_fd(char *s, int fd);
 //list
 typedef struct s_list
 {
-	struct s_list	*previous;
-	int				value;
-	struct s_list	*next;
+	struct s_list		*previous;
+	int					value;
+	unsigned int		id;
+	struct s_list		*next;
 }	t_list;
 
 t_list	*ft_lstnew(int value);
 
 void	ft_lstadd_front(t_list **lst, t_list *new);
 void	ft_lstadd_back(t_list **lst, t_list *new);
+void	ft_lst_init_id(t_list *lst);
 
 int		ft_lstsize(t_list *lst);
 t_list	*ft_lstlast(t_list *lst);

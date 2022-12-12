@@ -1,26 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   push_swap_check.c                                  :+:      :+:    :+:   */
+/*   ft_init_id.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: obouhlel <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/12/09 08:14:08 by obouhlel          #+#    #+#             */
-/*   Updated: 2022/12/12 18:58:15 by obouhlel         ###   ########.fr       */
+/*   Created: 2022/12/12 19:00:28 by obouhlel          #+#    #+#             */
+/*   Updated: 2022/12/12 19:06:31 by obouhlel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "libft.h"
 
-int	ft_push_swap_check(t_list *lst)
+void	ft_lst_init_id(t_list *lst)
 {
-	if (!lst)
-		return (0);
+	int	i;
+
+	i = 0;
 	while (lst)
 	{
-		if (lst->next && lst->value > lst->next->value)
-			return (0);
+		lst->id = i + 1;
 		lst = lst->next;
+		i++;
 	}
-	return (1);
 }

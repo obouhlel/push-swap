@@ -16,6 +16,10 @@ echo $Cyan $ARG $Color_Off
 ./push_swap $ARG
 
 # 20
-ARG="19 0 14 5 15 2 12 17 6 13 4 3 11 1 16 7 9 8 10 18"
+ARG="0 14 5 15 2 12 17 6 19 13 4 3 11 1 16 7 9 8 10 18"
+echo $Cyan $ARG $Color_Off
+./push_swap $ARG
+
+ARG="-253 904 -590 805 838 212 -50 247 430 336 131 -306 -368 -759 -403 -23 201 -72 480 690"
 echo $Cyan $ARG $Color_Off
 ./push_swap $ARG

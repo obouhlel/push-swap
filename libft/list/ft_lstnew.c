@@ -6,7 +6,7 @@
 /*   By: obouhlel <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/07 12:29:57 by obouhlel          #+#    #+#             */
-/*   Updated: 2022/12/09 17:04:05 by obouhlel         ###   ########.fr       */
+/*   Updated: 2022/12/12 18:56:19 by obouhlel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,6 +22,7 @@ t_list	*ft_lstnew(int value)
 		return (NULL);
 	lst->previous = NULL;
 	lst->value = value;
+	lst->id = 0;
 	lst->next = NULL;
 	return (lst);
 }

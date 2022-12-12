@@ -6,7 +6,7 @@
 /*   By: obouhlel <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/10 14:36:17 by obouhlel          #+#    #+#             */
-/*   Updated: 2022/12/11 12:16:56 by obouhlel         ###   ########.fr       */
+/*   Updated: 2022/12/12 19:05:49 by obouhlel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,17 +40,54 @@ int	ft_algo_max(t_list *lst)
 	return (max);
 }
 
-ssize_t	ft_algo_moy(t_list *lst)
+int	*ft_algo_tri(int *tab, int size)
 {
-	ssize_t	moy;
-	int		size;
+	int	i;
+	int	j;
+	int	tmp;
 
-	size = ft_lstsize(lst);
+	i = 0;
+	while (i < size)
+	{
+		j = i + 1;
+		while (j < size)
+		{
+			if (tab[i] > tab[j])
+			{
+				tmp = tab[i];
+				tab[i] = tab[j];
+				tab[j] = tmp;
+			}
+			j++;
+		}
+		i++;
+	}
+	return (tab);
+}
+
+int	ft_algo_med(t_list *lst, t_list **lst_a, t_list **lst_b)
+{
+	int			med;
+	int			*tab;
+	int			i;
+	const int	size = ft_lstsize(lst);
+
+	tab = (int *)malloc(size * sizeof(int));
+	if (!tab)
+	{
+		free_all_lst(lst_a, lst_b);
+		ft_putendl_fd("Error", 1);
+		exit(0);
+	}
+	i = 0;
 	while (lst)
 	{
-		moy += lst->value;
+		tab[i] = lst->value;
 		lst = lst->next;
+		i++;
 	}
-	moy /= size;
-	return (moy);
+	tab = ft_algo_tri(tab, size);
+	med = tab[size / 2];
+	free(tab);
+	return (med);
 }
