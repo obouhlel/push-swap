@@ -6,6 +6,7 @@ Cyan='\033[0;36m'
 Purple='\033[0;35m'
 Color_Off='\033[0m'
 
+rm -rf push_swap
 make
 make clean
 
