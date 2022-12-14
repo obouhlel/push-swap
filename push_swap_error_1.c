@@ -6,7 +6,7 @@
 /*   By: obouhlel <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/03 15:45:33 by obouhlel          #+#    #+#             */
-/*   Updated: 2022/12/09 09:17:15 by obouhlel         ###   ########.fr       */
+/*   Updated: 2022/12/14 09:19:46 by obouhlel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,7 +54,7 @@ void	ft_error_push_swap_digit(char **strs)
 			if (!ft_isdigit(strs[i][j]))
 			{
 				ft_putendl_fd("Error", 1);
-				free_nbrs_lst(strs, NULL);
+				free_nbrs_stack(strs, NULL);
 				exit(0);
 			}
 			j++;
@@ -77,32 +77,32 @@ void	ft_error_push_swap_int(char **nstr, int n)
 		if (atoi != atoi_long)
 		{
 			ft_putendl_fd("Error", 1);
-			free_nbrs_lst(nstr, NULL);
+			free_nbrs_stack(nstr, NULL);
 			exit(0);
 		}
 		i++;
 	}
 }
 
-void	ft_error_push_swap_double(t_list *lst, char **nbrs)
+void	ft_error_push_swap_double(t_list *stack, char **nbrs)
 {
-	t_list	*lstcmp;
+	t_list	*stackcmp;
 	int		tmp;
 
-	while (lst)
+	while (stack)
 	{
-		tmp = lst->value;
-		lstcmp = lst->next;
-		while (lstcmp)
+		tmp = stack->value;
+		stackcmp = stack->next;
+		while (stackcmp)
 		{
-			if (lstcmp->value == tmp)
+			if (stackcmp->value == tmp)
 			{
 				ft_putendl_fd("Error", 1);
-				free_nbrs_lst(nbrs, &lst);
+				free_nbrs_stack(nbrs, &stack);
 				exit(0);
 			}
-			lstcmp = lstcmp->next;
+			stackcmp = stackcmp->next;
 		}
-		lst = lst->next;
+		stack = stack->next;
 	}
 }

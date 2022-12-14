@@ -6,36 +6,36 @@
 /*   By: obouhlel <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/10 14:36:17 by obouhlel          #+#    #+#             */
-/*   Updated: 2022/12/12 19:05:49 by obouhlel         ###   ########.fr       */
+/*   Updated: 2022/12/14 09:20:33 by obouhlel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-int	ft_algo_min(t_list *lst)
+int	ft_algo_min(t_list *stack)
 {
 	int	min;
 
-	min = lst->value;
-	while (lst)
+	min = stack->value;
+	while (stack)
 	{
-		if (min > lst->value)
-			min = lst->value;
-		lst = lst->next;
+		if (min > stack->value)
+			min = stack->value;
+		stack = stack->next;
 	}
 	return (min);
 }
 
-int	ft_algo_max(t_list *lst)
+int	ft_algo_max(t_list *stack)
 {
 	int	max;
 
-	max = lst->value;
-	while (lst)
+	max = stack->value;
+	while (stack)
 	{
-		if (max < lst->value)
-			max = lst->value;
-		lst = lst->next;
+		if (max < stack->value)
+			max = stack->value;
+		stack = stack->next;
 	}
 	return (max);
 }
@@ -65,25 +65,25 @@ int	*ft_algo_tri(int *tab, int size)
 	return (tab);
 }
 
-int	ft_algo_med(t_list *lst, t_list **lst_a, t_list **lst_b)
+int	ft_algo_med(t_list *stack, t_list **stack_a, t_list **stack_b)
 {
 	int			med;
 	int			*tab;
 	int			i;
-	const int	size = ft_lstsize(lst);
+	const int	size = ft_lstsize(stack);
 
 	tab = (int *)malloc(size * sizeof(int));
 	if (!tab)
 	{
-		free_all_lst(lst_a, lst_b);
+		free_all_stack(stack_a, stack_b);
 		ft_putendl_fd("Error", 1);
 		exit(0);
 	}
 	i = 0;
-	while (lst)
+	while (stack)
 	{
-		tab[i] = lst->value;
-		lst = lst->next;
+		tab[i] = stack->value;
+		stack = stack->next;
 		i++;
 	}
 	tab = ft_algo_tri(tab, size);

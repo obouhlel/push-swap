@@ -6,7 +6,7 @@
 /*   By: obouhlel <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/08 11:29:46 by obouhlel          #+#    #+#             */
-/*   Updated: 2022/12/09 09:17:15 by obouhlel         ###   ########.fr       */
+/*   Updated: 2022/12/14 09:22:18 by obouhlel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ void	delete_value(int a)
 	a = 0;
 }
 
-void	free_nbrs_lst(char **nbrs, t_list **lst)
+void	free_nbrs_stack(char **nbrs, t_list **stack)
 {
 	int	i;
 
@@ -26,19 +26,19 @@ void	free_nbrs_lst(char **nbrs, t_list **lst)
 	while (nbrs[i])
 		free(nbrs[i++]);
 	free(nbrs);
-	if (lst)
-		ft_lstclear(lst, &delete_value);
+	if (stack)
+		ft_lstclear(stack, &delete_value);
 }
 
-void	free_all_lst(t_list **lst_a, t_list **lst_b)
+void	free_all_stack(t_list **stack_a, t_list **stack_b)
 {
-	if (*lst_a)
-		ft_lstclear(lst_a, &delete_value);
-	if (*lst_b)
-		ft_lstclear(lst_b, &delete_value);
+	if (*stack_a)
+		ft_lstclear(stack_a, &delete_value);
+	if (*stack_b)
+		ft_lstclear(stack_b, &delete_value);
 }
 
-void	ft_create_lst_a(t_list **lst, char **nbrs, int n)
+void	ft_create_stack_a(t_list **stack, char **nbrs, int n)
 {
 	int		i;
 	t_list	*atoi;
@@ -50,11 +50,11 @@ void	ft_create_lst_a(t_list **lst, char **nbrs, int n)
 		atoi = ft_lstnew(ft_atoi(nbrs[i]));
 		if (!atoi)
 		{
-			free_nbrs_lst(nbrs, lst);
+			free_nbrs_stack(nbrs, stack);
 			ft_putendl_fd("Error", 1);
 			exit(0);
 		}
-		ft_lstadd_front(lst, atoi);
+		ft_lstadd_front(stack, atoi);
 		i++;
 	}
 }

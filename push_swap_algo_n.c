@@ -6,13 +6,13 @@
 /*   By: obouhlel <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/10 17:49:07 by obouhlel          #+#    #+#             */
-/*   Updated: 2022/12/12 18:58:22 by obouhlel         ###   ########.fr       */
+/*   Updated: 2022/12/14 09:26:48 by obouhlel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void	ft_algo_ps_n(t_list **lst_a, t_list **lst_b)
+void	ft_algo_ps_n(t_list **stack_a, t_list **stack_b)
 {
 	
 }

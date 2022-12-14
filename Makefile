@@ -3,7 +3,7 @@ SRCS_libft			=  libft/char/ft_isalnum.c libft/char/ft_isalpha.c libft/char/ft_is
 					libft/conversion/ft_atoi.c libft/conversion/ft_atoi_long.c libft/conversion/ft_itoa.c \
 					libft/list/ft_lstadd_back.c libft/list/ft_lstadd_front.c libft/list/ft_lstclear.c libft/list/ft_lstdelone.c \
 					libft/list/ft_lstiter.c libft/list/ft_lstlast.c libft/list/ft_lstmap.c libft/list/ft_lstnew.c libft/list/ft_lstsize.c \
-					libft/list/ft_lstdelone_relink.c libft/list/ft_lstprint_num_fd.c libft/list/ft_lstprint_num_rev_fd.c \
+					libft/list/ft_lstdelone_relink.c libft/list/ft_lstprint_num_fd.c libft/list/ft_lstprint_num_rev_fd.c libft/list/ft_lst_init_id.c \
 					libft/malloc/ft_calloc.c libft/malloc/ft_split.c libft/malloc/ft_strdup.c libft/malloc/ft_strjoin.c libft/malloc/ft_strjoin_free.c libft/malloc/ft_strmapi.c \
 					libft/malloc/ft_strtrim.c libft/malloc/ft_substr.c libft/mem/ft_bzero.c libft/mem/ft_memchr.c libft/mem/ft_memcmp.c \
 					libft/mem/ft_memcpy.c libft/mem/ft_memmove.c libft/mem/ft_memset.c \

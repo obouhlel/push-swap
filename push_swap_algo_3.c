@@ -6,34 +6,34 @@
 /*   By: obouhlel <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/10 14:26:36 by obouhlel          #+#    #+#             */
-/*   Updated: 2022/12/11 12:19:14 by obouhlel         ###   ########.fr       */
+/*   Updated: 2022/12/14 09:19:46 by obouhlel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void	ft_algo_ps_3(t_list **lst, int min, int max)
+void	ft_algo_ps_3(t_list **stack, int min, int max)
 {
-	if ((*lst)->value == min)
+	if ((*stack)->value == min)
 	{
-		ft_push_swap_sa(lst);
-		ft_push_swap_ra(lst);
+		ft_push_swap_sa(stack);
+		ft_push_swap_ra(stack);
 	}
-	else if ((*lst)->next && (*lst)->next->value == min)
+	else if ((*stack)->next && (*stack)->next->value == min)
 	{
-		if ((*lst)->value == max)
-			ft_push_swap_ra(lst);
+		if ((*stack)->value == max)
+			ft_push_swap_ra(stack);
 		else
-			ft_push_swap_sa(lst);
+			ft_push_swap_sa(stack);
 	}
-	else if ((*lst)->next->next && (*lst)->next->next->value == min)
+	else if ((*stack)->next->next && (*stack)->next->next->value == min)
 	{
-		if ((*lst)->value == max)
+		if ((*stack)->value == max)
 		{
-			ft_push_swap_ra(lst);
-			ft_push_swap_sa(lst);
+			ft_push_swap_ra(stack);
+			ft_push_swap_sa(stack);
 		}
 		else
-			ft_push_swap_rra(lst);
+			ft_push_swap_rra(stack);
 	}
 }
