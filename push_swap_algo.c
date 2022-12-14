@@ -6,7 +6,7 @@
 /*   By: obouhlel <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/04 17:01:56 by obouhlel          #+#    #+#             */
-/*   Updated: 2022/12/14 09:21:09 by obouhlel         ###   ########.fr       */
+/*   Updated: 2022/12/14 09:30:43 by obouhlel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,26 +15,21 @@
 void	ft_algo_push_swap(t_list **stack_a, t_list **stack_b)
 {
 	int	size_a;
-	int	min;
-	int	max;
-	// int	med;
 
 	if (ft_push_swap_check(*stack_a))
 	{
 		free_all_stack(stack_a, stack_b);
 		return ;
 	}
-	min = ft_algo_min(*stack_a);
-	max = ft_algo_max(*stack_a);
 	size_a = ft_lstsize(*stack_a);
 	if (size_a == 2)
 		ft_push_swap_sa(stack_a);
 	else if (size_a == 3)
-		ft_algo_ps_3(stack_a, min, max);
+		ft_algo_ps_3(stack_a, algo_min(*stack_a), algo_max(*stack_a));
 	else if (size_a <= 5)
-		ft_algo_ps_5(stack_a, stack_b, min, max);
-	// else
-	// 	ft_algo_ps_100(stack_a, stack_b);
+		algo_ps_5(stack_a, stack_b, algo_min(*stack_a), algo_max(*stack_a));
+	else
+		ft_algo_ps_n(stack_a, stack_b);
 	if (ft_push_swap_check(*stack_a))
 		free_all_stack(stack_a, stack_b);
 	else

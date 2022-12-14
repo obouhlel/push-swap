@@ -6,13 +6,13 @@
 /*   By: obouhlel <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/10 14:36:17 by obouhlel          #+#    #+#             */
-/*   Updated: 2022/12/14 09:20:33 by obouhlel         ###   ########.fr       */
+/*   Updated: 2022/12/14 11:41:47 by obouhlel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-int	ft_algo_min(t_list *stack)
+int	algo_min(t_list *stack)
 {
 	int	min;
 
@@ -26,7 +26,7 @@ int	ft_algo_min(t_list *stack)
 	return (min);
 }
 
-int	ft_algo_max(t_list *stack)
+int	algo_max(t_list *stack)
 {
 	int	max;
 
@@ -40,7 +40,7 @@ int	ft_algo_max(t_list *stack)
 	return (max);
 }
 
-int	*ft_algo_tri(int *tab, int size)
+int	*algo_tri(int *tab, int size)
 {
 	int	i;
 	int	j;
@@ -65,7 +65,7 @@ int	*ft_algo_tri(int *tab, int size)
 	return (tab);
 }
 
-int	ft_algo_med(t_list *stack, t_list **stack_a, t_list **stack_b)
+int	algo_med(t_list *stack, t_list **stack_a, t_list **stack_b)
 {
 	int			med;
 	int			*tab;
@@ -86,8 +86,18 @@ int	ft_algo_med(t_list *stack, t_list **stack_a, t_list **stack_b)
 		stack = stack->next;
 		i++;
 	}
-	tab = ft_algo_tri(tab, size);
+	tab = algo_tri(tab, size);
 	med = tab[size / 2];
 	free(tab);
 	return (med);
+}
+
+t_info	stack_info(t_list *stack)
+{
+	t_info	value;
+
+	value.max = algo_max(stack);
+	value.min = algo_min(stack);
+	value.med = algo_med(stack);
+	value.size = ft_lstsize(stack);
 }

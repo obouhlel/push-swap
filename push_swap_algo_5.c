@@ -6,13 +6,13 @@
 /*   By: obouhlel <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/10 14:26:36 by obouhlel          #+#    #+#             */
-/*   Updated: 2022/12/14 09:20:33 by obouhlel         ###   ########.fr       */
+/*   Updated: 2022/12/14 09:29:42 by obouhlel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void	ft_algo_ps_5(t_list **stack_a, t_list **stack_b, int min, int max)
+void	algo_ps_5(t_list **stack_a, t_list **stack_b, int min, int max)
 {
 	int		push;
 	int		size_a;
@@ -23,7 +23,7 @@ void	ft_algo_ps_5(t_list **stack_a, t_list **stack_b, int min, int max)
 		if ((*stack_a)->value == min)
 		{
 			ft_push_swap_pb(stack_b, stack_a);
-			min = ft_algo_min(*stack_a);
+			min = algo_min(*stack_a);
 			push--;
 		}
 		else

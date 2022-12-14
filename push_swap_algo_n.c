@@ -6,7 +6,7 @@
 /*   By: obouhlel <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/10 17:49:07 by obouhlel          #+#    #+#             */
-/*   Updated: 2022/12/14 09:26:48 by obouhlel         ###   ########.fr       */
+/*   Updated: 2022/12/14 11:48:49 by obouhlel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,5 +14,7 @@
 
 void	ft_algo_ps_n(t_list **stack_a, t_list **stack_b)
 {
-	
+	ft_algo_lis(stack_a, stack_b);
+	ft_algo_price(stack_a, stack_b);
+	ft_print_color(*stack_a, *stack_b);
 }

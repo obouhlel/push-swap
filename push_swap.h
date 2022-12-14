@@ -6,7 +6,7 @@
 /*   By: obouhlel <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/03 14:10:03 by obouhlel          #+#    #+#             */
-/*   Updated: 2022/12/14 09:26:42 by obouhlel         ###   ########.fr       */
+/*   Updated: 2022/12/14 11:42:12 by obouhlel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,7 +41,7 @@ void	swap_to_the_bot(t_list **stack);
 
 //sort_a.c
 void	ft_push_swap_sa(t_list **stack);
-void	ft_push_swap_pa(t_list **stack_b, t_list **stack_a);
+void	ft_push_swap_pa(t_list **stack_a, t_list **stack_b);
 void	ft_push_swap_ra(t_list **stack);
 void	ft_push_swap_rra(t_list **stack);
 
@@ -58,19 +58,38 @@ void	ft_push_swap_rrr(t_list **stack_a, t_list **stack_b);
 
 //push_swap_algo.c
 void	ft_algo_push_swap(t_list **stack_a, t_list **stack_b);
+
 //push_swap_check.c
 int		ft_push_swap_check(t_list *stack);
-void	ft_push_swap_check_sort(t_list **stack, int value);
+
 //push_swap_algo_calcule.c
-int		ft_algo_min(t_list *stack);
-int		ft_algo_max(t_list *stack);
-ssize_t	ft_algo_moy(t_list *stack);
-int		ft_algo_med(t_list *stack, t_list **stack_a, t_list **stack_b);
+int		algo_min(t_list *stack);
+int		algo_max(t_list *stack);
+int		algo_med(t_list *stack, t_list **stack_a, t_list **stack_b);
+t_info	stack_info(t_list *stack);
+
+//push_swap_algo_lis.c
+void	ft_algo_lis(t_list **stack_a, t_list **stack_b);
+
+//push_swap_algo_price.c
+void	ft_algo_price(t_list **stack_a, t_list **stack_b);
+
 //push_swap_algo_3.c
 void	ft_algo_ps_3(t_list **stack, int min, int max);
+
 //push_swap_algo_5.c
-void	ft_algo_ps_5(t_list **stack_a, t_list **stack_b, int min, int max);
+void	algo_ps_5(t_list **stack_a, t_list **stack_b, int min, int max);
+
 //push_swap_algo_n.c
 void	ft_algo_ps_n(t_list **stack_a, t_list **stack_b);
+
+//struct limite
+typedef struct s_info
+{
+	int	max;
+	int	min;
+	int	med;
+	int	size;
+}	t_info;
 
 #endif

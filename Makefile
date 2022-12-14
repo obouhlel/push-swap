@@ -18,8 +18,8 @@ DEPS				+= ${SRCS_libft:.c=.d}
 LIB_libft			= libft.a
 
 SRCS_push_swap		= main_push_swap.c push_swap_algo.c push_swap_check.c push_swap_algo_calcule.c \
-					push_swap_algo_3.c push_swap_algo_5.c push_swap_algo_n.c \
-					push_swap_error_1.c push_swap_error_2.c \
+					push_swap_algo_3.c push_swap_algo_5.c push_swap_algo_n.c push_swap_algo_lis.c \
+					push_swap_error_1.c push_swap_error_2.c push_swap_algo_price.c \
 			  		push_swap_sort_a.c push_swap_sort_all.c push_swap_sort_b.c push_swap_sort.c \
 					ft_print_color.c
 
@@ -27,7 +27,7 @@ OBJS_push_swap		= ${SRCS_push_swap:.c=.o}
 
 DEPS				+= ${SRCS_push_swap:.c=.d}
 
-LIB_push_swap		= libpa.a
+LIB_push_swap		= libps.a
 
 CC					= gcc
 
@@ -35,19 +35,13 @@ CFLAGS				= -Wall -Wextra -Werror -g3
 
 NAME				= push_swap
 
-%.o					: %.c
-					${CC} ${CFLAGS} -c $< -o $@
-
-%.d					: %.c
-					${CC} ${CFLAGS} -MM $< -o $@
+all					: ${NAME}
 
 ${NAME}				: ${OBJS_libft} ${OBJS_push_swap} ${DEPS}
 					ar rcs ${LIB_libft} ${OBJS_libft}
 					mv ${LIB_libft} ${LIB_push_swap}
 					ar rcs ${LIB_push_swap} ${OBJS_push_swap}
 					${CC} ${CFLAGS} ${LIB_push_swap} -o ${NAME}
-
-all					: ${NAME}
 
 clean				:
 					rm -f ${OBJS_libft} ${OBJS_push_swap} ${LIB_push_swap} ${DEPS}
@@ -58,5 +52,11 @@ fclean				: clean
 re					: fclean all
 
 .PHONY				: all clean fclean re
+
+%.o					: %.c
+					${CC} ${CFLAGS} -c $< -o $@
+
+%.d					: %.c
+					${CC} ${CFLAGS} -MM $< -o $@
 
 -include $(DEPS)
