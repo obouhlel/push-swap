@@ -6,7 +6,7 @@
 /*   By: obouhlel <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/14 10:10:44 by obouhlel          #+#    #+#             */
-/*   Updated: 2022/12/14 14:32:55 by obouhlel         ###   ########.fr       */
+/*   Updated: 2022/12/14 16:15:56 by obouhlel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -67,7 +67,7 @@ static void	ft_algo_lis_do_c(t_list **stack_a, t_list **stack_b)
 			ft_push_swap_ra(stack_a);
 		}
 		else
-			ft_push_swap_pa(stack_a, stack_b);
+			ft_push_swap_pb(stack_a, stack_b);
 		i++;
 	}
 }
@@ -89,7 +89,7 @@ static void	ft_algo_lis_do_d(t_list **stack_a, t_list **stack_b)
 			ft_push_swap_ra(stack_a);
 		}
 		else
-			ft_push_swap_pa(stack_a, stack_b);
+			ft_push_swap_pb(stack_a, stack_b);
 		i++;
 	}
 }

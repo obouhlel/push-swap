@@ -6,7 +6,7 @@
 /*   By: obouhlel <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/10 14:36:17 by obouhlel          #+#    #+#             */
-/*   Updated: 2022/12/14 14:28:56 by obouhlel         ###   ########.fr       */
+/*   Updated: 2022/12/14 16:30:11 by obouhlel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -92,12 +92,12 @@ int	algo_med(t_list *stack, t_list **stack_a, t_list **stack_b)
 	return (med);
 }
 
-t_info	stack_info(t_list *stack)
-{
-	t_info	info;
+// t_info	stack_info(t_list *stack)
+// {
+// 	t_info	info;
 
-	info.max = algo_max(stack);
-	info.min = algo_min(stack);
-	info.size = ft_lstsize(stack);
-	return (info);
-}
+// 	info.max = algo_max(stack);
+// 	info.min = algo_min(stack);
+// 	info.size = ft_lstsize(stack);
+// 	return (info);
+// }

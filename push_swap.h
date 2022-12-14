@@ -6,7 +6,7 @@
 /*   By: obouhlel <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/03 14:10:03 by obouhlel          #+#    #+#             */
-/*   Updated: 2022/12/14 15:07:35 by obouhlel         ###   ########.fr       */
+/*   Updated: 2022/12/14 16:30:18 by obouhlel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,12 +24,12 @@ void	ft_print_color(t_list *stack_a, t_list *stack_b);
 
 //structure
 
-typedef struct s_info
-{
-	int		max;
-	int		min;
-	int		size;
-}	t_info;
+// typedef struct s_info
+// {
+// 	int		max;
+// 	int		min;
+// 	int		size;
+// }	t_info;
 
 //error_1.c
 char	**ft_clear_av(char **av, int n);
@@ -76,7 +76,7 @@ int		ft_push_swap_check(t_list *stack);
 int		algo_min(t_list *stack);
 int		algo_max(t_list *stack);
 int		algo_med(t_list *stack, t_list **stack_a, t_list **stack_b);
-t_info	stack_info(t_list *stack);
+// t_info	stack_info(t_list *stack);
 
 //push_swap_algo_lis.c
 void	ft_algo_lis(t_list **stack_a, t_list **stack_b);
