@@ -6,7 +6,7 @@
 /*   By: obouhlel <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/03 14:10:03 by obouhlel          #+#    #+#             */
-/*   Updated: 2022/12/14 16:30:18 by obouhlel         ###   ########.fr       */
+/*   Updated: 2022/12/14 18:08:10 by obouhlel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -80,6 +80,10 @@ int		algo_med(t_list *stack, t_list **stack_a, t_list **stack_b);
 
 //push_swap_algo_lis.c
 void	ft_algo_lis(t_list **stack_a, t_list **stack_b);
+
+//push_swap_algo_med.c
+void	ft_algo_med(t_list **stack_a, t_list **stack_b);
+void	ft_algo_med_2(t_list **stack_a, t_list **stack_b);
 
 //push_swap_algo_price.c
 //void	ft_algo_price(t_list **stack_a, t_list **stack_b);
