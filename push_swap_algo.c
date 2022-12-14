@@ -6,7 +6,7 @@
 /*   By: obouhlel <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/04 17:01:56 by obouhlel          #+#    #+#             */
-/*   Updated: 2022/12/14 09:30:43 by obouhlel         ###   ########.fr       */
+/*   Updated: 2022/12/14 15:19:02 by obouhlel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,7 @@ void	ft_algo_push_swap(t_list **stack_a, t_list **stack_b)
 	else if (size_a == 3)
 		ft_algo_ps_3(stack_a, algo_min(*stack_a), algo_max(*stack_a));
 	else if (size_a <= 5)
-		algo_ps_5(stack_a, stack_b, algo_min(*stack_a), algo_max(*stack_a));
+		ft_algo_ps_5(stack_a, stack_b, algo_min(*stack_a), algo_max(*stack_a));
 	else
 		ft_algo_ps_n(stack_a, stack_b);
 	if (ft_push_swap_check(*stack_a))

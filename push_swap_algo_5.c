@@ -6,23 +6,25 @@
 /*   By: obouhlel <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/10 14:26:36 by obouhlel          #+#    #+#             */
-/*   Updated: 2022/12/14 09:29:42 by obouhlel         ###   ########.fr       */
+/*   Updated: 2022/12/14 15:45:34 by obouhlel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void	algo_ps_5(t_list **stack_a, t_list **stack_b, int min, int max)
+void	ft_algo_ps_5(t_list **stack_a, t_list **stack_b, int min, int max)
 {
 	int		push;
 	int		size_a;
 
+	if ((*stack_a)->value == max)
+		ft_push_swap_rra(stack_a);
 	push = (ft_lstsize(*stack_a) / 2);
 	while (push)
 	{
 		if ((*stack_a)->value == min)
 		{
-			ft_push_swap_pb(stack_b, stack_a);
+			ft_push_swap_pb(stack_a, stack_b);
 			min = algo_min(*stack_a);
 			push--;
 		}
@@ -36,5 +38,5 @@ void	algo_ps_5(t_list **stack_a, t_list **stack_b, int min, int max)
 		ft_push_swap_sa(stack_a);
 	push = ft_lstsize(*stack_b) + 1;
 	while (--push)
-		ft_push_swap_pa(stack_b, stack_a);
+		ft_push_swap_pa(stack_a, stack_b);
 }

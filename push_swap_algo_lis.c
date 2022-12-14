@@ -6,7 +6,7 @@
 /*   By: obouhlel <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/14 10:10:44 by obouhlel          #+#    #+#             */
-/*   Updated: 2022/12/14 10:29:29 by obouhlel         ###   ########.fr       */
+/*   Updated: 2022/12/14 14:32:55 by obouhlel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -59,7 +59,7 @@ static void	ft_algo_lis_do_c(t_list **stack_a, t_list **stack_b)
 	size_a = ft_lstsize(*stack_a);
 	tmp = (*stack_a)->value;
 	i = 0;
-	while (i < size_a - 1)
+	while (i < size_a)
 	{
 		if (tmp < (*stack_a)->value)
 		{
@@ -69,11 +69,6 @@ static void	ft_algo_lis_do_c(t_list **stack_a, t_list **stack_b)
 		else
 			ft_push_swap_pa(stack_a, stack_b);
 		i++;
-	}
-	if (!ft_push_swap_check(*stack_a))
-	{
-		ft_push_swap_rra(stack_a);
-		ft_push_swap_sa(stack_a);
 	}
 }
 
@@ -86,7 +81,7 @@ static void	ft_algo_lis_do_d(t_list **stack_a, t_list **stack_b)
 	size_a = ft_lstsize(*stack_a);
 	tmp = (*stack_a)->value;
 	i = 0;
-	while (i < size_a - 1)
+	while (i < size_a)
 	{
 		if (tmp > (*stack_a)->value)
 		{
@@ -96,11 +91,6 @@ static void	ft_algo_lis_do_d(t_list **stack_a, t_list **stack_b)
 		else
 			ft_push_swap_pa(stack_a, stack_b);
 		i++;
-	}
-	if (!ft_push_swap_check(*stack_a))
-	{
-		ft_push_swap_rra(stack_a);
-		ft_push_swap_sa(stack_a);
 	}
 }
 

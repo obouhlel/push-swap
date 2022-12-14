@@ -6,7 +6,7 @@
 /*   By: obouhlel <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/10 14:36:17 by obouhlel          #+#    #+#             */
-/*   Updated: 2022/12/14 11:41:47 by obouhlel         ###   ########.fr       */
+/*   Updated: 2022/12/14 14:28:56 by obouhlel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -94,10 +94,10 @@ int	algo_med(t_list *stack, t_list **stack_a, t_list **stack_b)
 
 t_info	stack_info(t_list *stack)
 {
-	t_info	value;
+	t_info	info;
 
-	value.max = algo_max(stack);
-	value.min = algo_min(stack);
-	value.med = algo_med(stack);
-	value.size = ft_lstsize(stack);
+	info.max = algo_max(stack);
+	info.min = algo_min(stack);
+	info.size = ft_lstsize(stack);
+	return (info);
 }

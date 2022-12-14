@@ -6,7 +6,7 @@
 /*   By: obouhlel <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/03 14:10:03 by obouhlel          #+#    #+#             */
-/*   Updated: 2022/12/14 11:42:12 by obouhlel         ###   ########.fr       */
+/*   Updated: 2022/12/14 15:07:35 by obouhlel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,8 +18,18 @@
 # include "libft/libft.h"
 # include <stdlib.h>
 # include <unistd.h>
+# define INT_MAX 2147483647
 
 void	ft_print_color(t_list *stack_a, t_list *stack_b);
+
+//structure
+
+typedef struct s_info
+{
+	int		max;
+	int		min;
+	int		size;
+}	t_info;
 
 //error_1.c
 char	**ft_clear_av(char **av, int n);
@@ -72,24 +82,15 @@ t_info	stack_info(t_list *stack);
 void	ft_algo_lis(t_list **stack_a, t_list **stack_b);
 
 //push_swap_algo_price.c
-void	ft_algo_price(t_list **stack_a, t_list **stack_b);
+//void	ft_algo_price(t_list **stack_a, t_list **stack_b);
 
 //push_swap_algo_3.c
 void	ft_algo_ps_3(t_list **stack, int min, int max);
 
 //push_swap_algo_5.c
-void	algo_ps_5(t_list **stack_a, t_list **stack_b, int min, int max);
+void	ft_algo_ps_5(t_list **stack_a, t_list **stack_b, int min, int max);
 
 //push_swap_algo_n.c
 void	ft_algo_ps_n(t_list **stack_a, t_list **stack_b);
-
-//struct limite
-typedef struct s_info
-{
-	int	max;
-	int	min;
-	int	med;
-	int	size;
-}	t_info;
 
 #endif
