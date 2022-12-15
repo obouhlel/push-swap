@@ -1,30 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lstlast.c                                       :+:      :+:    :+:   */
+/*   ft_stacklast.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: obouhlel <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/11/07 12:14:37 by obouhlel          #+#    #+#             */
-/*   Updated: 2022/12/06 19:40:38 by obouhlel         ###   ########.fr       */
+/*   Created: 2022/12/15 15:08:48 by obouhlel          #+#    #+#             */
+/*   Updated: 2022/12/15 15:09:28 by obouhlel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../libft.h"
+#include "../push_swap.h"
 
 //to take the last list
-t_list	*ft_lstlast(t_list *lst)
+t_stack	*ft_stacklast(t_stack *stack)
 {
-	t_list	*tmp;
+	t_stack	*tmp;
 
 	tmp = NULL;
-	if (!lst)
+	if (!stack)
 		return (NULL);
-	while (lst && lst->next)
+	while (stack && stack->next)
 	{
-		tmp = lst;
-		lst = lst->next;
-		lst->previous = tmp;
+		tmp = stack;
+		stack = stack->next;
+		stack->previous = tmp;
 	}
-	return (lst);
+	return (stack);
 }

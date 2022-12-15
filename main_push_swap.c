@@ -6,13 +6,13 @@
 /*   By: obouhlel <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/03 15:43:23 by obouhlel          #+#    #+#             */
-/*   Updated: 2022/12/14 09:19:46 by obouhlel         ###   ########.fr       */
+/*   Updated: 2022/12/15 15:02:40 by obouhlel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-static void	main_error(char **nbrs, t_list **stack_a)
+static void	main_error(char **nbrs, t_stack **stack_a)
 {
 	int	n;
 
@@ -28,8 +28,8 @@ static void	main_error(char **nbrs, t_list **stack_a)
 
 int	main(int ac, char **av)
 {
-	t_list	*stack_a;
-	t_list	*stack_b;
+	t_stack	*stack_a;
+	t_stack	*stack_b;
 	char	**nbrs;
 
 	stack_a = NULL;

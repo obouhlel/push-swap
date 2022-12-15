@@ -1,25 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lstiter.c                                       :+:      :+:    :+:   */
+/*   push_swap_check.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: obouhlel <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/11/07 12:04:35 by obouhlel          #+#    #+#             */
-/*   Updated: 2022/12/08 11:01:18 by obouhlel         ###   ########.fr       */
+/*   Created: 2022/12/09 08:14:08 by obouhlel          #+#    #+#             */
+/*   Updated: 2022/12/15 15:02:40 by obouhlel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../libft.h"
+#include "push_swap.h"
 
-//to iter one list
-void	ft_lstiter(t_list *lst, int (*f)(int))
+int	ft_push_swap_check(t_stack *stack)
 {
-	if (!f)
-		return ;
-	while (lst)
+	if (!stack)
+		return (0);
+	while (stack)
 	{
-		f(lst->value);
-		lst = lst->next;
+		if (stack->next && stack->value > stack->next->value)
+			return (0);
+		stack = stack->next;
 	}
+	return (1);
 }

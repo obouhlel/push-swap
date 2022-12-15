@@ -1,25 +1,22 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lstprint_num_fd.c                               :+:      :+:    :+:   */
+/*   ft_stackdelone.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: obouhlel <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/12/06 16:57:20 by obouhlel          #+#    #+#             */
-/*   Updated: 2022/12/10 11:40:55 by obouhlel         ###   ########.fr       */
+/*   Created: 2022/12/15 15:08:42 by obouhlel          #+#    #+#             */
+/*   Updated: 2022/12/15 15:09:25 by obouhlel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../libft.h"
+#include "../push_swap.h"
 
-void	ft_lstprint_num_fd(t_list *lst, int fd)
+//to delete one list
+void	ft_stackdelone(t_stack *stack, void (*del)(int))
 {
-	if (lst == NULL)
-		ft_putendl_fd("(null)", 1);
-	while (lst)
-	{
-		ft_putnbr_fd(lst->value, fd);
-		ft_putchar_fd('\n', fd);
-		lst = lst->next;
-	}
+	if (!stack || !del)
+		return ;
+	del(stack->value);
+	free(stack);
 }

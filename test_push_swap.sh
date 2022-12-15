@@ -12,6 +12,10 @@ make clean
 
 echo $Cyan "\nTeste\n" $Color_Off
 
+ARG="1 9 2 3 4 5 6"
+echo $Cyan $ARG $Color_Off
+./push_swap $ARG
+
 ARG="2 3 5 12 10 6 9 7 4 1 8 11"
 echo $Cyan $ARG $Color_Off
 ./push_swap $ARG

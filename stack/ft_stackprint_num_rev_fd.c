@@ -1,32 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lstadd_back.c                                   :+:      :+:    :+:   */
+/*   ft_stackprint_num_rev_fd.c                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: obouhlel <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/11/07 10:57:24 by obouhlel          #+#    #+#             */
-/*   Updated: 2022/12/03 14:59:57 by obouhlel         ###   ########.fr       */
+/*   Created: 2022/12/15 15:09:05 by obouhlel          #+#    #+#             */
+/*   Updated: 2022/12/15 15:09:34 by obouhlel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../libft.h"
+#include "../push_swap.h"
 
-//we take the last list, and we add the new list
-void	ft_lstadd_back(t_list **lst, t_list *new)
+void	ft_stackprint_num_rev_fd(t_stack *stack, int fd)
 {
-	t_list	*tmp;
-
-	tmp = *lst;
-	if (!lst)
-		return ;
-	if (!(*lst))
+	while (stack)
 	{
-		*lst = new;
-		return ;
+		ft_putnbr_fd(stack->value, fd);
+		ft_putchar_fd('\n', fd);
+		stack = stack->previous;
 	}
-	if (!new)
-		return ;
-	tmp = ft_lstlast(tmp);
-	tmp->next = new;
 }

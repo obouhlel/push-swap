@@ -1,28 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lstadd_front.c                                  :+:      :+:    :+:   */
+/*   ft_stackadd_back.c                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: obouhlel <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/11/07 10:58:31 by obouhlel          #+#    #+#             */
-/*   Updated: 2022/12/09 14:33:06 by obouhlel         ###   ########.fr       */
+/*   Created: 2022/12/15 15:08:08 by obouhlel          #+#    #+#             */
+/*   Updated: 2022/12/15 15:08:12 by obouhlel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../libft.h"
+#include "../push_swap.h"
 
-//to add in front the list
-void	ft_lstadd_front(t_list **lst, t_list *new)
+//we take the last list, and we add the new list
+void	ft_stackadd_back(t_stack **stack, t_stack *new)
 {
-	if (!lst || !new)
+	t_stack	*tmp;
+
+	tmp = *stack;
+	if (!stack)
 		return ;
-	if (!(*lst))
+	if (!(*stack))
 	{
-		(*lst) = new;
+		*stack = new;
 		return ;
 	}
-	(*lst)->previous = new;
-	new->next = (*lst);
-	(*lst) = new;
+	if (!new)
+		return ;
+	tmp = ft_stacklast(tmp);
+	tmp->next = new;
 }

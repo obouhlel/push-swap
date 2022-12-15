@@ -1,23 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lstdelone_relink.c                              :+:      :+:    :+:   */
+/*   ft_stacksize.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: obouhlel <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/12/03 22:27:15 by obouhlel          #+#    #+#             */
-/*   Updated: 2022/12/08 11:35:10 by obouhlel         ###   ########.fr       */
+/*   Created: 2022/12/15 15:09:11 by obouhlel          #+#    #+#             */
+/*   Updated: 2022/12/15 15:09:35 by obouhlel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../libft.h"
+#include "../push_swap.h"
 
-void	ft_lstdelone_relink(t_list **lst)
+//to get the list size
+int	ft_stacksize(t_stack *stack)
 {
-	t_list	*tmp;
+	int		size;
 
-	tmp = (*lst)->previous;
-	(*lst)->previous = (*lst)->next;
-	(*lst)->next = tmp;
-	free(*lst);
+	size = 0;
+	if (!stack)
+		return (size);
+	while (stack)
+	{
+		size++;
+		stack = stack->next;
+	}
+	return (size);
 }

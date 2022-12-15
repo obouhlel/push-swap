@@ -1,23 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lstprint_num_rev_fd.c                           :+:      :+:    :+:   */
+/*   ft_stack_init_id.c                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: obouhlel <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/12/09 14:17:00 by obouhlel          #+#    #+#             */
-/*   Updated: 2022/12/10 16:02:12 by obouhlel         ###   ########.fr       */
+/*   Created: 2022/12/15 15:08:17 by obouhlel          #+#    #+#             */
+/*   Updated: 2022/12/15 15:08:21 by obouhlel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../libft.h"
+#include "../push_swap.h"
 
-void	ft_lstprint_num_rev_fd(t_list *lst, int fd)
+void	ft_stack_init_id(t_stack *stack)
 {
-	while (lst)
+	int	i;
+
+	i = 0;
+	while (stack)
 	{
-		ft_putnbr_fd(lst->value, fd);
-		ft_putchar_fd('\n', fd);
-		lst = lst->previous;
+		stack->id = i;
+		stack = stack->next;
+		i++;
 	}
 }

@@ -1,28 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lstclear.c                                      :+:      :+:    :+:   */
+/*   ft_stackprint_num_fd.c                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: obouhlel <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/11/07 10:59:19 by obouhlel          #+#    #+#             */
-/*   Updated: 2022/12/08 11:00:52 by obouhlel         ###   ########.fr       */
+/*   Created: 2022/12/15 15:08:59 by obouhlel          #+#    #+#             */
+/*   Updated: 2022/12/15 15:09:32 by obouhlel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../libft.h"
+#include "../push_swap.h"
 
-//to clear the all list
-void	ft_lstclear(t_list **lst, void (*del)(int))
+void	ft_stackprint_num_fd(t_stack *stack, int fd)
 {
-	t_list	*tmp;
-
-	if (!lst || !(*lst) || !del)
-		return ;
-	while (*lst)
+	if (stack == NULL)
+		ft_putendl_fd("(null)", 1);
+	while (stack)
 	{
-		tmp = (*lst)->next;
-		ft_lstdelone(*lst, del);
-		(*lst) = tmp;
+		ft_putnbr_fd(stack->value, fd);
+		ft_putchar_fd('\n', fd);
+		stack = stack->next;
 	}
 }

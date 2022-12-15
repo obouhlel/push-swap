@@ -1,29 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lstsize.c                                       :+:      :+:    :+:   */
+/*   push_swap_algo.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: obouhlel <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/11/07 12:30:59 by obouhlel          #+#    #+#             */
-/*   Updated: 2022/12/03 14:59:57 by obouhlel         ###   ########.fr       */
+/*   Created: 2022/12/04 17:01:56 by obouhlel          #+#    #+#             */
+/*   Updated: 2022/12/15 17:10:56 by obouhlel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../libft.h"
+#include "push_swap.h"
 
-//to get the list size
-int	ft_lstsize(t_list *lst)
+void	ft_algo_push_swap(t_stack **stack_a, t_stack **stack_b)
 {
-	int		size;
+	t_info	*info;
 
-	size = 0;
-	if (!lst)
-		return (size);
-	while (lst)
+	info->stack_a = stack_a;
+	info->stack_b = stack_b;
+	if (ft_push_swap_check(*stack_a))
 	{
-		size++;
-		lst = lst->next;
+		free_all_stack(stack_a, stack_b);
+		return ;
 	}
-	return (size);
+	info->size_a = ft_stacksize(*stack_a);
+	info->size_b = ft_stacksize(*stack_b);
+	if (info->stack_a)
 }
