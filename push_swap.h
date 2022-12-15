@@ -6,7 +6,7 @@
 /*   By: obouhlel <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/03 14:10:03 by obouhlel          #+#    #+#             */
-/*   Updated: 2022/12/15 21:18:09 by obouhlel         ###   ########.fr       */
+/*   Updated: 2022/12/15 21:31:24 by obouhlel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,6 +52,7 @@ typedef struct s_info
 }	t_info;
 
 //libft
+size_t	ft_strlen(const char *s);
 void	ft_putchar_fd(char c, int fd);
 void	ft_putstr_fd(char *s, int fd);
 void	ft_putendl_fd(char *s, int fd);
@@ -62,6 +63,9 @@ ssize_t	ft_atoi_long(const char *nptr);
 char	*ft_strjoin(char const *s1, char const *s2);
 char	*ft_strjoin_free(char *s1, char *s2);
 char	**ft_split(char *s, char c);
+size_t	ft_strlcat(char *dst, const char *src, size_t size);
+void	ft_bzero(void *s, size_t n);
+void	*ft_calloc(size_t nmemb, size_t size);
 
 //error check
 int		ft_push_swap_check(t_stack *stack);

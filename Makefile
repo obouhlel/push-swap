@@ -1,4 +1,5 @@
-SRCS	= algo/1_push_swap_algo_main.c \
+SRCS	= main_push_swap.c \
+		algo/1_push_swap_algo_main.c \
 		algo/2_push_swap_algo_3.c \
 		algo/3_push_swap_algo_5.c \
 		algo/40_push_swap_algo_price.c \
@@ -34,7 +35,10 @@ SRCS	= algo/1_push_swap_algo_main.c \
 		libft/ft_strjoin.c \
 		libft/ft_strjoin_free.c \
 		libft/ft_strlen.c \
-		libft/ft_isdigit.c
+		libft/ft_isdigit.c \
+		libft/ft_calloc.c \
+		libft/ft_strlcat.c \
+		libft/ft_bzero.c
 
 OBJS	= ${SRCS:.c=.o}
 
@@ -44,15 +48,18 @@ CC		= gcc
 
 CFLAGS	= -Wall -Wextra -Werror -g3
 
+LIB		= libps.a
+
 NAME	= push_swap
 
 all		: ${NAME}
 
 ${NAME}	: ${DEPS} ${OBJS}
-		${CC} ${CFLAGS} ${OBJS} -o ${NAME}
+		ar rcs ${LIB} ${OBJS}
+		${CC} ${CFLAGS} ${LIB} -o ${NAME}
 
 clean	:
-		rm -f ${OBJS} ${DEPS}
+		rm -f ${OBJS} ${LIB} ${DEPS}
 
 fclean	: clean
 		rm -f ${NAME}
