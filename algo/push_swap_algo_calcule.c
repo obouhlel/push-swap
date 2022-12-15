@@ -6,11 +6,36 @@
 /*   By: obouhlel <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/10 14:36:17 by obouhlel          #+#    #+#             */
-/*   Updated: 2022/12/15 17:17:40 by obouhlel         ###   ########.fr       */
+/*   Updated: 2022/12/15 20:12:05 by obouhlel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "../push_swap.h"
+
+static int	*algo_tri(int *tab, int size)
+{
+	int	i;
+	int	j;
+	int	tmp;
+
+	i = 0;
+	while (i < size)
+	{
+		j = i + 1;
+		while (j < size)
+		{
+			if (tab[i] > tab[j])
+			{
+				tmp = tab[i];
+				tab[i] = tab[j];
+				tab[j] = tmp;
+			}
+			j++;
+		}
+		i++;
+	}
+	return (tab);
+}
 
 int	algo_min(t_stack *stack)
 {
@@ -40,32 +65,7 @@ int	algo_max(t_stack *stack)
 	return (max);
 }
 
-int	*algo_tri(int *tab, int size)
-{
-	int	i;
-	int	j;
-	int	tmp;
-
-	i = 0;
-	while (i < size)
-	{
-		j = i + 1;
-		while (j < size)
-		{
-			if (tab[i] > tab[j])
-			{
-				tmp = tab[i];
-				tab[i] = tab[j];
-				tab[j] = tmp;
-			}
-			j++;
-		}
-		i++;
-	}
-	return (tab);
-}
-
-int	algo_med(t_stack *stack, t_stack **stack_a, t_stack **stack_b)
+int	algo_med(t_stack *stack, t_info *info)
 {
 	int			med;
 	int			*tab;
@@ -75,7 +75,7 @@ int	algo_med(t_stack *stack, t_stack **stack_a, t_stack **stack_b)
 	tab = (int *)malloc(size * sizeof(int));
 	if (!tab)
 	{
-		free_all_stack(stack_a, stack_b);
+		free_all_stack(info->stack_a, info->stack_b);
 		ft_putendl_fd("Error", 1);
 		exit(0);
 	}

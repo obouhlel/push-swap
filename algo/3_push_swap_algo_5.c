@@ -1,42 +1,41 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   push_swap_algo_5.c                                 :+:      :+:    :+:   */
+/*   3_push_swap_algo_5.c                               :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: obouhlel <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/10 14:26:36 by obouhlel          #+#    #+#             */
-/*   Updated: 2022/12/15 15:02:40 by obouhlel         ###   ########.fr       */
+/*   Updated: 2022/12/15 20:58:15 by obouhlel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "../push_swap.h"
 
-void	ft_algo_ps_5(t_stack **stack_a, t_stack **stack_b, int min, int max)
+void	ft_algo_ps_5(t_info *info)
 {
 	int		push;
-	int		size_a;
 
-	if ((*stack_a)->value == max)
-		ft_push_swap_rra(stack_a);
-	push = (ft_stacksize(*stack_a) / 2);
+	if (info->stack_a->value == info->max_a)
+		rra(info->stack_a);
+	push = (info->size_a / 2);
 	while (push)
 	{
-		if ((*stack_a)->value == min)
+		if (info->stack_a->value == info->min_a)
 		{
-			ft_push_swap_pb(stack_a, stack_b);
-			min = algo_min(*stack_a);
+			pb(info->stack_a, info->stack_b);
+			info = ft_init_info(info->stack_a, info->stack_b);
 			push--;
 		}
 		else
-			ft_push_swap_ra(stack_a);
+			ra(info->stack_a);
 	}
-	size_a = ft_stacksize(*stack_a);
-	if (size_a == 3)
-		ft_algo_ps_3(stack_a, min, max);
-	else if ((*stack_a)->value > (*stack_a)->next->value)
-		ft_push_swap_sa(stack_a);
-	push = ft_stacksize(*stack_b) + 1;
+	info = ft_init_info(info->stack_a, info->stack_b);
+	if (info->size_a == 3)
+		ft_algo_ps_3(info);
+	else if (info->stack_a->value > info->stack_a->next->value)
+		sa(info->stack_a);
+	push = info->size_b + 1;
 	while (--push)
-		ft_push_swap_pa(stack_a, stack_b);
+		pa(info->stack_a, info->stack_b);
 }

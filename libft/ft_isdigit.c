@@ -1,30 +1,21 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memcmp.c                                        :+:      :+:    :+:   */
+/*   ft_isdigit.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: obouhlel <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/11/07 12:33:57 by obouhlel          #+#    #+#             */
-/*   Updated: 2022/12/03 14:59:57 by obouhlel         ###   ########.fr       */
+/*   Created: 2022/11/07 10:53:44 by obouhlel          #+#    #+#             */
+/*   Updated: 2022/12/15 21:13:28 by obouhlel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../libft.h"
+#include "../push_swap.h"
 
-//to compare the size ascii of the char of string one and two
-int	ft_memcmp(const void *s1, const void *s2, size_t n)
+//if it's digit
+int	ft_isdigit(int c)
 {
-	size_t			i;
-
-	i = 0;
-	while (i < n)
-	{
-		if (((unsigned char *)s1)[i] > ((unsigned char *)s2)[i])
-			return (1);
-		else if (((unsigned char *)s1)[i] < ((unsigned char *)s2)[i])
-			return (-1);
-		i++;
-	}
+	if (c >= '0' && c <= '9')
+		return (1);
 	return (0);
 }

@@ -1,34 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strlcpy.c                                       :+:      :+:    :+:   */
+/*   ft_strjoin.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: obouhlel <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/11/07 12:51:11 by obouhlel          #+#    #+#             */
-/*   Updated: 2022/12/03 14:59:57 by obouhlel         ###   ########.fr       */
+/*   Created: 2022/11/07 12:49:42 by obouhlel          #+#    #+#             */
+/*   Updated: 2022/12/15 21:18:25 by obouhlel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../libft.h"
+#include "../push_swap.h"
 
-//strlcpy it's for copy the dest and the source, and we return the lenth
-size_t	ft_strlcpy(char *dst, const char *src, size_t size)
+//to joint two string
+char	*ft_strjoin(char const *s1, char const *s2)
 {
-	size_t	i;
-	size_t	len;
+	char	*s;
+	size_t	len1;
+	size_t	len2;
 
-	i = 0;
-	len = ft_strlen(src);
-	if (size > len)
-		size = len + 1;
-	else if (size == 0)
-		return (len);
-	while (i < size - 1)
-	{
-		dst[i] = src[i];
-		i++;
-	}
-	dst[i] = 0;
-	return (len);
+	len1 = ft_strlen(s1);
+	len2 = ft_strlen(s2);
+	s = (char *)ft_calloc((len1 + len2 + 1), sizeof(char));
+	if (!s)
+		return (NULL);
+	(void)ft_strlcat(s, s1, (len1 + 1));
+	(void)ft_strlcat(s, s2, (len1 + len2 + 1));
+	return (s);
 }

@@ -1,39 +1,40 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   push_swap_algo_3.c                                 :+:      :+:    :+:   */
+/*   2_push_swap_algo_3.c                               :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: obouhlel <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/10 14:26:36 by obouhlel          #+#    #+#             */
-/*   Updated: 2022/12/15 15:02:40 by obouhlel         ###   ########.fr       */
+/*   Updated: 2022/12/15 20:20:12 by obouhlel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "../push_swap.h"
 
-void	ft_algo_ps_3(t_stack **stack, int min, int max)
+void	ft_algo_ps_3(t_info *info)
 {
-	if ((*stack)->value == min)
+	if (info->stack_a->value == info->min_a)
 	{
-		ft_push_swap_sa(stack);
-		ft_push_swap_ra(stack);
+		sa(info->stack_a);
+		ra(info->stack_a);
 	}
-	else if ((*stack)->next && (*stack)->next->value == min)
+	else if (info->stack_a->next && info->stack_a->next->value == info->min_a)
 	{
-		if ((*stack)->value == max)
-			ft_push_swap_ra(stack);
+		if (info->stack_a->value == info->max_a)
+			ra(info->stack_a);
 		else
-			ft_push_swap_sa(stack);
+			sa(info->stack_a);
 	}
-	else if ((*stack)->next->next && (*stack)->next->next->value == min)
+	else if (info->stack_a->next->next && \
+			info->stack_a->next->next->value == info->min_a)
 	{
-		if ((*stack)->value == max)
+		if (info->stack_a->value == info->max_a)
 		{
-			ft_push_swap_ra(stack);
-			ft_push_swap_sa(stack);
+			ra(info->stack_a);
+			sa(info->stack_a);
 		}
 		else
-			ft_push_swap_rra(stack);
+			rra(info->stack_a);
 	}
 }

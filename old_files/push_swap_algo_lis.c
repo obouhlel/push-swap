@@ -6,11 +6,11 @@
 /*   By: obouhlel <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/14 10:10:44 by obouhlel          #+#    #+#             */
-/*   Updated: 2022/12/15 15:02:40 by obouhlel         ###   ########.fr       */
+/*   Updated: 2022/12/15 20:20:58 by obouhlel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "../push_swap.h"
 
 static int	ft_algo_lis_c(t_stack *stack_a)
 {
@@ -63,15 +63,15 @@ static void	ft_algo_lis_do_c(t_stack **stack_a, t_stack **stack_b)
 	{
 		if ((*stack_a)->value == algo_max(*stack_a))
 		{
-			ft_push_swap_pb(stack_a, stack_b);
+			pb(stack_a, stack_b);
 		}
 		else if (tmp < (*stack_a)->value)
 		{
 			tmp = (*stack_a)->value;
-			ft_push_swap_ra(stack_a);
+			ra(stack_a);
 		}
 		else
-			ft_push_swap_pb(stack_a, stack_b);
+			pb(stack_a, stack_b);
 		i++;
 	}
 }
@@ -90,10 +90,10 @@ static void	ft_algo_lis_do_d(t_stack **stack_a, t_stack **stack_b)
 		if (tmp > (*stack_a)->value)
 		{
 			tmp = (*stack_a)->value;
-			ft_push_swap_ra(stack_a);
+			ra(stack_a);
 		}
 		else
-			ft_push_swap_pb(stack_a, stack_b);
+			pb(stack_a, stack_b);
 		i++;
 	}
 }
@@ -114,7 +114,7 @@ void	ft_algo_lis(t_stack **stack_a, t_stack **stack_b)
 			ft_algo_ps_3(stack_a, algo_min(*stack_a), algo_max(*stack_a));
 		else if (ft_stacksize(*stack_a) == 2)
 			if ((*stack_a)->value > (*stack_a)->next->value)
-				ft_push_swap_sa(stack_a);
+				sa(stack_a);
 	}
 	else
 		ft_algo_lis_do_c(stack_a, stack_b);

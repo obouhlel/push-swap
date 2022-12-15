@@ -1,21 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_isprint.c                                       :+:      :+:    :+:   */
+/*   ft_putnbr_fd.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: obouhlel <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/11/07 10:53:58 by obouhlel          #+#    #+#             */
-/*   Updated: 2022/12/03 14:59:57 by obouhlel         ###   ########.fr       */
+/*   Created: 2022/11/07 12:44:11 by obouhlel          #+#    #+#             */
+/*   Updated: 2022/12/15 21:00:51 by obouhlel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../libft.h"
+#include "../push_swap.h"
 
-//if it's printable
-int	ft_isprint(int c)
+void	ft_putnbr_fd(int n, int fd)
 {
-	if (c >= ' ' && c <= '~')
-		return (1);
-	return (0);
+	long int	nb;
+
+	nb = n;
+	if (nb < 0)
+	{
+		nb *= -1;
+		ft_putchar_fd('-', fd);
+	}
+	if (nb >= 10)
+	{
+		ft_putnbr_fd(nb / 10, fd);
+		ft_putnbr_fd(nb % 10, fd);
+	}
+	else
+		ft_putchar_fd((nb + 48), fd);
 }

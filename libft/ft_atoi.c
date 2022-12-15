@@ -1,16 +1,16 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_atoi_long.c                                     :+:      :+:    :+:   */
+/*   ft_atoi.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: obouhlel <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/07 10:45:38 by obouhlel          #+#    #+#             */
-/*   Updated: 2022/12/08 11:35:28 by obouhlel         ###   ########.fr       */
+/*   Updated: 2022/12/15 21:12:12 by obouhlel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../libft.h"
+#include "../push_swap.h"
 
 //the fonction for white space and space
 static int	ft_is_white_space(char c)
@@ -22,14 +22,14 @@ static int	ft_is_white_space(char c)
 	return (0);
 }
 
-//ascii to ssize_t, we need to take a string
+//ascii to int, we need to take a string
 //he can have the white space and one - or +
 //and we need to multiply by ten because it's ten base
-ssize_t	ft_atoi_long(const char *nptr)
+int	ft_atoi(const char *nptr)
 {
-	int			i;
-	ssize_t		n;
-	int			signe;
+	int	i;
+	int	n;
+	int	signe;
 
 	i = 0;
 	n = 0;

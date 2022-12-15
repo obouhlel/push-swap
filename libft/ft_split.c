@@ -6,11 +6,11 @@
 /*   By: obouhlel <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/07 12:45:42 by obouhlel          #+#    #+#             */
-/*   Updated: 2022/12/07 19:37:06 by obouhlel         ###   ########.fr       */
+/*   Updated: 2022/12/15 20:37:47 by obouhlel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../libft.h"
+#include "../push_swap.h"
 
 //error
 static char	**error(char **strs, size_t j)

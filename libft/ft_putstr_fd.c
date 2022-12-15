@@ -1,26 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_bzero.c                                         :+:      :+:    :+:   */
+/*   ft_putstr_fd.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: obouhlel <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/11/07 10:46:28 by obouhlel          #+#    #+#             */
-/*   Updated: 2022/12/03 14:59:57 by obouhlel         ###   ########.fr       */
+/*   Created: 2022/11/07 12:44:23 by obouhlel          #+#    #+#             */
+/*   Updated: 2022/12/15 21:00:52 by obouhlel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../libft.h"
+#include "../push_swap.h"
 
-//put all bytes in zero
-void	ft_bzero(void *s, size_t n)
+void	ft_putstr_fd(char *s, int fd)
 {
 	size_t	i;
 
 	i = 0;
-	while (i < n)
+	while (s[i])
 	{
-		((char *)s)[i] = 0;
+		ft_putchar_fd(s[i], fd);
 		i++;
 	}
 }

@@ -6,11 +6,11 @@
 /*   By: obouhlel <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/12 13:28:38 by obouhlel          #+#    #+#             */
-/*   Updated: 2022/12/15 15:13:34 by obouhlel         ###   ########.fr       */
+/*   Updated: 2022/12/15 19:38:26 by obouhlel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "../push_swap.h"
 
 void	ft_printstack_color(t_stack *stack_a, t_stack *stack_b)
 {
