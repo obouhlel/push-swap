@@ -1,21 +1,20 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_stack_delone.c                                  :+:      :+:    :+:   */
+/*   3_algo_n.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: obouhlel <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/12/16 14:43:43 by obouhlel          #+#    #+#             */
-/*   Updated: 2022/12/16 18:50:10 by obouhlel         ###   ########.fr       */
+/*   Created: 2022/12/16 19:02:19 by obouhlel          #+#    #+#             */
+/*   Updated: 2022/12/16 19:32:32 by obouhlel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../push_swap.h"
 
-void	ft_stack_delone(t_stack *stack)
+void	ft_algo_n(t_info *info)
 {
-	if (!stack)
-		return ;
-	stack->value = 0;
-	free(stack);
+	ft_algo_lis(info);
+	ft_init_info(info);
+	// ft_print_info(info);
 }

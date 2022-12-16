@@ -1,6 +1,10 @@
 SRCS	= main_push_swap.c \
 		algo/00_algo_calcule.c \
 		algo/0_algo_main.c \
+		algo/1_algo_3.c \
+		algo/2_algo_5.c \
+		algo/3_algo_n.c \
+		algo/3_algo_lis.c \
 		error_check/push_swap_check.c \
 		error_check/push_swap_error_1.c \
 		error_check/push_swap_error_2.c \

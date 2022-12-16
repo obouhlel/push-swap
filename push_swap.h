@@ -6,7 +6,7 @@
 /*   By: obouhlel <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/03 14:10:03 by obouhlel          #+#    #+#             */
-/*   Updated: 2022/12/16 18:36:41 by obouhlel         ###   ########.fr       */
+/*   Updated: 2022/12/16 19:25:37 by obouhlel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -77,6 +77,8 @@ void	ft_print_stack_color(t_stack *stack_a, t_stack *stack_b);
 void	ft_stack_print_num_fd(t_stack *stack, int fd);
 
 //error check
+int		ft_push_swap_check(t_stack *stack);
+
 char	**ft_clear_av(char **av, int n);
 void	ft_error_push_swap_double(t_stack *stack, char **nbrs);
 void	ft_error_push_swap_int(char **nstr, int n);
@@ -111,6 +113,10 @@ int		ft_min(t_stack *stack);
 int		ft_max(t_stack *stack);
 int		ft_med(t_stack *stack, t_info *info);
 void	ft_algo_push_swap(t_stack *stack_a, t_stack *stack_b);
+void	ft_algo_3(t_info *info);
+void	ft_algo_5(t_info *info);
+void	ft_algo_n(t_info *info);
+void	ft_algo_lis(t_info *info);
 
 //info
 t_info	*ft_init_info(t_stack *stack_a, t_stack *stack_b);

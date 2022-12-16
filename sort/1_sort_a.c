@@ -6,7 +6,7 @@
 /*   By: obouhlel <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/16 16:12:29 by obouhlel          #+#    #+#             */
-/*   Updated: 2022/12/16 18:36:29 by obouhlel         ###   ########.fr       */
+/*   Updated: 2022/12/16 19:09:14 by obouhlel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,13 +43,13 @@ void	sa(t_stack *stack_a)
 	ft_putendl_fd("sa", 1);
 }
 
-void	pa(t_info *info)
+void	pb(t_info *info)
 {
 	ft_push_a(info);
 	ft_stack_id_init(info->stack_a);
 	ft_stack_id_init(info->stack_b);
-	ft_update_info(info);
-	ft_putendl_fd("pa", 1);
+	// ft_update_info(info);
+	ft_putendl_fd("pb", 1);
 }
 
 void	ra(t_stack *stack_a)
