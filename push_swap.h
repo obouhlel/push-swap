@@ -6,7 +6,7 @@
 /*   By: obouhlel <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/03 14:10:03 by obouhlel          #+#    #+#             */
-/*   Updated: 2022/12/16 19:25:37 by obouhlel         ###   ########.fr       */
+/*   Updated: 2022/12/16 21:00:32 by obouhlel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,14 @@
 # include <unistd.h>
 
 # define FAIL (void *)-1
+
+enum price{
+	RA_RB,
+	RRA_RRB,
+	RA_RRB,
+	RRA_RB,
+};
+
 //stack structure and function
 typedef struct s_stack
 {
@@ -26,7 +34,6 @@ typedef struct s_stack
 	struct s_stack		*next;
 	int					value;
 	unsigned int		id;
-	int					swap;
 	int					rotate;
 	int					rotate_reverse;
 }	t_stack;
@@ -117,6 +124,13 @@ void	ft_algo_3(t_info *info);
 void	ft_algo_5(t_info *info);
 void	ft_algo_n(t_info *info);
 void	ft_algo_lis(t_info *info);
+
+//price
+void	ft_price_calcule(t_stack *stack, int size);
+void	ft_price_calculate_all_price(t_info *info);
+void	ft_price_combo(t_stack *stack_a, t_stack *stack_b, int *tab);
+int		ft_best_price_cost(t_stack *stack_a, t_stack *stack_b);
+int		ft_best_price_move(t_stack *stack_a, t_stack *stack_b);
 
 //info
 t_info	*ft_init_info(t_stack *stack_a, t_stack *stack_b);

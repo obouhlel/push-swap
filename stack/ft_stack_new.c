@@ -6,7 +6,7 @@
 /*   By: obouhlel <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/16 14:21:44 by obouhlel          #+#    #+#             */
-/*   Updated: 2022/12/16 15:27:40 by obouhlel         ###   ########.fr       */
+/*   Updated: 2022/12/16 20:09:31 by obouhlel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,6 @@ t_stack	*ft_stack_new(int value)
 	new->previous = NULL;
 	new->value = value;
 	new->id = 0;
-	new->swap = -1;
 	new->rotate = -1;
 	new->rotate_reverse = -1;
 	return (new);
