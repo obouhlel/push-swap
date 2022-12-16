@@ -6,7 +6,7 @@
 /*   By: obouhlel <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/03 14:10:03 by obouhlel          #+#    #+#             */
-/*   Updated: 2022/12/16 14:11:52 by obouhlel         ###   ########.fr       */
+/*   Updated: 2022/12/16 16:03:40 by obouhlel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -63,73 +63,41 @@ size_t	ft_strlcat(char *dst, const char *src, size_t size);
 void	ft_bzero(void *s, size_t n);
 void	*ft_calloc(size_t nmemb, size_t size);
 
-//error check
-int		ft_push_swap_check(t_stack *stack);
+//stack
+t_stack	*ft_stack_new(int value);
+t_stack	*ft_stack_last(t_stack *stack);
+void	ft_stack_add_back(t_stack **stack, t_stack *new);
+void	ft_stack_add_front(t_stack **stack, t_stack *new);
+void	ft_stack_id_init(t_stack *stack);
+int		ft_stack_size(t_stack *stack);
+void	ft_stack_clear(t_stack *stack);
+void	ft_stack_delone(t_stack *stack);
+void	ft_print_stack_color(t_stack *stack_a, t_stack *stack_b);
+void	ft_stack_print_num_fd(t_stack *stack, int fd);
 
+//error check
 char	**ft_clear_av(char **av, int n);
 void	ft_error_push_swap_double(t_stack *stack, char **nbrs);
 void	ft_error_push_swap_int(char **nstr, int n);
 void	ft_error_push_swap_digit(char **strs);
 
-void	delete_value(int a);
-void	free_nbrs_stack(char **nbrs, t_stack **stack);
-void	free_all_stack(t_stack **stack_a, t_stack **stack_b);
+void	free_nbrs_stack(char **nbrs, t_stack *stack);
+void	free_all_stack(t_stack *stack_a, t_stack *stack_b);
 void	free_info(t_info *info);
 void	ft_create_stack_a(t_stack **stack, char **nbrs, int n);
 
-//info
-t_info	*ft_init_info(t_stack **stack_a, t_stack **stack_b);
-t_info	*ft_update_info(t_info *info);
-void	ft_print_info(t_info *info);
-
 //sort
-t_stack	*swap(t_stack *stack);
-t_info	*push(t_info *info);
-t_stack	*rotate(t_stack *stack);
-t_stack	*rotate_reverse(t_stack *stack);
-
-t_info	*ss(t_info *info);
-t_info	*rr(t_info *info);
-t_info	*rrr(t_info *info);
-
-t_info	*sa(t_info *info);
-t_info	*pa(t_info *info);
-t_info	*ra(t_info *info);
-t_info	*rra(t_info *info);
-
-t_info	*sb(t_info *info);
-t_info	*pb(t_info *info);
-t_info	*rb(t_info *info);
-t_info	*rrb(t_info *info);
+void	ft_swap(t_stack *stack);
 
 //algo
-void	ft_algo_push_swap(t_stack **stack_a, t_stack **stack_b);
-void	ft_algo_ps_3(t_info *info);
-void	ft_algo_ps_5(t_info *info);
-void	ft_algo_ps_n(t_info *info);
+int		ft_min(t_stack *stack);
+int		ft_max(t_stack *stack);
+int		ft_med(t_stack *stack, t_info *info);
+void	ft_algo_push_swap(t_stack *stack_a, t_stack *stack_b);
 
-int		algo_min(t_stack *stack);
-int		algo_max(t_stack *stack);
-int		algo_med(t_stack *stack, t_info *info);
-
-//stack
-t_stack	*ft_stacknew(int value);
-
-void	ft_stackadd_front(t_stack **stack, t_stack *new);
-void	ft_stackadd_back(t_stack **stack, t_stack *new);
-
-void	ft_stack_init_id(t_stack *stack);
-
-int		ft_stacksize(t_stack *stack);
-
-t_stack	*ft_stacklast(t_stack *stack);
-
-void	ft_stackdelone_relink(t_stack **stack);
-void	ft_stackdelone(t_stack **stack, void (*del)(int));
-void	ft_stackclear(t_stack **stack, void (*del)(int));
-
-void	ft_stackprint_num_fd(t_stack *stack, int fd);
-void	ft_stackprint_num_rev_fd(t_stack *stack, int fd);
-void	ft_printstack_color(t_stack *stack_a, t_stack *stack_b);
+//info
+t_info	*ft_init_info(t_stack *stack_a, t_stack *stack_b);
+t_info	*ft_update_info(t_info *info);
+void	ft_print_info(t_info *info);
 
 #endif

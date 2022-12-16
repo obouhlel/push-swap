@@ -6,7 +6,7 @@
 /*   By: obouhlel <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/03 15:45:33 by obouhlel          #+#    #+#             */
-/*   Updated: 2022/12/16 11:33:33 by obouhlel         ###   ########.fr       */
+/*   Updated: 2022/12/16 16:03:07 by obouhlel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -98,7 +98,7 @@ void	ft_error_push_swap_double(t_stack *stack, char **nbrs)
 			if (stackcmp->value == tmp)
 			{
 				ft_putendl_fd("Error", 1);
-				free_nbrs_stack(nbrs, &stack);
+				free_nbrs_stack(nbrs, stack);
 				exit(0);
 			}
 			stackcmp = stackcmp->next;
