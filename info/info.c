@@ -6,7 +6,7 @@
 /*   By: obouhlel <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/16 14:56:33 by obouhlel          #+#    #+#             */
-/*   Updated: 2022/12/16 17:29:33 by obouhlel         ###   ########.fr       */
+/*   Updated: 2022/12/16 21:28:57 by obouhlel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,6 +33,10 @@ t_info	*ft_init_info(t_stack *stack_a, t_stack *stack_b)
 	info->max_b = ft_max(stack_b);
 	info->min_b = ft_min(stack_b);
 	info->med_b = ft_med(stack_b, info);
+	info->ra = -1;
+	info->rb = -1;
+	info->rra = -1;
+	info->rrb = -1;
 	return (info);
 }
 
@@ -51,14 +55,25 @@ t_info	*ft_update_info(t_info *info)
 
 void	ft_print_info(t_info *info)
 {
+	ft_putchar_fd('\n', 1);
+	ft_putstr_fd("STACK A :\n", 1);
 	ft_putstrnbr_fd("size a = ", info->size_a, 1);
 	ft_putstrnbr_fd("max a = ", info->max_a, 1);
 	ft_putstrnbr_fd("min a = ", info->min_a, 1);
 	ft_putstrnbr_fd("med a = ", info->med_a, 1);
 	ft_putchar_fd('\n', 1);
+	ft_putstr_fd("STACK B :\n", 1);
 	ft_putstrnbr_fd("size b = ", info->size_b, 1);
 	ft_putstrnbr_fd("max b = ", info->max_b, 1);
 	ft_putstrnbr_fd("min b = ", info->min_b, 1);
 	ft_putstrnbr_fd("med b = ", info->med_b, 1);
 	ft_print_stack_color(info->stack_a, info->stack_b);
+}
+
+void	ft_init_move_info(t_info *info)
+{
+	info->ra = -1;
+	info->rb = -1;
+	info->rra = -1;
+	info->rrb = -1;
 }

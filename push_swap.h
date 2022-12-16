@@ -6,7 +6,7 @@
 /*   By: obouhlel <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/03 14:10:03 by obouhlel          #+#    #+#             */
-/*   Updated: 2022/12/16 21:03:47 by obouhlel         ###   ########.fr       */
+/*   Updated: 2022/12/16 21:27:56 by obouhlel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,6 +51,10 @@ typedef struct s_info
 	int		max_b;
 	int		min_b;
 	int		med_b;
+	int		ra;
+	int		rra;
+	int		rb;
+	int		rrb;
 }	t_info;
 
 //libft
@@ -135,6 +139,7 @@ int		ft_best_price_move(t_stack *stack_a, t_stack *stack_b);
 //info
 t_info	*ft_init_info(t_stack *stack_a, t_stack *stack_b);
 t_info	*ft_update_info(t_info *info);
+void	ft_init_move_info(t_info *info);
 void	ft_print_info(t_info *info);
 
 #endif
