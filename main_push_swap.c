@@ -6,13 +6,13 @@
 /*   By: obouhlel <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/03 15:43:23 by obouhlel          #+#    #+#             */
-/*   Updated: 2022/12/15 19:29:32 by obouhlel         ###   ########.fr       */
+/*   Updated: 2022/12/16 14:12:41 by obouhlel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-static void	main_error(char **nbrs, t_stack *stack_a)
+static void	main_error(char **nbrs, t_stack **stack_a)
 {
 	int	n;
 
@@ -22,7 +22,7 @@ static void	main_error(char **nbrs, t_stack *stack_a)
 	ft_error_push_swap_digit(nbrs);
 	ft_error_push_swap_int(nbrs, n);
 	ft_create_stack_a(stack_a, nbrs, n);
-	ft_error_push_swap_double(stack_a, nbrs);
+	ft_error_push_swap_double(*stack_a, nbrs);
 	free_nbrs_stack(nbrs, NULL);
 }
 
@@ -46,7 +46,7 @@ int	main(int ac, char **av)
 		ft_putendl_fd("Error", 1);
 		return (0);
 	}
-	main_error(nbrs, stack_a);
+	main_error(nbrs, &stack_a);
 	ft_algo_push_swap(stack_a, stack_b);
 	return (0);
 }

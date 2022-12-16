@@ -6,7 +6,7 @@
 /*   By: obouhlel <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/08 11:29:46 by obouhlel          #+#    #+#             */
-/*   Updated: 2022/12/15 19:38:26 by obouhlel         ###   ########.fr       */
+/*   Updated: 2022/12/16 11:32:09 by obouhlel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ void	delete_value(int a)
 	a = 0;
 }
 
-void	free_nbrs_stack(char **nbrs, t_stack *stack)
+void	free_nbrs_stack(char **nbrs, t_stack **stack)
 {
 	int	i;
 
@@ -27,10 +27,11 @@ void	free_nbrs_stack(char **nbrs, t_stack *stack)
 		free(nbrs[i++]);
 	free(nbrs);
 	if (stack)
-		ft_stackclear(stack, &delete_value);
+		if (*stack)
+			ft_stackclear(stack, &delete_value);
 }
 
-void	free_all_stack(t_stack *stack_a, t_stack *stack_b)
+void	free_all_stack(t_stack **stack_a, t_stack **stack_b)
 {
 	if (stack_a)
 		ft_stackclear(stack_a, &delete_value);
@@ -38,7 +39,17 @@ void	free_all_stack(t_stack *stack_a, t_stack *stack_b)
 		ft_stackclear(stack_b, &delete_value);
 }
 
-void	ft_create_stack_a(t_stack *stack, char **nbrs, int n)
+void	free_info(t_info *info)
+{
+	if (info->stack_a[0])
+		ft_stackclear(info->stack_a, &delete_value);
+	if (info->stack_b[0])
+		ft_stackclear(info->stack_b, &delete_value);
+	if (info)
+		free(info);
+}
+
+void	ft_create_stack_a(t_stack **stack, char **nbrs, int n)
 {
 	int		i;
 	t_stack	*atoi;

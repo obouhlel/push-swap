@@ -9,7 +9,7 @@ SRCS	= main_push_swap.c \
 		error_check/push_swap_check.c \
 		error_check/push_swap_error_1.c \
 		error_check/push_swap_error_2.c \
-		info/ft_init_info.c \
+		info_price/info.c \
 		sort/0_push_swap_sort.c \
 		sort/1_push_swap_sort_all.c \
 		sort/2_push_swap_sort_a.c \
@@ -31,6 +31,7 @@ SRCS	= main_push_swap.c \
 		libft/ft_putendl_fd.c \
 		libft/ft_putnbr_fd.c \
 		libft/ft_putstr_fd.c \
+		libft/ft_putstrnbr_fd.c \
 		libft/ft_split.c \
 		libft/ft_strjoin.c \
 		libft/ft_strjoin_free.c \

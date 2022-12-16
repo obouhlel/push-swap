@@ -27,11 +27,41 @@ RES=$(./push_swap $ARG | wc -l)
 TEST=$(if [ $(./push_swap $ARG | ./checker_linux $ARG) = "OK" ]; then echo $Green "OK" $Color_Off; else echo $Red "KO" $Color_Off; fi)
 echo $Cyan "2\t:" $TEST '\t' $Yellow $RES $Color_Off
 
-# 3
+# 3.1
 ARG="6 18 -14"
 RES=$(./push_swap $ARG | wc -l)
 TEST=$(if [ $(./push_swap $ARG | ./checker_linux $ARG) = "OK" ]; then echo $Green "OK" $Color_Off; else echo $Red "KO" $Color_Off; fi)
-echo $Cyan "3\t:" $TEST '\t' $Yellow $RES $Color_Off
+echo $Cyan "3.1\t:" $TEST '\t' $Yellow $RES $Color_Off
+
+# 3.2
+ARG="3 2 1"
+RES=$(./push_swap $ARG | wc -l)
+TEST=$(if [ $(./push_swap $ARG | ./checker_linux $ARG) = "OK" ]; then echo $Green "OK" $Color_Off; else echo $Red "KO" $Color_Off; fi)
+echo $Cyan "3.2\t:" $TEST '\t' $Yellow $RES $Color_Off
+
+# 3.3
+ARG="2 3 1"
+RES=$(./push_swap $ARG | wc -l)
+TEST=$(if [ $(./push_swap $ARG | ./checker_linux $ARG) = "OK" ]; then echo $Green "OK" $Color_Off; else echo $Red "KO" $Color_Off; fi)
+echo $Cyan "3.3\t:" $TEST '\t' $Yellow $RES $Color_Off
+
+# 3.4
+ARG="2 1 3"
+RES=$(./push_swap $ARG | wc -l)
+TEST=$(if [ $(./push_swap $ARG | ./checker_linux $ARG) = "OK" ]; then echo $Green "OK" $Color_Off; else echo $Red "KO" $Color_Off; fi)
+echo $Cyan "3.4\t:" $TEST '\t' $Yellow $RES $Color_Off
+
+# 3.5
+ARG="2 1 3"
+RES=$(./push_swap $ARG | wc -l)
+TEST=$(if [ $(./push_swap $ARG | ./checker_linux $ARG) = "OK" ]; then echo $Green "OK" $Color_Off; else echo $Red "KO" $Color_Off; fi)
+echo $Cyan "3.5\t:" $TEST '\t' $Yellow $RES $Color_Off
+
+# 3.6
+ARG="3 1 2"
+RES=$(./push_swap $ARG | wc -l)
+TEST=$(if [ $(./push_swap $ARG | ./checker_linux $ARG) = "OK" ]; then echo $Green "OK" $Color_Off; else echo $Red "KO" $Color_Off; fi)
+echo $Cyan "3.6\t:" $TEST '\t' $Yellow $RES $Color_Off
 
 # 4.1
 ARG="6 18 -14 1424321"

@@ -6,23 +6,23 @@
 /*   By: obouhlel <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/15 15:02:46 by obouhlel          #+#    #+#             */
-/*   Updated: 2022/12/15 19:26:36 by obouhlel         ###   ########.fr       */
+/*   Updated: 2022/12/16 10:57:20 by obouhlel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../push_swap.h"
 
 //to add in front the list
-void	ft_stackadd_front(t_stack *stack, t_stack *new)
+void	ft_stackadd_front(t_stack **stack, t_stack *new)
 {
 	if (!new)
 		return ;
-	if (!stack)
+	if (!*stack)
 	{
-		stack = new;
+		*stack = new;
 		return ;
 	}
-	stack->previous = new;
-	new->next = stack;
-	stack = new;
+	(*stack)->previous = new;
+	new->next = *stack;
+	*stack = new;
 }

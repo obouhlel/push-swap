@@ -6,7 +6,7 @@
 /*   By: obouhlel <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/15 15:08:54 by obouhlel          #+#    #+#             */
-/*   Updated: 2022/12/15 19:27:50 by obouhlel         ###   ########.fr       */
+/*   Updated: 2022/12/16 11:03:25 by obouhlel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,9 +21,11 @@ t_stack	*ft_stacknew(int value)
 	if (!stack)
 		return (NULL);
 	stack->previous = NULL;
+	stack->next = NULL;
 	stack->value = value;
 	stack->id = 0;
-	stack->price = NULL;
-	stack->next = NULL;
+	stack->swap = -1;
+	stack->rotate = -1;
+	stack->rotate_reverse = -1;
 	return (stack);
 }

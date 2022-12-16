@@ -6,7 +6,7 @@
 /*   By: obouhlel <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/10 14:36:17 by obouhlel          #+#    #+#             */
-/*   Updated: 2022/12/15 20:12:05 by obouhlel         ###   ########.fr       */
+/*   Updated: 2022/12/16 10:38:55 by obouhlel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,24 +37,12 @@ static int	*algo_tri(int *tab, int size)
 	return (tab);
 }
 
-int	algo_min(t_stack *stack)
-{
-	int	min;
-
-	min = stack->value;
-	while (stack)
-	{
-		if (min > stack->value)
-			min = stack->value;
-		stack = stack->next;
-	}
-	return (min);
-}
-
 int	algo_max(t_stack *stack)
 {
 	int	max;
 
+	if (!stack)
+		return (0);
 	max = stack->value;
 	while (stack)
 	{
@@ -65,6 +53,22 @@ int	algo_max(t_stack *stack)
 	return (max);
 }
 
+int	algo_min(t_stack *stack)
+{
+	int	min;
+
+	if (!stack)
+		return (0);
+	min = stack->value;
+	while (stack)
+	{
+		if (min > stack->value)
+			min = stack->value;
+		stack = stack->next;
+	}
+	return (min);
+}
+
 int	algo_med(t_stack *stack, t_info *info)
 {
 	int			med;
@@ -72,10 +76,12 @@ int	algo_med(t_stack *stack, t_info *info)
 	int			i;
 	const int	size = ft_stacksize(stack);
 
+	if (!stack)
+		return (0);
 	tab = (int *)malloc(size * sizeof(int));
 	if (!tab)
 	{
-		free_all_stack(info->stack_a, info->stack_b);
+		free_info(info);
 		ft_putendl_fd("Error", 1);
 		exit(0);
 	}

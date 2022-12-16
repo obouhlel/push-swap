@@ -6,7 +6,7 @@
 /*   By: obouhlel <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/03 14:10:03 by obouhlel          #+#    #+#             */
-/*   Updated: 2022/12/15 21:31:24 by obouhlel         ###   ########.fr       */
+/*   Updated: 2022/12/16 14:11:52 by obouhlel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,22 +18,17 @@
 # include <stdlib.h>
 # include <unistd.h>
 
-//struct price
-typedef struct s_price
-{
-	int	swap;
-	int	rotate;
-	int	rotate_reverse;
-}	t_price;
-
+# define OK (void *)1
 //stack structure and function
 typedef struct s_stack
 {
 	struct s_stack		*previous;
+	struct s_stack		*next;
 	int					value;
 	unsigned int		id;
-	t_price				*price;
-	struct s_stack		*next;
+	int					swap;
+	int					rotate;
+	int					rotate_reverse;
 }	t_stack;
 
 //stack info struture
@@ -42,10 +37,10 @@ typedef struct s_info
 	t_stack	*stack_a;
 	t_stack	*stack_b;
 	int		size_a;
-	int		size_b;
 	int		max_a;
 	int		min_a;
 	int		med_a;
+	int		size_b;
 	int		max_b;
 	int		min_b;
 	int		med_b;
@@ -57,6 +52,7 @@ void	ft_putchar_fd(char c, int fd);
 void	ft_putstr_fd(char *s, int fd);
 void	ft_putendl_fd(char *s, int fd);
 void	ft_putnbr_fd(int n, int fd);
+void	ft_putstrnbr_fd(char *str, int nbr, int fd);
 int		ft_isdigit(int c);
 int		ft_atoi(const char *nptr);
 ssize_t	ft_atoi_long(const char *nptr);
@@ -76,35 +72,38 @@ void	ft_error_push_swap_int(char **nstr, int n);
 void	ft_error_push_swap_digit(char **strs);
 
 void	delete_value(int a);
-void	free_nbrs_stack(char **nbrs, t_stack *stack);
-void	free_all_stack(t_stack *stack_a, t_stack *stack_b);
-void	ft_create_stack_a(t_stack *stack, char **nbrs, int n);
+void	free_nbrs_stack(char **nbrs, t_stack **stack);
+void	free_all_stack(t_stack **stack_a, t_stack **stack_b);
+void	free_info(t_info *info);
+void	ft_create_stack_a(t_stack **stack, char **nbrs, int n);
 
 //info
-t_info	*ft_init_info(t_stack *stack_a, t_stack *stack_b);
+t_info	*ft_init_info(t_stack **stack_a, t_stack **stack_b);
+t_info	*ft_update_info(t_info *info);
+void	ft_print_info(t_info *info);
 
 //sort
-void	swap(t_stack *stack);
-void	push(t_stack *stack1, t_stack *stack2);
-void	rotate(t_stack *stack);
-void	rotate_reverse(t_stack *stack);
+t_stack	*swap(t_stack *stack);
+t_info	*push(t_info *info);
+t_stack	*rotate(t_stack *stack);
+t_stack	*rotate_reverse(t_stack *stack);
 
-void	ss(t_stack *stack_a, t_stack *stack_b);
-void	rr(t_stack *stack_a, t_stack *stack_b);
-void	rrr(t_stack *stack_a, t_stack *stack_b);
+t_info	*ss(t_info *info);
+t_info	*rr(t_info *info);
+t_info	*rrr(t_info *info);
 
-void	sa(t_stack *stack_a);
-void	pa(t_stack *stack_a, t_stack *stack_b);
-void	ra(t_stack *stack_a);
-void	rra(t_stack *stack_a);
+t_info	*sa(t_info *info);
+t_info	*pa(t_info *info);
+t_info	*ra(t_info *info);
+t_info	*rra(t_info *info);
 
-void	sb(t_stack *stack_b);
-void	pb(t_stack *stack_a, t_stack *stack_b);
-void	rb(t_stack *stack_b);
-void	rrb(t_stack *stack_b);
+t_info	*sb(t_info *info);
+t_info	*pb(t_info *info);
+t_info	*rb(t_info *info);
+t_info	*rrb(t_info *info);
 
 //algo
-void	ft_algo_push_swap(t_stack *stack_a, t_stack *stack_b);
+void	ft_algo_push_swap(t_stack **stack_a, t_stack **stack_b);
 void	ft_algo_ps_3(t_info *info);
 void	ft_algo_ps_5(t_info *info);
 void	ft_algo_ps_n(t_info *info);
@@ -116,18 +115,18 @@ int		algo_med(t_stack *stack, t_info *info);
 //stack
 t_stack	*ft_stacknew(int value);
 
-void	ft_stackadd_front(t_stack *stack, t_stack *new);
-void	ft_stackadd_back(t_stack *stack, t_stack *new);
+void	ft_stackadd_front(t_stack **stack, t_stack *new);
+void	ft_stackadd_back(t_stack **stack, t_stack *new);
 
 void	ft_stack_init_id(t_stack *stack);
 
 int		ft_stacksize(t_stack *stack);
 
 t_stack	*ft_stacklast(t_stack *stack);
-void	ft_stackdelone_relink(t_stack *stack);
 
-void	ft_stackdelone(t_stack *stack, void (*del)(int));
-void	ft_stackclear(t_stack *stack, void (*del)(int));
+void	ft_stackdelone_relink(t_stack **stack);
+void	ft_stackdelone(t_stack **stack, void (*del)(int));
+void	ft_stackclear(t_stack **stack, void (*del)(int));
 
 void	ft_stackprint_num_fd(t_stack *stack, int fd);
 void	ft_stackprint_num_rev_fd(t_stack *stack, int fd);
