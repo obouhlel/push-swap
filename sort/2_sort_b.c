@@ -6,7 +6,7 @@
 /*   By: obouhlel <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/16 16:15:22 by obouhlel          #+#    #+#             */
-/*   Updated: 2022/12/16 19:09:17 by obouhlel         ###   ########.fr       */
+/*   Updated: 2022/12/16 21:04:08 by obouhlel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,7 +41,6 @@ void	pa(t_info *info)
 	ft_push_b(info);
 	ft_stack_id_init(info->stack_a);
 	ft_stack_id_init(info->stack_b);
-	// ft_update_info(info);
 	ft_putendl_fd("pa", 1);
 }
 

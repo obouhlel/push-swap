@@ -6,7 +6,7 @@
 /*   By: obouhlel <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/03 14:10:03 by obouhlel          #+#    #+#             */
-/*   Updated: 2022/12/16 21:00:32 by obouhlel         ###   ########.fr       */
+/*   Updated: 2022/12/16 21:03:47 by obouhlel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@
 
 # define FAIL (void *)-1
 
-enum price{
+enum e_price{
 	RA_RB,
 	RRA_RRB,
 	RA_RRB,
