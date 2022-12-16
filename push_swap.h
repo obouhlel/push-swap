@@ -6,7 +6,7 @@
 /*   By: obouhlel <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/03 14:10:03 by obouhlel          #+#    #+#             */
-/*   Updated: 2022/12/16 17:32:36 by obouhlel         ###   ########.fr       */
+/*   Updated: 2022/12/16 18:36:41 by obouhlel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@
 # include <stdlib.h>
 # include <unistd.h>
 
-# define OK (void *)1
+# define FAIL (void *)-1
 //stack structure and function
 typedef struct s_stack
 {
@@ -89,17 +89,22 @@ void	ft_create_stack_a(t_stack **stack, char **nbrs, int n);
 
 //sort
 void	ft_swap(t_stack *stack);
-void	rotate(t_stack *stack);
-void	reverse_rotate(t_stack *stack);
+void	ft_rotate(t_stack *stack);
+void	ft_reverse_rotate(t_stack *stack);
 
-void	sa(t_stack *stack_a);
 void	pa(t_info *info);
+void	sa(t_stack *stack_a);
 void	ra(t_stack *stack_a);
 void	rra(t_stack *stack_a);
 
-void	sb(t_stack *stack);
+void	pb(t_info *info);
+void	sb(t_stack *stack_b);
+void	rb(t_stack *stack_b);
+void	rrb(t_stack *stack_b);
 
 void	ss(t_stack *stack_a, t_stack *stack_b);
+void	rr(t_stack *stack_a, t_stack *stack_b);
+void	rrr(t_stack *stack_a, t_stack *stack_b);
 
 //algo
 int		ft_min(t_stack *stack);

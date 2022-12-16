@@ -6,7 +6,7 @@
 /*   By: obouhlel <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/16 15:32:12 by obouhlel          #+#    #+#             */
-/*   Updated: 2022/12/16 17:31:41 by obouhlel         ###   ########.fr       */
+/*   Updated: 2022/12/16 18:29:48 by obouhlel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ void	ft_swap(t_stack *stack)
 	stack->next->value = tmp;
 }
 
-void	rotate(t_stack *stack)
+void	ft_rotate(t_stack *stack)
 {
 	t_stack	*swap;
 	int		tmp;
@@ -41,7 +41,7 @@ void	rotate(t_stack *stack)
 	}
 }
 
-void	reverse_rotate(t_stack *stack)
+void	ft_reverse_rotate(t_stack *stack)
 {
 	t_stack	*swap;
 	int		tmp;
