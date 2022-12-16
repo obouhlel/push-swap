@@ -1,23 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   0_algo_main.c                                      :+:      :+:    :+:   */
+/*   ft_stack_deltop.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: obouhlel <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/12/16 14:55:14 by obouhlel          #+#    #+#             */
-/*   Updated: 2022/12/16 17:06:39 by obouhlel         ###   ########.fr       */
+/*   Created: 2022/12/16 17:21:58 by obouhlel          #+#    #+#             */
+/*   Updated: 2022/12/16 17:23:53 by obouhlel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../push_swap.h"
 
-void	ft_algo_push_swap(t_stack *stack_a, t_stack *stack_b)
+t_stack	*ft_stack_deltop(t_stack *stack)
 {
-	t_info	*info;
+	t_stack	*new_stack;
 
-	info = ft_init_info(stack_a, stack_b);
-	pa(info->stack_a, info->stack_b);
-	ft_print_info(info);
-	free_info(info);
+	new_stack = stack->next;
+	new_stack->previous = NULL;
+	ft_stack_delone(stack);
+	return (new_stack);
 }

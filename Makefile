@@ -25,12 +25,16 @@ SRCS	= main_push_swap.c \
 		stack/ft_stack_add_front.c \
 		stack/ft_stack_clear.c \
 		stack/ft_stack_delone.c \
+		stack/ft_stack_deltop.c \
 		stack/ft_stack_id_init.c \
 		stack/ft_stack_last.c \
 		stack/ft_stack_new.c \
 		stack/ft_stack_print_num_fd.c \
 		stack/ft_stack_size.c \
-		sort/0_sort.c
+		sort/0_sort.c \
+		sort/1_sort_a.c \
+		sort/2_sort_b.c \
+		sort/3_sort_all.c
 
 OBJS	= ${SRCS:.c=.o}
 

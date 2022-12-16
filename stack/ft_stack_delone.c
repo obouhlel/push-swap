@@ -6,7 +6,7 @@
 /*   By: obouhlel <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/16 14:43:43 by obouhlel          #+#    #+#             */
-/*   Updated: 2022/12/16 14:44:26 by obouhlel         ###   ########.fr       */
+/*   Updated: 2022/12/16 17:36:19 by obouhlel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,5 +17,6 @@ void	ft_stack_delone(t_stack *stack)
 {
 	if (!stack)
 		return ;
+	stack->value = 0;
 	free(stack);
 }

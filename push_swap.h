@@ -6,7 +6,7 @@
 /*   By: obouhlel <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/03 14:10:03 by obouhlel          #+#    #+#             */
-/*   Updated: 2022/12/16 16:03:40 by obouhlel         ###   ########.fr       */
+/*   Updated: 2022/12/16 17:32:36 by obouhlel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -72,6 +72,7 @@ void	ft_stack_id_init(t_stack *stack);
 int		ft_stack_size(t_stack *stack);
 void	ft_stack_clear(t_stack *stack);
 void	ft_stack_delone(t_stack *stack);
+t_stack	*ft_stack_deltop(t_stack *stack);
 void	ft_print_stack_color(t_stack *stack_a, t_stack *stack_b);
 void	ft_stack_print_num_fd(t_stack *stack, int fd);
 
@@ -88,6 +89,17 @@ void	ft_create_stack_a(t_stack **stack, char **nbrs, int n);
 
 //sort
 void	ft_swap(t_stack *stack);
+void	rotate(t_stack *stack);
+void	reverse_rotate(t_stack *stack);
+
+void	sa(t_stack *stack_a);
+void	pa(t_info *info);
+void	ra(t_stack *stack_a);
+void	rra(t_stack *stack_a);
+
+void	sb(t_stack *stack);
+
+void	ss(t_stack *stack_a, t_stack *stack_b);
 
 //algo
 int		ft_min(t_stack *stack);

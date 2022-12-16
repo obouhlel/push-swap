@@ -1,23 +1,20 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   0_algo_main.c                                      :+:      :+:    :+:   */
+/*   2_sort_b.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: obouhlel <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/12/16 14:55:14 by obouhlel          #+#    #+#             */
-/*   Updated: 2022/12/16 17:06:39 by obouhlel         ###   ########.fr       */
+/*   Created: 2022/12/16 16:15:22 by obouhlel          #+#    #+#             */
+/*   Updated: 2022/12/16 16:15:39 by obouhlel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../push_swap.h"
 
-void	ft_algo_push_swap(t_stack *stack_a, t_stack *stack_b)
+void	sb(t_stack *stack)
 {
-	t_info	*info;
-
-	info = ft_init_info(stack_a, stack_b);
-	pa(info->stack_a, info->stack_b);
-	ft_print_info(info);
-	free_info(info);
+	ft_swap(stack);
+	ft_stack_id_init(stack);
+	ft_putendl_fd("sb", 1);
 }

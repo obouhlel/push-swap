@@ -6,7 +6,7 @@
 /*   By: obouhlel <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/16 14:56:33 by obouhlel          #+#    #+#             */
-/*   Updated: 2022/12/16 15:58:56 by obouhlel         ###   ########.fr       */
+/*   Updated: 2022/12/16 17:29:33 by obouhlel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ t_info	*ft_init_info(t_stack *stack_a, t_stack *stack_b)
 	info = (t_info *)malloc(sizeof(t_info));
 	if (!info)
 	{
-		free_all_stack(&stack_a, &stack_b);
+		free_all_stack(stack_a, stack_b);
 		ft_putendl_fd("Error", 1);
 		exit(0);
 	}
