@@ -6,7 +6,7 @@
 /*   By: obouhlel <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/03 14:10:03 by obouhlel          #+#    #+#             */
-/*   Updated: 2022/12/16 21:27:56 by obouhlel         ###   ########.fr       */
+/*   Updated: 2022/12/17 17:46:18 by obouhlel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,7 @@
 # include <stdlib.h>
 # include <unistd.h>
 
+# define OK (void *)1
 # define FAIL (void *)-1
 
 enum e_price{
@@ -33,9 +34,10 @@ typedef struct s_stack
 	struct s_stack		*previous;
 	struct s_stack		*next;
 	int					value;
-	unsigned int		id;
+	int					id;
+	int					pos;
 	int					rotate;
-	int					rotate_reverse;
+	int 				rotate_reverse;
 }	t_stack;
 
 //stack info struture
@@ -43,6 +45,7 @@ typedef struct s_info
 {
 	t_stack	*stack_a;
 	t_stack	*stack_b;
+	int		size;
 	int		size_a;
 	int		max_a;
 	int		min_a;
@@ -86,6 +89,7 @@ void	ft_stack_delone(t_stack *stack);
 t_stack	*ft_stack_deltop(t_stack *stack);
 void	ft_print_stack_color(t_stack *stack_a, t_stack *stack_b);
 void	ft_stack_print_num_fd(t_stack *stack, int fd);
+void	*ft_stack_pos_init(t_stack *stack_a, t_stack *stack_b);
 
 //error check
 int		ft_push_swap_check(t_stack *stack);
@@ -132,9 +136,12 @@ void	ft_algo_lis(t_info *info);
 //price
 void	ft_price_calcule(t_stack *stack, int size);
 void	ft_price_calculate_all_price(t_info *info);
-void	ft_price_combo(t_stack *stack_a, t_stack *stack_b, int *tab);
-int		ft_best_price_cost(t_stack *stack_a, t_stack *stack_b);
+void	ft_price_combo(t_stack *stack_a, t_stack *stack_b, int tab[4]);
 int		ft_best_price_move(t_stack *stack_a, t_stack *stack_b);
+
+//find
+int		ft_algo_find_id(int value, t_stack *stack);
+int		ft_algo_find_next_pos(int pos, t_stack *stack);
 
 //info
 t_info	*ft_init_info(t_stack *stack_a, t_stack *stack_b);

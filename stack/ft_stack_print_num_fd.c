@@ -6,7 +6,7 @@
 /*   By: obouhlel <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/16 14:47:03 by obouhlel          #+#    #+#             */
-/*   Updated: 2022/12/16 14:47:21 by obouhlel         ###   ########.fr       */
+/*   Updated: 2022/12/17 17:46:42 by obouhlel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,16 @@ void	ft_stack_print_num_fd(t_stack *stack, int fd)
 		ft_putendl_fd("(null)", 1);
 	while (stack)
 	{
+		ft_putchar_fd('\t', 1);
 		ft_putnbr_fd(stack->value, fd);
+		ft_putstr_fd("\tid = ", fd);
+		ft_putnbr_fd(stack->id, fd);
+		ft_putstr_fd(", pos = ", fd);
+		ft_putnbr_fd(stack->pos, fd);
+		ft_putstr_fd(", rx = ", fd);
+		ft_putnbr_fd(stack->rotate, fd);
+		ft_putstr_fd(", rrx = ", fd);
+		ft_putnbr_fd(stack->rotate_reverse, fd);
 		ft_putchar_fd('\n', fd);
 		stack = stack->next;
 	}

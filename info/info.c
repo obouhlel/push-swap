@@ -6,7 +6,7 @@
 /*   By: obouhlel <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/16 14:56:33 by obouhlel          #+#    #+#             */
-/*   Updated: 2022/12/16 21:28:57 by obouhlel         ###   ########.fr       */
+/*   Updated: 2022/12/17 17:43:02 by obouhlel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,6 +25,7 @@ t_info	*ft_init_info(t_stack *stack_a, t_stack *stack_b)
 	}
 	info->stack_a = stack_a;
 	info->stack_b = stack_b;
+	info->size = ft_stack_size(stack_a) + ft_stack_size(stack_b);
 	info->size_a = ft_stack_size(stack_a);
 	info->max_a = ft_max(stack_a);
 	info->min_a = ft_min(stack_a);
@@ -56,18 +57,23 @@ t_info	*ft_update_info(t_info *info)
 void	ft_print_info(t_info *info)
 {
 	ft_putchar_fd('\n', 1);
-	ft_putstr_fd("STACK A :\n", 1);
-	ft_putstrnbr_fd("size a = ", info->size_a, 1);
-	ft_putstrnbr_fd("max a = ", info->max_a, 1);
-	ft_putstrnbr_fd("min a = ", info->min_a, 1);
-	ft_putstrnbr_fd("med a = ", info->med_a, 1);
+	ft_putstrnbr_fd("Size total = ", info->size, 1);
 	ft_putchar_fd('\n', 1);
+	ft_putstr_fd("\033[0;31m", 1);
+	ft_putstr_fd("STACK A :\n", 1);
+	ft_putstrnbr_fd("size a\t= ", info->size_a, 1);
+	ft_putstrnbr_fd("max a\t= ", info->max_a, 1);
+	ft_putstrnbr_fd("min a\t= ", info->min_a, 1);
+	ft_putstrnbr_fd("med a\t= ", info->med_a, 1);
+	ft_putchar_fd('\n', 1);
+	ft_putstr_fd("\033[0;32m", 1);
 	ft_putstr_fd("STACK B :\n", 1);
-	ft_putstrnbr_fd("size b = ", info->size_b, 1);
-	ft_putstrnbr_fd("max b = ", info->max_b, 1);
-	ft_putstrnbr_fd("min b = ", info->min_b, 1);
-	ft_putstrnbr_fd("med b = ", info->med_b, 1);
+	ft_putstrnbr_fd("size b\t= ", info->size_b, 1);
+	ft_putstrnbr_fd("max b\t= ", info->max_b, 1);
+	ft_putstrnbr_fd("min b\t= ", info->min_b, 1);
+	ft_putstrnbr_fd("med b\t= ", info->med_b, 1);
 	ft_print_stack_color(info->stack_a, info->stack_b);
+	ft_putstr_fd("\033[0m", 1);
 }
 
 void	ft_init_move_info(t_info *info)

@@ -1,39 +1,42 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   3_algo_diff.c                                      :+:      :+:    :+:   */
+/*   3_algo_find.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: obouhlel <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/16 21:30:26 by obouhlel          #+#    #+#             */
-/*   Updated: 2022/12/16 21:37:18 by obouhlel         ###   ########.fr       */
+/*   Updated: 2022/12/17 17:59:17 by obouhlel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../push_swap.h"
 
-int	*ft_algo_value_min_id(int value, t_stack *stack_a)
+int	ft_algo_find_id(int value, t_stack *stack)
 {
 	int	id;
 
-	while (stack_a)
+	id = 0;
+	while (stack)
 	{
-		if (value > stack_a->value)
-			id = stack_a->id;
-		stack_a = stack_a->next;
+		if (value == stack->value)
+		{
+			id = stack->id;
+			return (id);
+		}
+		stack = stack->next;
 	}
-	return (id);
+	return (-1);
 }
 
-int	*ft_algo_value_max_id(int value, t_stack *stack_a)
+int	ft_algo_find_next_pos(int pos, t_stack *stack)
 {
-	int	id;
-
-	while (stack_a)
+	pos++;
+	while (stack)
 	{
-		if (value > stack_a->value)
-			id = stack_a->id;
-		stack_a = stack_a->next;
+		if (pos == stack->pos)
+			return (stack->id);
+		stack = stack->next;
 	}
-	return (id);
+	return (-1);
 }

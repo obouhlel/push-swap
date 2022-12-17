@@ -6,6 +6,7 @@ SRCS	= main_push_swap.c \
 		algo/3_algo_n.c \
 		algo/3_algo_lis.c \
 		algo/3_algo_price.c \
+		algo/3_algo_find.c \
 		error_check/push_swap_check.c \
 		error_check/push_swap_error_1.c \
 		error_check/push_swap_error_2.c \
@@ -32,6 +33,7 @@ SRCS	= main_push_swap.c \
 		stack/ft_stack_delone.c \
 		stack/ft_stack_deltop.c \
 		stack/ft_stack_id_init.c \
+		stack/ft_stack_pos_init.c \
 		stack/ft_stack_last.c \
 		stack/ft_stack_new.c \
 		stack/ft_stack_print_num_fd.c \
