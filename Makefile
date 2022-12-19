@@ -5,7 +5,6 @@ SRCS	= main_push_swap.c \
 		algo/2_algo_5.c \
 		algo/3_algo_n.c \
 		algo/3_algo_lis.c \
-		algo/3_algo_price.c \
 		algo/3_algo_find.c \
 		error_check/push_swap_check.c \
 		error_check/push_swap_error_1.c \

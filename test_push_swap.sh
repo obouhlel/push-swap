@@ -16,13 +16,13 @@ echo $Cyan "\nTeste\n" $Color_Off
 # echo $Cyan $ARG $Color_Off
 # valgrind ./push_swap $ARG
 
-# ARG="1 9 2 3 4 5 6"
-# echo $Cyan $ARG $Color_Off
-# ./push_swap $ARG
-
-ARG="2 3 5 12 10 6 9 7 4 1 8 11"
+ARG="7 9 2 1 0 3 4 5 6 8"
 echo $Cyan $ARG $Color_Off
-valgrind ./push_swap $ARG
+./push_swap $ARG
+
+# ARG="2 3 5 12 10 6 9 7 4 1 8 11"
+# echo $Cyan $ARG $Color_Off
+# valgrind ./push_swap $ARG
 
 # # 10
 # ARG="7 9 2 1 0 3 4 5 6 8"

@@ -6,7 +6,7 @@
 /*   By: obouhlel <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/16 14:56:33 by obouhlel          #+#    #+#             */
-/*   Updated: 2022/12/19 14:08:32 by obouhlel         ###   ########.fr       */
+/*   Updated: 2022/12/19 15:06:14 by obouhlel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -74,26 +74,24 @@ void	ft_print_info(t_info *info)
 	ft_putstrnbr_fd("min b\t= ", info->min_b, 1);
 	ft_putstrnbr_fd("med b\t= ", info->med_b, 1);
 	ft_putstr_fd("\033[0m", 1);
-	ft_putchar_fd('\n', 1);
-	ft_print_move_info(info);
+	// ft_print_move_info(info);
 	ft_print_stack_color(info->stack_a, info->stack_b);
 	ft_putstr_fd("\033[0m", 1);
 }
 
 void	ft_print_move_info(t_info *info)
 {
-	ft_putstr_fd("\033[0;35m", 1);
+	ft_putstr_fd("\n\033[0;35m", 1);
 	ft_putstr_fd("MOVE :\n", 1);
 	ft_putstrnbr_fd("ra\t= ", info->ra, 1);
 	ft_putstrnbr_fd("rb\t= ", info->rb, 1);
 	ft_putstrnbr_fd("rra\t= ", info->rra, 1);
 	ft_putstrnbr_fd("rrb\t= ", info->rrb, 1);
-	ft_putstr_fd("\033[0m", 1);
+	ft_putstr_fd("\033[0m\n", 1);
 }
 
 void	ft_init_move_info(t_info *info)
 {
-	ft_price_calculate_all_price(info);
 	info->ra = info->stack_a->id;
 	info->rb = info->stack_b->id;
 	info->rra = info->size_a - info->stack_a->id;
