@@ -6,7 +6,7 @@
 /*   By: obouhlel <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/03 14:10:03 by obouhlel          #+#    #+#             */
-/*   Updated: 2022/12/19 16:49:18 by obouhlel         ###   ########.fr       */
+/*   Updated: 2022/12/19 16:53:44 by obouhlel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@
 //include .h
 # include <stdlib.h>
 # include <unistd.h>
-
+//error gestion
 # define OK (void *)1
 # define FAIL (void *)-1
 
@@ -89,6 +89,13 @@ void	ft_print_stack_color(t_stack *stack_a, t_stack *stack_b);
 void	ft_stack_print_num_fd(t_stack *stack, int fd);
 void	*ft_stack_pos_init(t_stack *stack_a, t_stack *stack_b);
 
+//info
+t_info	*ft_init_info(t_stack *stack_a, t_stack *stack_b);
+t_info	*ft_update_info(t_info *info);
+void	ft_print_move_info(t_info *info);
+void	ft_init_move_info(t_info *info);
+void	ft_print_info(t_info *info);
+
 //error check
 //check
 int		ft_push_swap_check(t_stack *stack);
@@ -123,14 +130,24 @@ void	rr(t_stack *stack_a, t_stack *stack_b);
 void	rrr(t_stack *stack_a, t_stack *stack_b);
 
 //algo
+//calcule
 int		ft_min(t_stack *stack);
 int		ft_max(t_stack *stack);
 int		ft_med(t_stack *stack, t_info *info);
+//algo main
 void	ft_algo_push_swap(t_stack *stack_a, t_stack *stack_b);
+//algo 3
 void	ft_algo_3(t_info *info);
+//algo 5
 void	ft_algo_5(t_info *info);
+//algo n
 void	ft_algo_n(t_info *info);
 void	ft_algo_lis(t_info *info);
+
+//find
+int		ft_algo_find_id(int value, t_stack *stack);
+int		ft_algo_find_pos(int pos, t_stack *stack);
+int		ft_algo_find_next_pos(int pos, t_stack *stack);
 
 //info combot
 void	ft_calcule_best_combot(int id_a, int id_b, t_info *info);
@@ -142,17 +159,5 @@ void	ft_algo_info_ra_rrb(int id_a, int id_b, t_info *info);
 //move
 int		ft_best_price_move(int *price);
 void	ft_do_move(t_info *info);
-
-//find
-int		ft_algo_find_id(int value, t_stack *stack);
-int		ft_algo_find_pos(int pos, t_stack *stack);
-int		ft_algo_find_next_pos(int pos, t_stack *stack);
-
-//info
-t_info	*ft_init_info(t_stack *stack_a, t_stack *stack_b);
-t_info	*ft_update_info(t_info *info);
-void	ft_print_move_info(t_info *info);
-void	ft_init_move_info(t_info *info);
-void	ft_print_info(t_info *info);
 
 #endif

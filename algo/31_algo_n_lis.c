@@ -6,7 +6,7 @@
 /*   By: obouhlel <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/16 19:21:10 by obouhlel          #+#    #+#             */
-/*   Updated: 2022/12/19 16:40:11 by obouhlel         ###   ########.fr       */
+/*   Updated: 2022/12/19 16:56:03 by obouhlel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -110,10 +110,4 @@ void	ft_algo_lis(t_info *info)
 	}
 	else
 		ft_algo_lis_do_c(info);
-	if (ft_stack_pos_init(info->stack_a, info->stack_b) == FAIL)
-	{
-		free_info(info);
-		ft_putendl_fd("Error", 1);
-		exit(0);
-	}
 }
