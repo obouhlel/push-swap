@@ -6,7 +6,7 @@
 /*   By: obouhlel <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/03 14:10:03 by obouhlel          #+#    #+#             */
-/*   Updated: 2022/12/19 15:11:07 by obouhlel         ###   ########.fr       */
+/*   Updated: 2022/12/19 16:37:54 by obouhlel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,13 +26,6 @@ enum e_price{
 	RRA_RRB,
 	RA_RRB,
 	RRA_RB,
-};
-
-enum e_move{
-	RA,
-	RRA,
-	RB,
-	RRB,
 };
 
 //stack structure and function
@@ -138,8 +131,14 @@ void	ft_algo_5(t_info *info);
 void	ft_algo_n(t_info *info);
 void	ft_algo_lis(t_info *info);
 
-//price
-int		ft_best_price_move(int *price);
+//info combot
+void	ft_algo_info_ra_rb(int id_a, int id_b, t_info *info);
+void	ft_algo_info_rra_rrb(int id_a, int id_b, t_info *info);
+void	ft_algo_info_rra_rb(int id_a, int id_b, t_info *info);
+void	ft_algo_info_ra_rrb(int id_a, int id_b, t_info *info);
+
+//move
+void	ft_do_move(t_info *info);
 
 //find
 int		ft_algo_find_id(int value, t_stack *stack);

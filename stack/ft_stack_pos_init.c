@@ -6,7 +6,7 @@
 /*   By: obouhlel <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/17 14:21:36 by obouhlel          #+#    #+#             */
-/*   Updated: 2022/12/17 16:33:27 by obouhlel         ###   ########.fr       */
+/*   Updated: 2022/12/19 16:45:18 by obouhlel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 static int	*ft_stack_to_tab(t_stack *stack_a, t_stack *stack_b, int size)
 {
 	int	i;
-	int *tab;
+	int	*tab;
 
 	tab = (int *)malloc(sizeof(int) * (size));
 	if (!tab)
@@ -76,7 +76,8 @@ void	*ft_stack_pos_init(t_stack *stack_a, t_stack *stack_b)
 	const int	size = ft_stack_size(stack_a) + ft_stack_size(stack_b);
 	int			*tab;
 	int			i;
-	int			id;
+	int			id_a;
+	int			id_b;
 
 	tab = ft_stack_to_tab(stack_a, stack_b, size);
 	if (!tab)
@@ -85,10 +86,12 @@ void	*ft_stack_pos_init(t_stack *stack_a, t_stack *stack_b)
 	i = 0;
 	while (i < size)
 	{
-		if ((id = ft_algo_find_id(tab[i], stack_a)) != -1)
-			ft_pos_set(stack_a, id, (i + 1));
-		else if ((id = ft_algo_find_id(tab[i], stack_b)) != -1)
-			ft_pos_set(stack_b, id, (i + 1));
+		id_a = ft_algo_find_id(tab[i], stack_a);
+		id_b = ft_algo_find_id(tab[i], stack_b);
+		if (id_a != -1)
+			ft_pos_set(stack_a, id_a, (i + 1));
+		if (id_b != -1)
+			ft_pos_set(stack_b, id_b, (i + 1));
 		i++;
 	}
 	free(tab);
