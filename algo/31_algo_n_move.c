@@ -1,16 +1,39 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   3_algo_n_move.c                                    :+:      :+:    :+:   */
+/*   31_algo_n_move.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: obouhlel <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/19 16:28:46 by obouhlel          #+#    #+#             */
-/*   Updated: 2022/12/19 16:36:26 by obouhlel         ###   ########.fr       */
+/*   Updated: 2022/12/19 16:47:49 by obouhlel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../push_swap.h"
+
+int	ft_best_price_move(int *price)
+{
+	int			min;
+	int			i;
+
+	min = price[0];
+	i = 0;
+	while (i < 4)
+	{
+		if (min > price[i])
+			min = price[i];
+		i++;
+	}
+	i = 0;
+	while (i < 4)
+	{
+		if (min == price[i])
+			return (i);
+		i++;
+	}
+	return (-1);
+}
 
 static void	ft_do_move_rr_rrr(t_info *info)
 {

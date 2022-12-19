@@ -6,7 +6,7 @@
 /*   By: obouhlel <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/03 14:10:03 by obouhlel          #+#    #+#             */
-/*   Updated: 2022/12/19 16:37:54 by obouhlel         ###   ########.fr       */
+/*   Updated: 2022/12/19 16:49:18 by obouhlel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -90,13 +90,14 @@ void	ft_stack_print_num_fd(t_stack *stack, int fd);
 void	*ft_stack_pos_init(t_stack *stack_a, t_stack *stack_b);
 
 //error check
+//check
 int		ft_push_swap_check(t_stack *stack);
-
+//error_1
 char	**ft_clear_av(char **av, int n);
 void	ft_error_push_swap_double(t_stack *stack, char **nbrs);
 void	ft_error_push_swap_int(char **nstr, int n);
 void	ft_error_push_swap_digit(char **strs);
-
+//error_2
 void	free_nbrs_stack(char **nbrs, t_stack *stack);
 void	free_all_stack(t_stack *stack_a, t_stack *stack_b);
 void	free_info(t_info *info);
@@ -106,17 +107,17 @@ void	ft_create_stack_a(t_stack **stack, char **nbrs, int n);
 void	ft_swap(t_stack *stack);
 void	ft_rotate(t_stack *stack);
 void	ft_reverse_rotate(t_stack *stack);
-
+//sort_a
 void	pa(t_info *info);
 void	sa(t_stack *stack_a);
 void	ra(t_stack *stack_a);
 void	rra(t_stack *stack_a);
-
+//sort_b
 void	pb(t_info *info);
 void	sb(t_stack *stack_b);
 void	rb(t_stack *stack_b);
 void	rrb(t_stack *stack_b);
-
+//sort_all
 void	ss(t_stack *stack_a, t_stack *stack_b);
 void	rr(t_stack *stack_a, t_stack *stack_b);
 void	rrr(t_stack *stack_a, t_stack *stack_b);
@@ -132,12 +133,14 @@ void	ft_algo_n(t_info *info);
 void	ft_algo_lis(t_info *info);
 
 //info combot
+void	ft_calcule_best_combot(int id_a, int id_b, t_info *info);
 void	ft_algo_info_ra_rb(int id_a, int id_b, t_info *info);
 void	ft_algo_info_rra_rrb(int id_a, int id_b, t_info *info);
 void	ft_algo_info_rra_rb(int id_a, int id_b, t_info *info);
 void	ft_algo_info_ra_rrb(int id_a, int id_b, t_info *info);
 
 //move
+int		ft_best_price_move(int *price);
 void	ft_do_move(t_info *info);
 
 //find

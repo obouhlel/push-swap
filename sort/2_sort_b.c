@@ -6,7 +6,7 @@
 /*   By: obouhlel <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/16 16:15:22 by obouhlel          #+#    #+#             */
-/*   Updated: 2022/12/19 15:07:48 by obouhlel         ###   ########.fr       */
+/*   Updated: 2022/12/19 16:49:55 by obouhlel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,7 +41,12 @@ void	pa(t_info *info)
 	ft_push_b(info);
 	ft_stack_id_init(info->stack_a);
 	ft_stack_id_init(info->stack_b);
-	ft_stack_pos_init(info->stack_a, info->stack_b);
+	if (ft_stack_pos_init(info->stack_a, info->stack_b) == FAIL)
+	{
+		free_info(info);
+		ft_putendl_fd("Error", 1);
+		exit(0);
+	}
 	ft_putendl_fd("pa", 1);
 }
 
