@@ -6,7 +6,7 @@
 /*   By: obouhlel <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/03 14:10:03 by obouhlel          #+#    #+#             */
-/*   Updated: 2022/12/17 17:46:18 by obouhlel         ###   ########.fr       */
+/*   Updated: 2022/12/19 12:31:13 by obouhlel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -136,16 +136,20 @@ void	ft_algo_lis(t_info *info);
 //price
 void	ft_price_calcule(t_stack *stack, int size);
 void	ft_price_calculate_all_price(t_info *info);
-void	ft_price_combo(t_stack *stack_a, t_stack *stack_b, int tab[4]);
-int		ft_best_price_move(t_stack *stack_a, t_stack *stack_b);
+int		ft_best_price_move(int *price);
+
+//
+int		ft_tmp_combot(int *price, t_info *info);
 
 //find
 int		ft_algo_find_id(int value, t_stack *stack);
+int		ft_algo_find_pos(int pos, t_stack *stack);
 int		ft_algo_find_next_pos(int pos, t_stack *stack);
 
 //info
 t_info	*ft_init_info(t_stack *stack_a, t_stack *stack_b);
 t_info	*ft_update_info(t_info *info);
+void	ft_print_move_info(t_info *info);
 void	ft_init_move_info(t_info *info);
 void	ft_print_info(t_info *info);
 

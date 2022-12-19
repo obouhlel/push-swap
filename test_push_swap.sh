@@ -12,6 +12,10 @@ make clean
 
 echo $Cyan "\nTeste\n" $Color_Off
 
+# ARG="9 1 5 7 8 6 2 4 3 0"
+# echo $Cyan $ARG $Color_Off
+# valgrind ./push_swap $ARG
+
 # ARG="1 9 2 3 4 5 6"
 # echo $Cyan $ARG $Color_Off
 # ./push_swap $ARG

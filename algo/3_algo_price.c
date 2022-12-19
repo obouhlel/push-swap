@@ -6,7 +6,7 @@
 /*   By: obouhlel <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/16 20:52:07 by obouhlel          #+#    #+#             */
-/*   Updated: 2022/12/17 17:43:27 by obouhlel         ###   ########.fr       */
+/*   Updated: 2022/12/19 13:55:48 by obouhlel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,44 +35,47 @@ void	ft_price_combo(t_stack *stack_a, t_stack *stack_b, int *tab)
 	const int	ra_rrb = stack_a->rotate + stack_b->rotate_reverse;
 	const int	rra_rb = stack_a->rotate_reverse + stack_b->rotate;
 
-	tab[0] = ra_rb;
-	tab[1] = rra_rrb;
-	tab[2] = rra_rb;
-	tab[3] = ra_rrb;
+	tab[RA_RB] = ra_rb;
+	tab[RRA_RRB] = rra_rrb;
+	tab[RRA_RB] = rra_rb;
+	tab[RA_RRB] = ra_rrb;
 }
 
-int	ft_best_price_cost(t_stack *stack_a, t_stack *stack_b)
+int	ft_best_price_cost(int *price)
+{
+	int	combot;
+
+	combot = ft_best_price_move(price);
+	if (combot == RA_RB)
+		return (price[RA_RB]);
+	else if (combot == RRA_RRB)
+		return (price[RRA_RRB]);
+	else if (combot == RRA_RB)
+		return (price[RRA_RB]);
+	else if (combot == RA_RRB)
+		return (price[RA_RRB]);
+	return (-1);
+}
+
+int	ft_best_price_move(int *price)
 {
 	int			min;
-	int			tab[4];
 	int			i;
 
-	ft_price_combo(stack_a, stack_b, tab);
-	min = tab[0];
+	min = price[0];
 	i = 0;
 	while (i < 4)
 	{
-		if (min > tab[i])
-			min = tab[i];
+		if (min > price[i])
+			min = price[i];
 		i++;
 	}
-	return (min);
-}
-
-int	ft_best_price_move(t_stack *stack_a, t_stack *stack_b)
-{
-	int			min;
-	int			tab[4];
-	int			i;
-
-	ft_price_combo(stack_a, stack_b, tab);
-	min = tab[0];
 	i = 0;
 	while (i < 4)
 	{
-		if (min > tab[i])
-			min = tab[i];
+		if (min == price[i])
+			return (i);
 		i++;
 	}
-	return (i);
+	return (-1);
 }
