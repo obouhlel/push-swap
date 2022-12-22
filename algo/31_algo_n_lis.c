@@ -6,7 +6,7 @@
 /*   By: obouhlel <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/16 19:21:10 by obouhlel          #+#    #+#             */
-/*   Updated: 2022/12/19 16:56:03 by obouhlel         ###   ########.fr       */
+/*   Updated: 2022/12/22 13:33:49 by obouhlel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -99,11 +99,13 @@ void	ft_algo_lis(t_info *info)
 	lis_d = ft_algo_lis_d(info->stack_a);
 	if (lis_c >= lis_d)
 		ft_algo_lis_do_c(info);
-	else if (lis_d <= 3)
+	else if (lis_d <= 5)
 	{
 		ft_algo_lis_do_d(info);
 		ft_update_info(info);
-		if (lis_d == 3)
+		if (lis_d == 5 || lis_d == 4)
+			ft_algo_5(info);
+		else if (lis_d == 3)
 			ft_algo_3(info);
 		else if (lis_d == 2)
 			sa(info->stack_a);

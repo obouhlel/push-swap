@@ -1,24 +1,34 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   30_algo_n.c                                        :+:      :+:    :+:   */
+/*   31_algo_n_med.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: obouhlel <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/12/16 19:02:19 by obouhlel          #+#    #+#             */
-/*   Updated: 2022/12/22 13:35:04 by obouhlel         ###   ########.fr       */
+/*   Created: 2022/12/22 12:38:39 by obouhlel          #+#    #+#             */
+/*   Updated: 2022/12/22 13:34:08 by obouhlel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../push_swap.h"
 
-// void	ft_algo_n_price(t_stack *stack_a, t_stack *stack_b, t_info *info)
-// {
-// 	int	id_a;
-// 	int	id_b;
-// }
-
-void	ft_algo_n(t_info *info)
+void	ft_algo_n_med(t_info *info)
 {
-	ft_algo_lis(info);
+	int	i;
+
+	i = 0;
+	while (i < info->size)
+	{
+		if (info->med_a < info->stack_a->value)
+			pb(info);
+		else if (info->stack_a->value == info->med_a)
+		{
+			pb(info);
+			info->med_a = ft_med(info->stack_a, info);
+		}
+		else if (info->med_a > info->stack_a->value)
+			ra(info->stack_a);
+		i++;
+	}
+	ft_update_info(info);
 }

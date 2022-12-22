@@ -6,7 +6,7 @@
 /*   By: obouhlel <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/03 14:10:03 by obouhlel          #+#    #+#             */
-/*   Updated: 2022/12/19 16:53:44 by obouhlel         ###   ########.fr       */
+/*   Updated: 2022/12/22 12:46:15 by obouhlel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -142,6 +142,7 @@ void	ft_algo_3(t_info *info);
 void	ft_algo_5(t_info *info);
 //algo n
 void	ft_algo_n(t_info *info);
+void	ft_algo_n_med(t_info *info);
 void	ft_algo_lis(t_info *info);
 
 //find

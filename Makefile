@@ -6,6 +6,7 @@ SRCS	= main_push_swap.c \
 		algo/30_algo_n.c \
 		algo/31_algo_n_find.c \
 		algo/31_algo_n_info_combot.c \
+		algo/31_algo_n_med.c \
 		algo/31_algo_n_lis.c \
 		algo/31_algo_n_move.c \
 		error_check/push_swap_check.c \
