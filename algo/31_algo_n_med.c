@@ -6,7 +6,7 @@
 /*   By: obouhlel <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/22 12:38:39 by obouhlel          #+#    #+#             */
-/*   Updated: 2022/12/22 16:01:08 by obouhlel         ###   ########.fr       */
+/*   Updated: 2022/12/23 18:03:55 by obouhlel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,8 @@ void	ft_algo_n_med(t_info *info)
 		info->size_a = ft_stack_size(info->stack_a);
 	}
 	ft_update_info(info);
-	ft_algo_3(info);
+	if (!ft_push_swap_check(info->stack_a))
+		ft_algo_3(info);
 	if (!ft_stack_pos_init(info->stack_a, info->stack_b))
 	{
 		free_info(info);

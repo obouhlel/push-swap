@@ -99,6 +99,7 @@ RES=$(./push_swap $ARG | wc -l)
 TEST=$(if [ $(./push_swap $ARG | ./checker_linux $ARG) = "OK" ]; then echo $Green "OK" $Color_Off; else echo $Red "KO" $Color_Off; fi)
 echo $Cyan "5.4\t:" $TEST '\t' $Yellow $RES $Color_Off
 
+# 7
 ARG="1 9 2 3 4 5 6"
 RES=$(./push_swap $ARG | wc -l)
 TEST=$(if [ $(./push_swap $ARG | ./checker_linux $ARG) = "OK" ]; then echo $Green "OK" $Color_Off; else echo $Red "KO" $Color_Off; fi)

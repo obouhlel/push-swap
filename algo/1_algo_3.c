@@ -6,7 +6,7 @@
 /*   By: obouhlel <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/16 18:40:49 by obouhlel          #+#    #+#             */
-/*   Updated: 2022/12/16 18:45:54 by obouhlel         ###   ########.fr       */
+/*   Updated: 2022/12/23 17:59:49 by obouhlel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,8 +30,8 @@ void	ft_algo_3(t_info *info)
 	{
 		if (info->stack_a->value == info->max_a)
 		{
-			ra(info->stack_a);
 			sa(info->stack_a);
+			rra(info->stack_a);
 		}
 		else
 			rra(info->stack_a);

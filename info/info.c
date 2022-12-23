@@ -6,7 +6,7 @@
 /*   By: obouhlel <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/16 14:56:33 by obouhlel          #+#    #+#             */
-/*   Updated: 2022/12/19 16:30:57 by obouhlel         ###   ########.fr       */
+/*   Updated: 2022/12/23 18:07:44 by obouhlel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,6 @@ t_info	*ft_init_info(t_stack *stack_a, t_stack *stack_b)
 	}
 	info->stack_a = stack_a;
 	info->stack_b = stack_b;
-	info->size = ft_stack_size(stack_a) + ft_stack_size(stack_b);
 	info->size_a = ft_stack_size(stack_a);
 	info->max_a = ft_max(stack_a);
 	info->min_a = ft_min(stack_a);
@@ -56,9 +55,6 @@ t_info	*ft_update_info(t_info *info)
 
 void	ft_print_info(t_info *info)
 {
-	ft_putchar_fd('\n', 1);
-	ft_putstr_fd("\033[0;36m", 1);
-	ft_putstrnbr_fd("Size total = ", info->size, 1);
 	ft_putchar_fd('\n', 1);
 	ft_putstr_fd("\033[0;31m", 1);
 	ft_putstr_fd("STACK A :\n", 1);
@@ -92,8 +88,8 @@ void	ft_print_move_info(t_info *info)
 
 void	ft_init_move_info(t_info *info)
 {
-	info->ra = info->stack_a->id;
-	info->rb = info->stack_b->id;
-	info->rra = info->size_a - info->stack_a->id;
-	info->rrb = info->size_b - info->stack_b->id;
+	info->ra = -1;
+	info->rb = -1;
+	info->rra = -1;
+	info->rrb = -1;
 }
