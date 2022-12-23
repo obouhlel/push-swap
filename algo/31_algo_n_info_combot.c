@@ -6,7 +6,7 @@
 /*   By: obouhlel <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/19 16:24:06 by obouhlel          #+#    #+#             */
-/*   Updated: 2022/12/23 18:11:51 by obouhlel         ###   ########.fr       */
+/*   Updated: 2022/12/23 20:32:29 by obouhlel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,23 +28,27 @@ void	ft_calcule_best_combot(int id_a, int id_b, t_info *info)
 		if (move == RA_RB)
 			ft_algo_info_ra_rb(id_a, id_b, info);
 		else if (move == RRA_RRB)
-			ft_algo_info_ra_rb(id_a, id_b, info);
+			ft_algo_info_rra_rrb(id_a, id_b, info);
 		else if (move == RRA_RB)
-			ft_algo_info_ra_rb(id_a, id_b, info);
+			ft_algo_info_rra_rb(id_a, id_b, info);
 		else if (move == RA_RRB)
-			ft_algo_info_ra_rb(id_a, id_b, info);
+			ft_algo_info_ra_rrb(id_a, id_b, info);
 		start++;
 	}
 	else if (start)
 	{
-		if (move == RA_RB && price[move] < (info->ra + info->rb))
-			ft_algo_info_ra_rb(id_a, id_b, info);
-		else if (move == RRA_RRB && price[move] < (info->rra + info->rrb))
-			ft_algo_info_ra_rb(id_a, id_b, info);
-		else if (move == RRA_RB && price[move] < (info->rra + info->rb))
-			ft_algo_info_ra_rb(id_a, id_b, info);
-		else if (move == RA_RRB && price[move] < (info->ra + info->rrb))
-			ft_algo_info_ra_rb(id_a, id_b, info);
+		if (move == RA_RB)
+			if (price[move] < (info->ra + info->rb))
+				ft_algo_info_ra_rb(id_a, id_b, info);
+		if (move == RRA_RRB)
+			if (price[move] < (info->rra + info->rrb))
+				ft_algo_info_rra_rrb(id_a, id_b, info);
+		if (move == RRA_RB)
+			if (price[move] < (info->rra + info->rb))
+				ft_algo_info_rra_rb(id_a, id_b, info);
+		if (move == RA_RRB)
+			if (price[move] < (info->ra + info->rrb))
+				ft_algo_info_ra_rrb(id_a, id_b, info);
 	}
 	if (id_b == (info->size_b - 1))
 		start = 0;

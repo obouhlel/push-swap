@@ -6,53 +6,52 @@
 /*   By: obouhlel <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/16 19:02:19 by obouhlel          #+#    #+#             */
-/*   Updated: 2022/12/23 18:36:38 by obouhlel         ###   ########.fr       */
+/*   Updated: 2022/12/23 21:12:21 by obouhlel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../push_swap.h"
 
-void	ft_algo_n_price_end(t_stack *stack_a, t_stack *stack_b, t_info *info)
-{
-	int	id_a;
-	int	id_b;
+// void	ft_algo_n_price_end(t_stack *stack_a, t_stack *stack_b, t_info *info)
+// {
+// 	int	id_a;
+// 	int	id_b;
 
-	if (info->max_a > info->max_b)
-		info->max_b = info->max_a;
-	if (stack_b->value == info->max_b)
-	{
-		id_b = 0;
-		id_a = ft_algo_find_id(info->min_a, stack_a);
-		ft_calcule_best_combot(id_a, id_b, info);
-	}
-	else
-	{
-		id_b = 0;
-		id_a = ft_algo_find_next_pos(stack_b->pos, stack_a);
-		ft_calcule_best_combot(id_a, id_b, info);
-	}
-}
+// 	if (info->max_a > info->max_b)
+// 		info->max_b = info->max_a;
+// 	if (stack_b->value == info->max_b)
+// 	{
+// 		id_b = 0;
+// 		id_a = ft_algo_find_id(info->min_a, stack_a);
+// 		ft_calcule_best_combot(id_a, id_b, info);
+// 	}
+// 	else
+// 	{
+// 		id_b = 0;
+// 		id_a = ft_algo_find_next_pos(stack_b->pos, stack_a);
+// 		ft_calcule_best_combot(id_a, id_b, info);
+// 	}
+// }
 
 void	ft_algo_n_price(t_stack *stack_a, t_stack *stack_b, t_info *info)
 {
 	int	id_a;
 	int	id_b;
+	int	i;
 
 	while (stack_b)
 	{
 		id_b = stack_b->id;
-		if (stack_a->pos > stack_b->pos)
+		id_a = ft_algo_find_next_pos(stack_b->pos, stack_a);
+		i = 0;
+		while (id_a == -1 && stack_b->pos + i < info->size_a + info->size_b)
 		{
-			id_a = stack_a->id;
-			ft_calcule_best_combot(id_a, id_b, info);
+			id_a = ft_algo_find_pos(stack_b->pos + i, stack_a);
+			i++;
 		}
-		else
-		{
+		if (id_a == -1)
 			id_a = ft_algo_find_id(info->min_a, stack_a);
-			ft_calcule_best_combot(id_a, id_b, info);
-		}
-		if (info->ra + info->rra + info->rb + info->rrb == 0)
-			return ;
+		ft_calcule_best_combot(id_a, id_b, info);
 		stack_b = stack_b->next;
 	}
 }
@@ -87,17 +86,16 @@ void	ft_algo_n(t_info *info)
 	int	i;
 
 	ft_algo_n_med(info);
-	i = 2;
-	while (i)
+	i = 5;
+	while (info->size_b)
 	{
 		ft_algo_n_price(info->stack_a, info->stack_b, info);
 		ft_do_move(info);
+		ft_init_move_info(info);
 		ft_update_info(info);
 		i--;
 	}
-	// ft_algo_n_price_end(info->stack_a, info->stack_b, info);
-	// ft_do_move(info);
-	// ft_algo_n_sort(info);
+	ft_algo_n_sort(info);
 	// ft_stack_pos_init(info->stack_a, info->stack_b);
-	ft_print_info(info);
+	// ft_print_info(info);
 }
