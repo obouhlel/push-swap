@@ -65,7 +65,7 @@ ${NAME}	: ${OBJS} ${HEADER}
 		${CC} ${CFLAGS} ./lib/${LIB} -o ${NAME}
 
 clean	:
-		rm -f ${OBJS} ${LIB} ${DEPS}
+		rm -f ${OBJS} ./lib/${LIB} ${DEPS}
 
 fclean	: clean
 		rm -f ${NAME}
