@@ -94,5 +94,3 @@ echo $Cyan "500\t:" $TEST '\t' $Yellow $RES $Color_Off
 
 rm -f push_swap
 rm test_*
-
-# thank : https://www.dcode.fr/nombre-aleatoire
