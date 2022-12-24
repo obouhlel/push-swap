@@ -6,11 +6,11 @@
 /*   By: obouhlel <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/03 15:43:23 by obouhlel          #+#    #+#             */
-/*   Updated: 2022/12/16 15:56:54 by obouhlel         ###   ########.fr       */
+/*   Updated: 2022/12/24 12:46:02 by obouhlel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "../includes/push_swap.h"
 
 static void	main_error(char **nbrs, t_stack **stack_a)
 {

@@ -93,6 +93,6 @@ TEST=$(if [ $(./push_swap $ARG | ./checker_linux $ARG) = "OK" ]; then echo $Gree
 echo $Cyan "500\t:" $TEST '\t' $Yellow $RES $Color_Off
 
 rm -f push_swap
-mv test_* .test
+rm test_*
 
 # thank : https://www.dcode.fr/nombre-aleatoire

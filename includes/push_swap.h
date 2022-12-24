@@ -6,7 +6,7 @@
 /*   By: obouhlel <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/03 14:10:03 by obouhlel          #+#    #+#             */
-/*   Updated: 2022/12/24 11:01:15 by obouhlel         ###   ########.fr       */
+/*   Updated: 2022/12/24 13:11:23 by obouhlel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -151,14 +151,16 @@ int		ft_algo_find_pos(int pos, t_stack *stack);
 int		ft_algo_find_next_pos(int pos, t_stack *stack);
 
 //info combot
+int		ft_best_price_move(int *price);
 void	ft_calcule_best_combot(int id_a, int id_b, t_info *info);
+
+//info init
 void	ft_algo_info_ra_rb(int id_a, int id_b, t_info *info);
 void	ft_algo_info_rra_rrb(int id_a, int id_b, t_info *info);
 void	ft_algo_info_rra_rb(int id_a, int id_b, t_info *info);
 void	ft_algo_info_ra_rrb(int id_a, int id_b, t_info *info);
 
 //move
-int		ft_best_price_move(int *price);
 void	ft_do_move(t_info *info);
 
 #endif
