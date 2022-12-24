@@ -61,11 +61,10 @@ all		: ${NAME}
 
 ${NAME}	: ${OBJS} ${HEADER}
 		ar rcs ${LIB} ${OBJS}
-		mv ${LIB} ./lib
-		${CC} ${CFLAGS} ./lib/${LIB} -o ${NAME}
+		${CC} ${CFLAGS} ${LIB} -o ${NAME}
 
 clean	:
-		rm -f ${OBJS} ./lib/${LIB} ${DEPS}
+		rm -f ${OBJS} ${LIB} ${DEPS}
 
 fclean	: clean
 		rm -f ${NAME}
