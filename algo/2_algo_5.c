@@ -6,7 +6,7 @@
 /*   By: obouhlel <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/16 18:51:53 by obouhlel          #+#    #+#             */
-/*   Updated: 2022/12/22 13:26:40 by obouhlel         ###   ########.fr       */
+/*   Updated: 2022/12/24 10:50:23 by obouhlel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,7 +31,7 @@ void	ft_algo_5(t_info *info)
 			ra(info->stack_a);
 	}
 	ft_update_info(info);
-	if (info->size_a == 3)
+	if (info->size_a == 3 && !ft_push_swap_check(info->stack_a))
 		ft_algo_3(info);
 	else if (info->stack_a->value > info->stack_a->next->value)
 		sa(info->stack_a);

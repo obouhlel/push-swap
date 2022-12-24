@@ -6,7 +6,7 @@
 /*   By: obouhlel <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/16 14:56:33 by obouhlel          #+#    #+#             */
-/*   Updated: 2022/12/23 18:07:44 by obouhlel         ###   ########.fr       */
+/*   Updated: 2022/12/24 11:02:00 by obouhlel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,6 +23,7 @@ t_info	*ft_init_info(t_stack *stack_a, t_stack *stack_b)
 		ft_putendl_fd("Error", 1);
 		exit(0);
 	}
+	info->size = ft_stack_size(stack_a) + ft_stack_size(stack_b);
 	info->stack_a = stack_a;
 	info->stack_b = stack_b;
 	info->size_a = ft_stack_size(stack_a);

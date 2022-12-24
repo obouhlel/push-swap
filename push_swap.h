@@ -6,7 +6,7 @@
 /*   By: obouhlel <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/03 14:10:03 by obouhlel          #+#    #+#             */
-/*   Updated: 2022/12/23 18:07:32 by obouhlel         ###   ########.fr       */
+/*   Updated: 2022/12/24 11:01:15 by obouhlel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,6 +43,7 @@ typedef struct s_info
 {
 	t_stack	*stack_a;
 	t_stack	*stack_b;
+	int		size;
 	int		size_a;
 	int		max_a;
 	int		min_a;

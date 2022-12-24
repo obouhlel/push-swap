@@ -6,7 +6,7 @@
 /*   By: obouhlel <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/16 19:02:19 by obouhlel          #+#    #+#             */
-/*   Updated: 2022/12/23 21:19:01 by obouhlel         ###   ########.fr       */
+/*   Updated: 2022/12/24 11:03:58 by obouhlel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,8 +22,8 @@ void	ft_algo_n_price(t_stack *stack_a, t_stack *stack_b, t_info *info)
 	{
 		id_b = stack_b->id;
 		id_a = ft_algo_find_next_pos(stack_b->pos, stack_a);
-		i = 0;
-		while (id_a == -1 && stack_b->pos + i < info->size_a + info->size_b)
+		i = 1;
+		while (id_a == -1 && (stack_b->pos + i) <= info->size)
 		{
 			id_a = ft_algo_find_pos(stack_b->pos + i, stack_a);
 			i++;
@@ -39,6 +39,7 @@ void	ft_algo_n_sort(t_info *info)
 {
 	int	id_min;
 
+	ft_init_move_info(info);
 	id_min = ft_algo_find_id(info->min_a, info->stack_a);
 	info->ra = id_min;
 	info->rra = info->size_a - id_min;
@@ -62,8 +63,6 @@ void	ft_algo_n_sort(t_info *info)
 
 void	ft_algo_n(t_info *info)
 {
-	int	i;
-
 	ft_algo_n_med(info);
 	while (info->size_b)
 	{
