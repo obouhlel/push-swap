@@ -1,23 +1,25 @@
-# Nom de votre exécutable
+# Name
 NAME		= push_swap
 
-# Répertoires
+# Directories
 SRCS_PATH	:= ./srcs/
 OBJS_PATH	:= ./objs/
 INCS_PATH	:= ./incs/
 
-# Fichiers source
-SRCS		= main.c parsing.c
-SRCS		+= utils/convertion.c utils/string.c utils/print.c utils/split.c utils/free.c
+# Files
+SRCS		= main.c parsing.c data.c
+SRCS		+= utils/convertion.c utils/string.c utils/print.c utils/split.c utils/free.c utils/memory.c
+# SRCS		+= stack/swap.c stack/push.c stack/rotate.c stack/rotate_reverse.c
+SRCS		+= debug.c
 SRCS		:= $(addprefix $(SRCS_PATH), $(SRCS))
 OBJS		:= $(SRCS:$(SRCS_PATH)%.c=$(OBJS_PATH)%.o)
 DEPS		:= $(OBJS:.o=.d)
 
-# Compilation
+# Compilator
 CC			= gcc
 CFLAGS		= -Wall -Wextra -Werror -MMD -g3 -I $(INCS_PATH)
 
-# Règles
+# Rules
 all		: $(NAME)
 
 $(NAME)	: $(OBJS)
@@ -33,10 +35,10 @@ re		: fclean all
 
 .PHONY	: all clean fclean re
 
-# Règle générique pour générer les fichiers objets
+# Rules for .o files
 $(OBJS_PATH)%.o : $(SRCS_PATH)%.c
 		@mkdir -p $(@D)
 		$(CC) $(CFLAGS) -c $< -o $@
 
-# Inclusion des fichiers de dépendances
+# Dependencies
 -include $(DEPS)

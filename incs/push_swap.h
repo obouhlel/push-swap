@@ -6,7 +6,7 @@
 /*   By: obouhlel <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/03 14:10:03 by obouhlel          #+#    #+#             */
-/*   Updated: 2023/10/17 16:46:00 by obouhlel         ###   ########.fr       */
+/*   Updated: 2023/10/17 20:16:59 by obouhlel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,12 +25,36 @@
 
 enum
 {
-	NO_ERROR,
-	ERROR_ARGS_NUMBER,
-	ERROR_ARGS_EMPTY,
-	ERROR_PARSING
+	NO_ERROR = 0,
+	ERROR_ARGS_NUMBER = 1,
+	ERROR_ARGS_EMPTY = 2,
+	ERROR_PARSING = 3,
+	ERROR_INIT = 4
 };
 
-int	parsing(int nb_nbrs, char **strs_nbrs);
+typedef struct s_stack
+{
+	int	value;
+	int	index;
+	int	position;
+}	t_stack;
+typedef struct s_data
+{
+	t_stack	*stack_a;
+	t_stack	*stack_b;
+	int		*tab;
+	int		*sorted_tab;
+	int		nb_nbrs;
+	int		size_a;
+	int		size_b;
+}	t_data;
+
+int		*parsing(int ac, char **strs_nbrs, int *nb_nbrs);
+
+int		init_data(t_data *data);
+void	destroy_data(t_data *data);
+int		found_position(int *sorted_tab, int value, int size);
+
+void	print_data(t_data *data);
 
 #endif

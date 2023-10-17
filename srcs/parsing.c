@@ -6,7 +6,7 @@
 /*   By: obouhlel <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/17 16:19:55 by obouhlel          #+#    #+#             */
-/*   Updated: 2023/10/17 17:13:29 by obouhlel         ###   ########.fr       */
+/*   Updated: 2023/10/17 18:38:04 by obouhlel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,16 +47,6 @@ static int	all_is_number(char **strs)
 	return (TRUE);
 }
 
-static int	calculate_nb_nbrs(char **strs_nbrs)
-{
-	int	nb;
-
-	nb = 0;
-	while (strs_nbrs[nb])
-		nb++;
-	return (nb);
-}
-
 static int	*check_overflow_and_creat_tab(char **strs_nbrs, int nb_nbrs)
 {
 	long	tmp;
@@ -81,29 +71,51 @@ static int	*check_overflow_and_creat_tab(char **strs_nbrs, int nb_nbrs)
 	return (tab);
 }
 
-int	parsing(int ac, char **strs_nbrs)
+int	is_duplicate(int *tab, int nb_nbrs)
+{
+	int	i;
+	int	j;
+
+	i = 0;
+	while (i < nb_nbrs)
+	{
+		j = i + 1;
+		while (j < nb_nbrs)
+		{
+			if (tab[i] == tab[j])
+				return (TRUE);
+			j++;
+		}
+		i++;
+	}
+	return (FALSE);
+}
+
+int	*parsing(int ac, char **strs_nbrs, int *nb_nbrs)
 {
 	int	*tab;
-	int	nb_nbrs;
 
-	nb_nbrs = ac;
 	if (ac == 1)
 	{
 		strs_nbrs = ft_split(strs_nbrs[0], ' ');
 		if (!strs_nbrs)
-			return (EXIT_FAILURE);
-		nb_nbrs = calculate_nb_nbrs(strs_nbrs);
+			return (NULL);
+		*nb_nbrs = 0;
+		while (strs_nbrs[*nb_nbrs])
+			*nb_nbrs += 1;
 	}
 	if (all_is_number(strs_nbrs) == FALSE)
 	{
 		if (ac == 1)
 			ft_free_ptrs((void **)strs_nbrs);
-		return (EXIT_FAILURE);
+		return (NULL);
 	}
-	tab = check_overflow_and_creat_tab(strs_nbrs, nb_nbrs);
+	tab = check_overflow_and_creat_tab(strs_nbrs, *nb_nbrs);
 	if (ac == 1)
 		ft_free_ptrs((void **)strs_nbrs);
 	if (!tab)
-		return (EXIT_FAILURE);
-	return (EXIT_SUCCESS);
+		return (NULL);
+	if (is_duplicate(tab, *nb_nbrs) == TRUE)
+		return (ft_free((void **)&tab), NULL);
+	return (tab);
 }
