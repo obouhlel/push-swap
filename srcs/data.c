@@ -6,7 +6,7 @@
 /*   By: obouhlel <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/17 17:36:56 by obouhlel          #+#    #+#             */
-/*   Updated: 2023/10/17 19:47:54 by obouhlel         ###   ########.fr       */
+/*   Updated: 2023/10/17 20:27:46 by obouhlel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,8 +39,8 @@ static int	*bubble_sort(int *tab, int size)
 		j = size - 1;
 		while (j > i)
 		{
-			if (tab[j] < tab[j - 1])
-				swap_int(&tab[j], &tab[j - 1]);
+			if (new_tab[j] < new_tab[j - 1])
+				swap_int(&new_tab[j], &new_tab[j - 1]);
 			j--;
 		}
 		i++;

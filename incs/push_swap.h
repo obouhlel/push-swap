@@ -6,7 +6,7 @@
 /*   By: obouhlel <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/03 14:10:03 by obouhlel          #+#    #+#             */
-/*   Updated: 2023/10/17 20:16:59 by obouhlel         ###   ########.fr       */
+/*   Updated: 2023/10/17 20:28:35 by obouhlel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,7 +54,5 @@ int		*parsing(int ac, char **strs_nbrs, int *nb_nbrs);
 int		init_data(t_data *data);
 void	destroy_data(t_data *data);
 int		found_position(int *sorted_tab, int value, int size);
-
-void	print_data(t_data *data);
 
 #endif
