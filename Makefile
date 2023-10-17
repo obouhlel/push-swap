@@ -1,39 +1,42 @@
+# Nom de votre exécutable
 NAME		= push_swap
 
-#PATH
-SRCS_PATH	:=	./srcs/
-OBJS_PATH	:=	./objs/
-INCS_PATH	:=	./incs/
+# Répertoires
+SRCS_PATH	:= ./srcs/
+OBJS_PATH	:= ./objs/
+INCS_PATH	:= ./incs/
 
-#FILES
-SRCS		:= main.c
-SRCS		:= ${addprefix ${SRCS_PATH}, ${SRCS}}
-OBJS		:= ${SRCS:.c=.o}
-OBJS		:= ${subst ${SRCS_PATH}, ${OBJS_PATH}, ${OBJS}}
-DEPS		:= ${OBJS:.o=.d}
+# Fichiers source
+SRCS		= main.c parsing.c
+SRCS		+= utils/convertion.c utils/string.c utils/print.c utils/split.c utils/free.c
+SRCS		:= $(addprefix $(SRCS_PATH), $(SRCS))
+OBJS		:= $(SRCS:$(SRCS_PATH)%.c=$(OBJS_PATH)%.o)
+DEPS		:= $(OBJS:.o=.d)
 
-#COMPILATION
+# Compilation
 CC			= gcc
-CFLAGS		= -Wall -Wextra -Werror -MMD -g3 -I ${INCS_PATH}
+CFLAGS		= -Wall -Wextra -Werror -MMD -g3 -I $(INCS_PATH)
 
-#RULES
-all		: ${NAME}
+# Règles
+all		: $(NAME)
 
-${NAME}	: ${OBJS}
-		${CC} ${OBJS} -o ${NAME}
+$(NAME)	: $(OBJS)
+		$(CC) $(OBJS) -o $(NAME)
 
 clean	:
-		rm -rf ${OBJS_PATH}
+		rm -rf $(OBJS_PATH)
 
 fclean	: clean
-		rm -f ${NAME}
+		rm -f $(NAME)
 
 re		: fclean all
 
 .PHONY	: all clean fclean re
 
-${OBJS_PATH}%.o : ${SRCS_PATH}%.c
-		@mkdir -p ${OBJS_PATH}
-		${CC} ${CFLAGS} -c $< -o $@
+# Règle générique pour générer les fichiers objets
+$(OBJS_PATH)%.o : $(SRCS_PATH)%.c
+		@mkdir -p $(@D)
+		$(CC) $(CFLAGS) -c $< -o $@
 
--include ${DEPS}
+# Inclusion des fichiers de dépendances
+-include $(DEPS)

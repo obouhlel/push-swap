@@ -1,36 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   push_swap.h                                        :+:      :+:    :+:   */
+/*   string.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: obouhlel <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/12/03 14:10:03 by obouhlel          #+#    #+#             */
-/*   Updated: 2023/10/17 16:46:00 by obouhlel         ###   ########.fr       */
+/*   Created: 2023/10/17 16:07:49 by obouhlel          #+#    #+#             */
+/*   Updated: 2023/10/17 16:37:10 by obouhlel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-// read, write, malloc, free, exit
+#include "utils.h"
 
-#ifndef PUSH_SWAP_H
-# define PUSH_SWAP_H
-
-# include <stdlib.h>
-# include <unistd.h>
-
-# include "utils.h"
-
-# define TRUE 1
-# define FALSE 0
-
-enum
+size_t	ft_strlen(char *str)
 {
-	NO_ERROR,
-	ERROR_ARGS_NUMBER,
-	ERROR_ARGS_EMPTY,
-	ERROR_PARSING
-};
+	size_t	i;
 
-int	parsing(int nb_nbrs, char **strs_nbrs);
-
-#endif
+	i = 0;
+	while (str[i])
+		i++;
+	return (i);
+}
