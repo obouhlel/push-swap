@@ -1,20 +1,22 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putstrnbr_fd.c                                  :+:      :+:    :+:   */
+/*   main.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: obouhlel <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/12/16 11:50:08 by obouhlel          #+#    #+#             */
-/*   Updated: 2022/12/24 12:40:27 by obouhlel         ###   ########.fr       */
+/*   Created: 2022/12/03 15:43:23 by obouhlel          #+#    #+#             */
+/*   Updated: 2023/10/17 15:24:18 by obouhlel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../../includes/push_swap.h"
+#include "push_swap.h"
 
-void	ft_putstrnbr_fd(char *str, int nbr, int fd)
+int	main(int ac, char **av)
 {
-	ft_putstr_fd(str, fd);
-	ft_putnbr_fd(nbr, fd);
-	ft_putchar_fd('\n', fd);
+	(void)ac;
+	(void)av;
+
+	write(1, "Hello World!\n", 13);
+	return (0);
 }

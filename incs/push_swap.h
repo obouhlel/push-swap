@@ -1,27 +1,21 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_stack_add_front.c                               :+:      :+:    :+:   */
+/*   push_swap.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: obouhlel <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/12/16 14:41:42 by obouhlel          #+#    #+#             */
-/*   Updated: 2022/12/24 12:40:27 by obouhlel         ###   ########.fr       */
+/*   Created: 2022/12/03 14:10:03 by obouhlel          #+#    #+#             */
+/*   Updated: 2023/10/17 15:24:01 by obouhlel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../../includes/push_swap.h"
+// read, write, malloc, free, exit
 
-void	ft_stack_add_front(t_stack **stack, t_stack *new)
-{
-	if (!stack || !new)
-		return ;
-	if (!(*stack))
-	{
-		(*stack) = new;
-		return ;
-	}
-	(*stack)->previous = new;
-	new->next = (*stack);
-	(*stack) = new;
-}
+#ifndef PUSH_SWAP_H
+# define PUSH_SWAP_H
+
+# include <stdlib.h>
+# include <unistd.h>
+
+#endif

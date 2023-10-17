@@ -1,70 +1,29 @@
-SRCS	= srcs/main_push_swap.c \
-		srcs/algo/00_algo_calcule.c \
-		srcs/algo/0_algo_main.c \
-		srcs/algo/1_algo_3.c \
-		srcs/algo/2_algo_5.c \
-		srcs/algo/30_algo_n.c \
-		srcs/algo/31_algo_n_find.c \
-		srcs/algo/31_algo_n_info_init.c \
-		srcs/algo/31_algo_n_info_combot.c \
-		srcs/algo/31_algo_n_med.c \
-		srcs/algo/31_algo_n_move.c \
-		srcs/error_check/push_swap_check.c \
-		srcs/error_check/push_swap_error_1.c \
-		srcs/error_check/push_swap_error_2.c \
-		srcs/info/info.c \
-		srcs/libft/ft_atoi.c \
-		srcs/libft/ft_atoi_long.c \
-		srcs/libft/ft_bzero.c \
-		srcs/libft/ft_calloc.c \
-		srcs/libft/ft_isdigit.c \
-		srcs/libft/ft_putchar_fd.c \
-		srcs/libft/ft_putendl_fd.c \
-		srcs/libft/ft_putnbr_fd.c \
-		srcs/libft/ft_putstr_fd.c \
-		srcs/libft/ft_putstrnbr_fd.c \
-		srcs/libft/ft_split.c \
-		srcs/libft/ft_strjoin.c \
-		srcs/libft/ft_strjoin_free.c \
-		srcs/libft/ft_strlcat.c \
-		srcs/libft/ft_strlen.c \
-		srcs/stack/ft_print_stack_color.c \
-		srcs/stack/ft_stack_add_back.c \
-		srcs/stack/ft_stack_add_front.c \
-		srcs/stack/ft_stack_clear.c \
-		srcs/stack/ft_stack_delone.c \
-		srcs/stack/ft_stack_deltop.c \
-		srcs/stack/ft_stack_id_init.c \
-		srcs/stack/ft_stack_pos_init.c \
-		srcs/stack/ft_stack_last.c \
-		srcs/stack/ft_stack_new.c \
-		srcs/stack/ft_stack_print_num_fd.c \
-		srcs/stack/ft_stack_size.c \
-		srcs/sort/0_sort.c \
-		srcs/sort/1_sort_a.c \
-		srcs/sort/2_sort_b.c \
-		srcs/sort/3_sort_all.c
+NAME		= push_swap
 
-OBJS	= ${SRCS:.c=.o}
+#PATH
+SRCS_PATH	:=	./srcs/
+OBJS_PATH	:=	./objs/
+INCS_PATH	:=	./incs/
 
-CC		= gcc
+#FILES
+SRCS		:= main.c
+SRCS		:= ${addprefix ${SRCS_PATH}, ${SRCS}}
+OBJS		:= ${SRCS:.c=.o}
+OBJS		:= ${subst ${SRCS_PATH}, ${OBJS_PATH}, ${OBJS}}
+DEPS		:= ${OBJS:.o=.d}
 
-CFLAGS	= -Wall -Wextra -Werror -g3
+#COMPILATION
+CC			= gcc
+CFLAGS		= -Wall -Wextra -Werror -MMD -g3 -I ${INCS_PATH}
 
-LIB		= libps.a
-
-HEADER	= ./includes/push_swap.h
-
-NAME	= push_swap
-
+#RULES
 all		: ${NAME}
 
-${NAME}	: ${OBJS} ${HEADER}
-		ar rcs ${LIB} ${OBJS}
-		${CC} ${CFLAGS} ${LIB} -o ${NAME}
+${NAME}	: ${OBJS}
+		${CC} ${OBJS} -o ${NAME}
 
 clean	:
-		rm -f ${OBJS} ${LIB} ${DEPS}
+		rm -rf ${OBJS_PATH}
 
 fclean	: clean
 		rm -f ${NAME}
@@ -73,5 +32,8 @@ re		: fclean all
 
 .PHONY	: all clean fclean re
 
-%.o		: %.c
+${OBJS_PATH}%.o : ${SRCS_PATH}%.c
+		@mkdir -p ${OBJS_PATH}
 		${CC} ${CFLAGS} -c $< -o $@
+
+-include ${DEPS}
