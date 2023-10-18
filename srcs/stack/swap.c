@@ -6,7 +6,7 @@
 /*   By: obouhlel <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/18 09:41:00 by obouhlel          #+#    #+#             */
-/*   Updated: 2023/10/18 11:48:25 by obouhlel         ###   ########.fr       */
+/*   Updated: 2023/10/18 16:33:52 by obouhlel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,20 +24,14 @@ static void	swap(t_stack *stack_a, t_stack *stack_b)
 void	sa(t_stack *stack_a, int size_a)
 {
 	if (size_a > 1)
-	{
 		swap(&stack_a[0], &stack_a[1]);
-		reset_index_of_stack(stack_a, size_a);
-	}
 	ft_putendl("sa");
 }
 
 void	sb(t_stack *stack_b, int size_b)
 {
 	if (size_b > 1)
-	{
 		swap(&stack_b[0], &stack_b[1]);
-		reset_index_of_stack(stack_b, size_b);
-	}
 	ft_putendl("sb");
 }
 

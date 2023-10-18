@@ -6,7 +6,7 @@
 /*   By: obouhlel <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/17 19:48:40 by obouhlel          #+#    #+#             */
-/*   Updated: 2023/10/18 11:23:09 by obouhlel         ###   ########.fr       */
+/*   Updated: 2023/10/18 16:32:48 by obouhlel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,13 +27,6 @@ void	print_stack(t_stack *stack, int size)
 		printf("%d\t", stack[i].value);
 		i++;
 	}
-	printf("\nindex =\t\t");
-	i = 0;
-	while (i < size)
-	{
-		printf("%d\t", stack[i].index);
-		i++;
-	}
 	printf("\npos =\t\t");
 	i = 0;
 	while (i < size)
@@ -42,4 +35,11 @@ void	print_stack(t_stack *stack, int size)
 		i++;
 	}
 	printf("\n");
+}
+
+void	print_info(t_info info)
+{
+	printf("min = %d\n", info.min);
+	printf("max = %d\n", info.max);
+	printf("median = %d\n", info.median);
 }

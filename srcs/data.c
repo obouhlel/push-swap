@@ -6,13 +6,13 @@
 /*   By: obouhlel <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/17 17:36:56 by obouhlel          #+#    #+#             */
-/*   Updated: 2023/10/18 11:03:21 by obouhlel         ###   ########.fr       */
+/*   Updated: 2023/10/18 16:32:59 by obouhlel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-static void	swap_int(int *a, int *b)
+void	swap_int(int *a, int *b)
 {
 	int	tmp;
 
@@ -21,7 +21,8 @@ static void	swap_int(int *a, int *b)
 	*b = tmp;
 }
 
-static int	*bubble_sort(int *tab, int size)
+static
+int	*bubble_sort(int *tab, int size)
 {
 	int	*new_tab;
 	int	i;
@@ -48,6 +49,7 @@ static int	*bubble_sort(int *tab, int size)
 	return (new_tab);
 }
 
+static
 int	found_position(int *sorted_tab, int value, int size)
 {
 	static int	*tab = NULL;
@@ -84,11 +86,12 @@ int	init_data(t_data *data)
 	while (i < data->nb_nbrs)
 	{
 		data->stack_a[i].value = data->tab[i];
-		data->stack_a[i].index = i + 1;
 		data->stack_a[i].position = found_position(data->sorted_tab,
 				data->tab[i], data->nb_nbrs);
 		i++;
 	}
+	data->info_a = init_info(data->stack_a, data->nb_nbrs, data);
+	data->info_b = (t_info){.min = 0, .max = 0, .median = 0};
 	return (EXIT_SUCCESS);
 }
 

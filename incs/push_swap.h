@@ -6,7 +6,7 @@
 /*   By: obouhlel <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/03 14:10:03 by obouhlel          #+#    #+#             */
-/*   Updated: 2023/10/18 11:47:33 by obouhlel         ###   ########.fr       */
+/*   Updated: 2023/10/18 16:39:04 by obouhlel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,6 +22,8 @@
 
 # define TRUE 1
 # define FALSE 0
+# define RA 0
+# define RRA 1
 
 enum
 {
@@ -30,19 +32,29 @@ enum
 	ERROR_ARGS_EMPTY = 2,
 	ERROR_PARSING = 3,
 	ERROR_INIT = 4,
-	ERROR_ALGO = 5
+	ERROR_ALGO = 5,
+	ERROR_MALLOC = 6
 };
 
 typedef struct s_stack
 {
 	int	value;
-	int	index;
 	int	position;
 }	t_stack;
+
+typedef struct s_info
+{
+	int		min;
+	int		max;
+	int		median;
+}	t_info;
+
 typedef struct s_data
 {
 	t_stack	*stack_a;
 	t_stack	*stack_b;
+	t_info	info_a;
+	t_info	info_b;
 	int		*tab;
 	int		*sorted_tab;
 	int		nb_nbrs;
@@ -52,11 +64,13 @@ typedef struct s_data
 
 int		*parsing(int ac, char **strs_nbrs, int *nb_nbrs);
 
+void	swap_int(int *a, int *b);
 int		init_data(t_data *data);
+t_info	init_info(t_stack *stack, int size, t_data *data);
 void	destroy_data(t_data *data);
-int		found_position(int *sorted_tab, int value, int size);
 
 int		algo(t_data *data);
+void	push_to_b_5(t_data *data);
 
 // stack
 // rotate
@@ -77,9 +91,9 @@ void	ss(t_stack *stack_a, t_stack *stack_b, int size_a, int size_b);
 // push
 void	pa(t_stack *stack_a, t_stack *stack_b, int *size_a, int *size_b);
 void	pb(t_stack *stack_a, t_stack *stack_b, int *size_a, int *size_b);
-void	reset_index_of_stack(t_stack *stack, int size);
 
 // debug
 void	print_stack(t_stack *stack, int size);
+void	print_info(t_info info);
 
 #endif

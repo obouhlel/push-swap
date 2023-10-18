@@ -7,7 +7,7 @@ OBJS_PATH	:= ./objs/
 INCS_PATH	:= ./incs/
 
 # Files
-SRCS		= main.c parsing.c data.c algo.c
+SRCS		= main.c parsing.c data.c info.c algo.c algo_bis.c
 SRCS		+= utils/convertion.c utils/string.c utils/print.c utils/split.c utils/free.c utils/memory.c
 SRCS		+= stack/swap.c stack/push.c stack/rotate.c stack/rotate_reverse.c
 SRCS		+= debug.c

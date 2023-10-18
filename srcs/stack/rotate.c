@@ -6,7 +6,7 @@
 /*   By: obouhlel <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/18 09:40:54 by obouhlel          #+#    #+#             */
-/*   Updated: 2023/10/18 11:47:54 by obouhlel         ###   ########.fr       */
+/*   Updated: 2023/10/18 16:33:41 by obouhlel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,6 @@ static void	rotate(t_stack *stack, int size)
 		i++;
 	}
 	stack[size - 1] = tmp;
-	reset_index_of_stack(stack, size);
 }
 
 void	ra(t_stack *stack_a, int size_a)
