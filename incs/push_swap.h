@@ -6,7 +6,7 @@
 /*   By: obouhlel <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/03 14:10:03 by obouhlel          #+#    #+#             */
-/*   Updated: 2023/10/18 16:39:04 by obouhlel         ###   ########.fr       */
+/*   Updated: 2023/10/18 17:38:47 by obouhlel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,17 +55,15 @@ typedef struct s_data
 	t_stack	*stack_b;
 	t_info	info_a;
 	t_info	info_b;
-	int		*tab;
-	int		*sorted_tab;
-	int		nb_nbrs;
 	int		size_a;
 	int		size_b;
+	int		size;
 }	t_data;
 
 int		*parsing(int ac, char **strs_nbrs, int *nb_nbrs);
 
 void	swap_int(int *a, int *b);
-int		init_data(t_data *data);
+int		init_data(t_data *data, int *tab, int nb_nbrs);
 t_info	init_info(t_stack *stack, int size, t_data *data);
 void	destroy_data(t_data *data);
 

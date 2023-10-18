@@ -6,7 +6,7 @@
 /*   By: obouhlel <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/18 10:22:59 by obouhlel          #+#    #+#             */
-/*   Updated: 2023/10/18 16:42:46 by obouhlel         ###   ########.fr       */
+/*   Updated: 2023/10/18 17:39:25 by obouhlel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -78,11 +78,11 @@ int	algo(t_data *data)
 {
 	if (is_sorted(data) == TRUE)
 		return (EXIT_SUCCESS);
-	if (data->nb_nbrs == 2)
+	if (data->size == 2)
 		sa(data->stack_a, data->size_a);
-	else if (data->nb_nbrs <= 3)
+	else if (data->size <= 3)
 		sort_size_3(data);
-	else if (data->nb_nbrs <= 5)
+	else if (data->size <= 5)
 		sort_size_5(data);
 	else
 		sort_size_n(data);
