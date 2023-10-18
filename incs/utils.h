@@ -6,7 +6,7 @@
 /*   By: obouhlel <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/17 16:05:10 by obouhlel          #+#    #+#             */
-/*   Updated: 2023/10/17 19:37:49 by obouhlel         ###   ########.fr       */
+/*   Updated: 2023/10/18 09:46:37 by obouhlel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,7 +37,9 @@ char	**ft_split(char const *s, char c);
 size_t	ft_strlen(char *str);
 
 // PATH : ./srcs/utils/memory.c
-void	*ft_calloc(size_t nmem, size_t size);
 void	ft_bzero(void *s, size_t n);
+void	ft_memcpy(void *dst, const void *src, size_t n);
+void	*ft_calloc(size_t nmemb, size_t size);
+void	*reallocarray(void *ptr, size_t nmemb, size_t size);
 
 #endif

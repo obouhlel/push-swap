@@ -6,7 +6,7 @@
 /*   By: obouhlel <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/17 17:36:56 by obouhlel          #+#    #+#             */
-/*   Updated: 2023/10/17 20:27:46 by obouhlel         ###   ########.fr       */
+/*   Updated: 2023/10/18 11:03:21 by obouhlel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,12 +50,15 @@ static int	*bubble_sort(int *tab, int size)
 
 int	found_position(int *sorted_tab, int value, int size)
 {
-	int	i;
+	static int	*tab = NULL;
+	int			i;
 
 	i = 0;
+	if (sorted_tab != NULL)
+		tab = sorted_tab;
 	while (i < size)
 	{
-		if (sorted_tab[i] == value)
+		if (tab[i] == value)
 			return (i);
 		i++;
 	}
@@ -69,7 +72,9 @@ int	init_data(t_data *data)
 	data->stack_a = ft_calloc(data->nb_nbrs, sizeof(t_stack));
 	if (!data->stack_a)
 		return (EXIT_FAILURE);
-	data->stack_b = NULL;
+	data->stack_b = ft_calloc(data->nb_nbrs, sizeof(t_stack));
+	if (!data->stack_b)
+		return (EXIT_FAILURE);
 	data->size_a = data->nb_nbrs;
 	data->size_b = 0;
 	data->sorted_tab = bubble_sort(data->tab, data->nb_nbrs);
@@ -79,7 +84,7 @@ int	init_data(t_data *data)
 	while (i < data->nb_nbrs)
 	{
 		data->stack_a[i].value = data->tab[i];
-		data->stack_a[i].index = i;
+		data->stack_a[i].index = i + 1;
 		data->stack_a[i].position = found_position(data->sorted_tab,
 				data->tab[i], data->nb_nbrs);
 		i++;
