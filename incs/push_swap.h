@@ -6,7 +6,7 @@
 /*   By: obouhlel <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/03 14:10:03 by obouhlel          #+#    #+#             */
-/*   Updated: 2023/10/18 17:38:47 by obouhlel         ###   ########.fr       */
+/*   Updated: 2023/10/18 17:47:50 by obouhlel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,8 +22,6 @@
 
 # define TRUE 1
 # define FALSE 0
-# define RA 0
-# define RRA 1
 
 enum
 {
@@ -60,14 +58,22 @@ typedef struct s_data
 	int		size;
 }	t_data;
 
+// parsing.c 5/5
 int		*parsing(int ac, char **strs_nbrs, int *nb_nbrs);
 
+// data.c 5/5
 void	swap_int(int *a, int *b);
 int		init_data(t_data *data, int *tab, int nb_nbrs);
-t_info	init_info(t_stack *stack, int size, t_data *data);
 void	destroy_data(t_data *data);
 
+// info.c 5/5
+t_info	init_info(t_stack *stack, int size, t_data *data);
+
+// algo.c 5/5
 int		algo(t_data *data);
+
+// algo_utils.c	2/5
+int		get_index_with_position(int pos, t_stack *stack, int size);
 void	push_to_b_5(t_data *data);
 
 // stack
@@ -90,7 +96,7 @@ void	ss(t_stack *stack_a, t_stack *stack_b, int size_a, int size_b);
 void	pa(t_stack *stack_a, t_stack *stack_b, int *size_a, int *size_b);
 void	pb(t_stack *stack_a, t_stack *stack_b, int *size_a, int *size_b);
 
-// debug
+// debug 2/5 remove after the work finished
 void	print_stack(t_stack *stack, int size);
 void	print_info(t_info info);
 
