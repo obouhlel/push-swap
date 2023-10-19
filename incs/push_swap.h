@@ -6,7 +6,7 @@
 /*   By: obouhlel <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/03 14:10:03 by obouhlel          #+#    #+#             */
-/*   Updated: 2023/10/18 17:47:50 by obouhlel         ###   ########.fr       */
+/*   Updated: 2023/10/18 20:53:26 by obouhlel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,13 +44,13 @@ typedef struct s_info
 {
 	int		min;
 	int		max;
-	int		median;
+	int		med;
 }	t_info;
 
 typedef struct s_data
 {
-	t_stack	*stack_a;
-	t_stack	*stack_b;
+	t_stack	*a;
+	t_stack	*b;
 	t_info	info_a;
 	t_info	info_b;
 	int		size_a;
@@ -75,26 +75,27 @@ int		algo(t_data *data);
 // algo_utils.c	2/5
 int		get_index_with_position(int pos, t_stack *stack, int size);
 void	push_to_b_5(t_data *data);
+void	push_to_b_n(t_data *data, int *size_a);
 
 // stack
 // rotate
-void	ra(t_stack *stack_a, int size_a);
-void	rb(t_stack *stack_b, int size_b);
-void	rr(t_stack *stack_a, t_stack *stack_b, int size_a, int size_b);
+void	ra(t_stack *a, int size_a);
+void	rb(t_stack *b, int size_b);
+void	rr(t_stack *a, t_stack *b, int size_a, int size_b);
 
 // rotate_reverse
-void	rra(t_stack *stack_a, int size_a);
-void	rrb(t_stack *stack_b, int size_b);
-void	rrr(t_stack *stack_a, t_stack *stack_b, int size_a, int size_b);
+void	rra(t_stack *a, int size_a);
+void	rrb(t_stack *b, int size_b);
+void	rrr(t_stack *a, t_stack *b, int size_a, int size_b);
 
 // swap
-void	sa(t_stack *stack_a, int size_a);
-void	sb(t_stack *stack_b, int size_b);
-void	ss(t_stack *stack_a, t_stack *stack_b, int size_a, int size_b);
+void	sa(t_stack *a, int size_a);
+void	sb(t_stack *b, int size_b);
+void	ss(t_stack *a, t_stack *b, int size_a, int size_b);
 
 // push
-void	pa(t_stack *stack_a, t_stack *stack_b, int *size_a, int *size_b);
-void	pb(t_stack *stack_a, t_stack *stack_b, int *size_a, int *size_b);
+void	pa(t_stack *a, t_stack *b, int *size_a, int *size_b);
+void	pb(t_stack *a, t_stack *b, int *size_a, int *size_b);
 
 // debug 2/5 remove after the work finished
 void	print_stack(t_stack *stack, int size);

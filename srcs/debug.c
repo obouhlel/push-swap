@@ -6,7 +6,7 @@
 /*   By: obouhlel <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/17 19:48:40 by obouhlel          #+#    #+#             */
-/*   Updated: 2023/10/18 16:32:48 by obouhlel         ###   ########.fr       */
+/*   Updated: 2023/10/18 20:38:45 by obouhlel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,5 +41,5 @@ void	print_info(t_info info)
 {
 	printf("min = %d\n", info.min);
 	printf("max = %d\n", info.max);
-	printf("median = %d\n", info.median);
+	printf("median = %d\n", info.med);
 }

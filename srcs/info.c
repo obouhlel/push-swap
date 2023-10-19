@@ -6,7 +6,7 @@
 /*   By: obouhlel <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/18 13:41:21 by obouhlel          #+#    #+#             */
-/*   Updated: 2023/10/18 14:00:39 by obouhlel         ###   ########.fr       */
+/*   Updated: 2023/10/18 20:38:20 by obouhlel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -81,6 +81,6 @@ t_info	init_info(t_stack *stack, int size, t_data *data)
 
 	info.min = found_min(stack, size);
 	info.max = found_max(stack, size);
-	info.median = found_med(stack, size, data);
+	info.med = found_med(stack, size, data);
 	return (info);
 }

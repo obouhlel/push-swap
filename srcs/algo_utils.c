@@ -6,7 +6,7 @@
 /*   By: obouhlel <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/18 15:43:31 by obouhlel          #+#    #+#             */
-/*   Updated: 2023/10/18 17:47:08 by obouhlel         ###   ########.fr       */
+/*   Updated: 2023/10/18 20:54:02 by obouhlel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 #define RA 0
 #define RRA 1
 
-int	get_index_with_position(int pos, t_stack *stack, int size)
+int	get_i_pos(int pos, t_stack *stack, int size)
 {
 	int	i;
 
@@ -35,25 +35,54 @@ void	push_to_b_5(t_data *data)
 	int	mode;
 
 	i = 0;
-	if (get_index_with_position(0, data->stack_a, data->size_a) < \
+	if (get_i_pos(0, data->a, data->size_a) < \
 		data->size_a / 2)
 		mode = RA;
 	else
 		mode = RRA;
 	while (i < 2)
 	{
-		if (data->stack_a[0].position == i)
+		if (data->a[0].position == i)
 		{
-			pb(data->stack_a, data->stack_b, &data->size_a, &data->size_b);
-			if (get_index_with_position(++i, data->stack_a, data->size_a) < \
+			pb(data->a, data->b, &data->size_a, &data->size_b);
+			if (get_i_pos(++i, data->a, data->size_a) < \
 				data->size_a / 2)
 				mode = RA;
 			else
 				mode = RRA;
 		}
 		else if (mode == RA)
-			ra(data->stack_a, data->size_a);
+			ra(data->a, data->size_a);
 		else
-			rra(data->stack_a, data->size_a);
+			rra(data->a, data->size_a);
+	}
+}
+
+void	push_to_b_n(t_data *data, int *size_a)
+{
+	int	mode;
+
+	if (get_i_pos(data->info_a.med, data->a, *size_a) < *size_a / 2)
+		mode = RA;
+	else
+		mode = RRA;
+	while (*size_a != 3)
+	{
+		if (data->info_a.med <= data->a[0].value)
+		{
+			pb(data->a, data->b, &data->size_a, &data->size_b);
+			if (data->info_a.med == data->b[0].value)
+			{
+				data->info_a = init_info(data->a, *size_a, data);
+				if (get_i_pos(data->info_a.med, data->a, *size_a) < *size_a / 2)
+					mode = RA;
+				else
+					mode = RRA;
+			}
+		}
+		else if (mode == RA)
+			ra(data->a, *size_a);
+		else
+			rra(data->a, *size_a);
 	}
 }

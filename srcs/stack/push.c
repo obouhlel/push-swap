@@ -6,7 +6,7 @@
 /*   By: obouhlel <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/18 09:40:28 by obouhlel          #+#    #+#             */
-/*   Updated: 2023/10/18 16:39:24 by obouhlel         ###   ########.fr       */
+/*   Updated: 2023/10/18 20:46:39 by obouhlel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,16 +34,16 @@ void	push(t_stack *to_push, t_stack *to_receve, int *size_tp, int *size_tr)
 	to_receve[0] = tmp_top;
 }
 
-void	pa(t_stack *stack_a, t_stack *stack_b, int *size_a, int *size_b)
+void	pa(t_stack *a, t_stack *b, int *size_a, int *size_b)
 {
 	if (*size_b > 0)
-		push(stack_b, stack_a, size_b, size_a);
+		push(b, a, size_b, size_a);
 	ft_putendl("pa");
 }
 
-void	pb(t_stack *stack_a, t_stack *stack_b, int *size_a, int *size_b)
+void	pb(t_stack *a, t_stack *b, int *size_a, int *size_b)
 {
 	if (*size_a > 0)
-		push(stack_a, stack_b, size_a, size_b);
+		push(a, b, size_a, size_b);
 	ft_putendl("pb");
 }

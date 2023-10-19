@@ -6,7 +6,7 @@
 /*   By: obouhlel <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/18 09:40:54 by obouhlel          #+#    #+#             */
-/*   Updated: 2023/10/18 16:33:41 by obouhlel         ###   ########.fr       */
+/*   Updated: 2023/10/18 20:46:39 by obouhlel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,25 +27,25 @@ static void	rotate(t_stack *stack, int size)
 	stack[size - 1] = tmp;
 }
 
-void	ra(t_stack *stack_a, int size_a)
+void	ra(t_stack *a, int size_a)
 {
 	if (size_a > 1)
-		rotate(stack_a, size_a);
+		rotate(a, size_a);
 	ft_putendl("ra");
 }
 
-void	rb(t_stack *stack_b, int size_b)
+void	rb(t_stack *b, int size_b)
 {
 	if (size_b > 1)
-		rotate(stack_b, size_b);
+		rotate(b, size_b);
 	ft_putendl("rb");
 }
 
-void	rr(t_stack *stack_a, t_stack *stack_b, int size_a, int size_b)
+void	rr(t_stack *a, t_stack *b, int size_a, int size_b)
 {
 	if (size_a > 1)
-		rotate(stack_a, size_a);
+		rotate(a, size_a);
 	if (size_b > 1)
-		rotate(stack_b, size_b);
+		rotate(b, size_b);
 	ft_putendl("rr");
 }
