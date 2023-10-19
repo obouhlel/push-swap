@@ -6,60 +6,74 @@
 /*   By: obouhlel <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/18 13:41:21 by obouhlel          #+#    #+#             */
-/*   Updated: 2023/10/18 20:38:20 by obouhlel         ###   ########.fr       */
+/*   Updated: 2023/10/19 11:11:47 by obouhlel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-static
-int	found_min(t_stack *stack, int size)
+int	get_i_pos(int pos, t_stack *stack, int size)
 {
 	int	i;
-	int	min;
 
 	i = 0;
-	min = stack[0].value;
 	while (i < size)
 	{
-		if (stack[i].value < min)
-			min = stack[i].value;
+		if (stack[i].pos == pos)
+			return (i);
+		i++;
+	}
+	return (-1);
+}
+
+static
+t_stack	found_min(t_stack *stack, int size)
+{
+	int		i;
+	t_stack	min;
+
+	i = 0;
+	min.val = stack[0].val;
+	while (i < size)
+	{
+		if (stack[i].val < min.val)
+			min = stack[i];
 		i++;
 	}
 	return (min);
 }
 
 static
-int	found_max(t_stack *stack, int size)
+t_stack	found_max(t_stack *stack, int size)
 {
-	int	i;
-	int	max;
+	int		i;
+	t_stack	max;
 
 	i = 0;
-	max = stack[0].value;
+	max.val = stack[0].val;
 	while (i < size)
 	{
-		if (stack[i].value > max)
-			max = stack[i].value;
+		if (stack[i].val > max.val)
+			max = stack[i];
 		i++;
 	}
 	return (max);
 }
 
 static
-int	found_med(t_stack *stack, int size, t_data *data)
+t_stack	found_med(t_stack *stack, int size, t_data *data)
 {
-	int	i;
-	int	j;
-	int	*tab;
-	int	med;
+	int		i;
+	int		j;
+	int		*tab;
+	t_stack	med;
 
 	tab = ft_calloc(size, sizeof(int));
 	if (!tab)
-		return (destroy_data(data), exit(ERROR_MALLOC), EXIT_FAILURE);
+		return (destroy_data(data), exit(ERROR_MALLOC), (t_stack){0, 0});
 	i = -1;
 	while (++i < size)
-		tab[i] = stack[i].value;
+		tab[i] = stack[i].val;
 	i = -1;
 	while (++i < size - 1)
 	{
@@ -71,7 +85,8 @@ int	found_med(t_stack *stack, int size, t_data *data)
 			j--;
 		}
 	}
-	med = tab[size / 2];
+	med.val = tab[size / 2];
+	med.pos = found_pos(NULL, med.val, size);
 	return (free(tab), med);
 }
 

@@ -6,7 +6,7 @@
 /*   By: obouhlel <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/18 10:22:59 by obouhlel          #+#    #+#             */
-/*   Updated: 2023/10/18 20:55:21 by obouhlel         ###   ########.fr       */
+/*   Updated: 2023/10/19 13:02:22 by obouhlel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ int	is_sorted(t_data *data)
 	i = 0;
 	while (i < data->size_a)
 	{
-		if (data->a[i].position != i)
+		if (data->a[i].pos != i)
 			return (FALSE);
 		i++;
 	}
@@ -32,24 +32,24 @@ int	is_sorted(t_data *data)
 static
 void	sort_size_3(t_data *data)
 {
-	if (data->a[0].value == data->info_a.min)
+	if (data->a[0].val == data->info_a.min.val)
 	{
-		if (data->a[1].value == data->info_a.max)
+		if (data->a[1].val == data->info_a.max.val)
 		{
 			sa(data->a, data->size_a);
 			ra(data->a, data->size_a);
 		}
 	}
-	else if (data->a[0].value == data->info_a.med)
+	else if (data->a[0].val == data->info_a.med.val)
 	{
-		if (data->a[1].value == data->info_a.min)
+		if (data->a[1].val == data->info_a.min.val)
 			sa(data->a, data->size_a);
 		else
 			rra(data->a, data->size_a);
 	}
 	else
 	{
-		if (data->a[1].value == data->info_a.min)
+		if (data->a[1].val == data->info_a.min.val)
 			ra(data->a, data->size_a);
 		else
 		{
@@ -76,9 +76,9 @@ void	sort_size_n(t_data *data)
 	data->info_a = init_info(data->a, data->size_a, data);
 	data->info_b = init_info(data->b, data->size_b, data);
 	sort_size_3(data);
-	ft_putendl("STACK A:");
+	ft_putendl("Stack A:");
 	print_stack(data->a, data->size_a);
-	ft_putendl("STACK B:");
+	ft_putendl("Stack B:");
 	print_stack(data->b, data->size_b);
 }
 

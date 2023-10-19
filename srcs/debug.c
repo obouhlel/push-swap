@@ -6,7 +6,7 @@
 /*   By: obouhlel <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/17 19:48:40 by obouhlel          #+#    #+#             */
-/*   Updated: 2023/10/18 20:38:45 by obouhlel         ###   ########.fr       */
+/*   Updated: 2023/10/19 11:14:22 by obouhlel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,17 +21,17 @@ void	print_stack(t_stack *stack, int size)
 	if (size == 0)
 		return ((void)ft_putendl("Stack is empty"));
 	i = 0;
-	printf("value =\t\t");
+	printf("val =\t\t");
 	while (i < size)
 	{
-		printf("%d\t", stack[i].value);
+		printf("%d\t", stack[i].val);
 		i++;
 	}
 	printf("\npos =\t\t");
 	i = 0;
 	while (i < size)
 	{
-		printf("%d\t", stack[i].position);
+		printf("%d\t", stack[i].pos);
 		i++;
 	}
 	printf("\n");
@@ -39,7 +39,7 @@ void	print_stack(t_stack *stack, int size)
 
 void	print_info(t_info info)
 {
-	printf("min = %d\n", info.min);
-	printf("max = %d\n", info.max);
-	printf("median = %d\n", info.med);
+	printf("min = %d\n", info.min.val);
+	printf("max = %d\n", info.max.val);
+	printf("median = %d\n", info.med.val);
 }

@@ -6,7 +6,7 @@
 /*   By: obouhlel <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/03 14:10:03 by obouhlel          #+#    #+#             */
-/*   Updated: 2023/10/18 20:53:26 by obouhlel         ###   ########.fr       */
+/*   Updated: 2023/10/19 13:04:30 by obouhlel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,28 +34,37 @@ enum
 	ERROR_MALLOC = 6
 };
 
+enum e_type
+{
+	RR,
+	RRR,
+	RA_RRB,
+	RRA_RB
+};
+
 typedef struct s_stack
 {
-	int	value;
-	int	position;
+	int	val;
+	int	pos;
 }	t_stack;
 
 typedef struct s_info
 {
-	int		min;
-	int		max;
-	int		med;
+	t_stack		min;
+	t_stack		max;
+	t_stack		med;
 }	t_info;
 
 typedef struct s_data
 {
-	t_stack	*a;
-	t_stack	*b;
-	t_info	info_a;
-	t_info	info_b;
-	int		size_a;
-	int		size_b;
-	int		size;
+	t_stack			*a;
+	t_stack			*b;
+	t_info			info_a;
+	t_info			info_b;
+	int				size_a;
+	int				size_b;
+	int				size;
+	int				*sorted_tab;
 }	t_data;
 
 // parsing.c 5/5
@@ -63,17 +72,18 @@ int		*parsing(int ac, char **strs_nbrs, int *nb_nbrs);
 
 // data.c 5/5
 void	swap_int(int *a, int *b);
+int		found_pos(int *sorted_tab, int val, int size);
 int		init_data(t_data *data, int *tab, int nb_nbrs);
 void	destroy_data(t_data *data);
 
 // info.c 5/5
+int		get_i_pos(int pos, t_stack *stack, int size);
 t_info	init_info(t_stack *stack, int size, t_data *data);
 
 // algo.c 5/5
 int		algo(t_data *data);
 
 // algo_utils.c	2/5
-int		get_index_with_position(int pos, t_stack *stack, int size);
 void	push_to_b_5(t_data *data);
 void	push_to_b_n(t_data *data, int *size_a);
 
