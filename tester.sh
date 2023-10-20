@@ -1,5 +1,4 @@
 #!/bin/bash
-# Testeur de la fonction de tri
 
 # Teste pour 2 valeurs
 echo "Teste pour 2 valeurs"
@@ -45,33 +44,3 @@ ARGS=$(./random.sh 5 1 5)
 NB=$(./push_swap $ARGS | wc -l)
 RES=$(./push_swap $ARGS | ./checker_linux $ARGS)
 echo "$ARGS : $RES $NB"
-
-# # Teste pour 100 valeurs
-# echo "Teste pour 100 valeurs"
-# range=500
-# declare -a arr
-# while [ ${#arr[@]} -lt 100 ]
-# do
-# 	num=$((RANDOM%(range * 2) - range))
-# 	if [[ ! " ${arr[@]} " =~ " ${num} " ]]; then
-# 		arr+=($num)
-# 	fi
-# done
-# ARGS=$(echo ${arr[@]} | tr ' ' '\n' | tr '\n' ' ')
-# echo -n $ARGS": "
-# ./push_swap $ARGS | ./checker_linux $ARGS
-
-# # Teste pour 500 valeurs
-# echo "Teste pour 500 valeurs"
-# range=1000
-# declare -a arr
-# while [ ${#arr[@]} -lt 500 ]
-# do
-# 	num=$((RANDOM%(range * 2) - range))
-# 	if [[ ! " ${arr[@]} " =~ " ${num} " ]]; then
-# 		arr+=($num)
-# 	fi
-# done
-# ARGS=$(echo ${arr[@]} | tr ' ' '\n' | tr '\n' ' ')
-# echo -n $ARGS": "
-# ./push_swap $ARGS | ./checker_linux $ARGS

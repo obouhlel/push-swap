@@ -6,7 +6,7 @@
 /*   By: obouhlel <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/20 09:57:34 by obouhlel          #+#    #+#             */
-/*   Updated: 2023/10/20 10:40:12 by obouhlel         ###   ########.fr       */
+/*   Updated: 2023/10/20 12:02:01 by obouhlel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,30 +21,22 @@ typedef struct s_list
 	struct s_list	*next;
 }	t_list;
 
-typedef struct s_stack
-{
-	int	val;
-	int	pos;
-}	t_stack;
-
 typedef struct s_info
 {
-	t_stack		min;
-	t_stack		max;
-	t_stack		med;
+	int	size;
+	int	min;
+	int	max;
+	int	med;
 }	t_info;
 
-typedef struct s_data
+typedef struct s_stack
 {
-	t_stack			*a;
-	t_stack			*b;
-	t_info			info_a;
-	t_info			info_b;
-	int				size_a;
-	int				size_b;
-	int				size;
-	int				*sorted_tab;
-	t_list			*instruction;
-}	t_data;
+	int		*a;
+	int		*b;
+	t_info	info;
+	t_info	info_a;
+	t_info	info_b;
+	t_list	*instruction;
+}	t_stack;
 
 #endif

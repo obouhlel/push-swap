@@ -6,17 +6,17 @@
 /*   By: obouhlel <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/18 09:40:54 by obouhlel          #+#    #+#             */
-/*   Updated: 2023/10/20 10:03:23 by obouhlel         ###   ########.fr       */
+/*   Updated: 2023/10/20 12:34:50 by obouhlel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "api.h"
 #include "utils.h"
 
-static void	rotate(t_stack *stack, int size)
+static void	rotate(int *stack, int size)
 {
-	t_stack	tmp;
-	int		i;
+	int	tmp;
+	int	i;
 
 	i = 0;
 	tmp = stack[0];
@@ -28,26 +28,33 @@ static void	rotate(t_stack *stack, int size)
 	stack[size - 1] = tmp;
 }
 
-void	ra(t_data *data, bool print)
+void	ra(t_stack *stack, bool print)
 {
-	if (data->size_a > 1)
-		rotate(data->a, data->size_a);
-	if (print)
-		ft_putendl("ra");
+	if (stack->info_a.size >= 1)
+	{
+		rotate(stack->a, stack->info_a.size);
+		if (print)
+			ft_putendl("ra");
+	}
 }
 
-void	rb(t_data *data, bool print)
+void	rb(t_stack *stack, bool print)
 {
-	if (data->size_b > 1)
-		rotate(data->b, data->size_b);
-	if (print)
-		ft_putendl("rb");
+	if (stack->info_b.size >= 1)
+	{
+		rotate(stack->b, stack->info_b.size);
+		if (print)
+			ft_putendl("rb");
+	}
 }
 
-void	rr(t_data *data, bool print)
+void	rr(t_stack *stack, bool print)
 {
-	ra(data, FALSE);
-	rb(data, FALSE);
-	if (print)
-		ft_putendl("rr");
+	if (stack->info_a.size >= 1 && stack->info_b.size >= 1)
+	{
+		ra(stack, FALSE);
+		rb(stack, FALSE);
+		if (print)
+			ft_putendl("rr");
+	}
 }

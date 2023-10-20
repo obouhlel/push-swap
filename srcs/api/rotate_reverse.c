@@ -6,17 +6,17 @@
 /*   By: obouhlel <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/18 09:40:47 by obouhlel          #+#    #+#             */
-/*   Updated: 2023/10/20 10:03:25 by obouhlel         ###   ########.fr       */
+/*   Updated: 2023/10/20 12:33:47 by obouhlel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "api.h"
 #include "utils.h"
 
-static void	rotate_reverse(t_stack *stack, int size)
+static void	rotate_reverse(int *stack, int size)
 {
-	t_stack	tmp;
-	int		i;
+	int	tmp;
+	int	i;
 
 	i = size - 1;
 	tmp = stack[size - 1];
@@ -28,26 +28,33 @@ static void	rotate_reverse(t_stack *stack, int size)
 	stack[0] = tmp;
 }
 
-void	rra(t_data *data, bool print)
+void	rra(t_stack *stack, bool print)
 {
-	if (data->size_a > 1)
-		rotate_reverse(data->a, data->size_a);
-	if (print)
-		ft_putendl("rra");
+	if (stack->info_a.size >= 1)
+	{
+		rotate_reverse(stack->a, stack->info_a.size);
+		if (print)
+			ft_putendl("rra");
+	}
 }
 
-void	rrb(t_data *data, bool print)
+void	rrb(t_stack *stack, bool print)
 {
-	if (data->size_b > 1)
-		rotate_reverse(data->b, data->size_b);
-	if (print)
-		ft_putendl("rra");
+	if (stack->info_b.size >= 1)
+	{
+		rotate_reverse(stack->b, stack->info_b.size);
+		if (print)
+			ft_putendl("rrb");
+	}
 }
 
-void	rrr(t_data *data, bool print)
+void	rrr(t_stack *stack, bool print)
 {
-	rra(data, FALSE);
-	rrb(data, FALSE);
-	if (print)
-		ft_putendl("rrr");
+	if (stack->info_a.size >= 1 && stack->info_b.size >= 1)
+	{
+		rotate_reverse(stack->a, stack->info_a.size);
+		rotate_reverse(stack->b, stack->info_b.size);
+		if (print)
+			ft_putendl("rrr");
+	}
 }

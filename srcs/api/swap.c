@@ -6,42 +6,50 @@
 /*   By: obouhlel <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/18 09:41:00 by obouhlel          #+#    #+#             */
-/*   Updated: 2023/10/20 10:03:17 by obouhlel         ###   ########.fr       */
+/*   Updated: 2023/10/20 12:35:46 by obouhlel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "api.h"
 #include "utils.h"
 
-static void	swap(t_stack *a, t_stack *b)
+static
+void	swap(int *a, int *b)
 {
-	t_stack	tmp;
+	int	tmp;
 
 	tmp = *a;
 	*a = *b;
 	*b = tmp;
 }
 
-void	sa(t_data *data, bool print)
+void	sa(t_stack *stack, bool print)
 {
-	if (data->size_a > 1)
-		swap(&data->a[0], &data->a[1]);
-	if (print)
-		ft_putendl("sa");
+	if (stack->info_a.size > 1)
+	{
+		swap(&stack->a[0], &stack->a[1]);
+		if (print)
+			ft_putendl("sa");
+	}
 }
 
-void	sb(t_data *data, bool print)
+void	sb(t_stack *stack, bool print)
 {
-	if (data->size_b > 1)
-		swap(&data->b[0], &data->b[1]);
-	if (print)
-		ft_putendl("sb");
+	if (stack->info_b.size > 1)
+	{
+		swap(&stack->b[0], &stack->b[1]);
+		if (print)
+			ft_putendl("sb");
+	}
 }
 
-void	ss(t_data *data, bool print)
+void	ss(t_stack *stack, bool print)
 {
-	sa(data, FALSE);
-	sb(data, FALSE);
-	if (print)
-		ft_putendl("ss");
+	if (stack->info_a.size > 1 && stack->info_b.size > 1)
+	{
+		sa(stack, FALSE);
+		sb(stack, FALSE);
+		if (print)
+			ft_putendl("ss");
+	}
 }

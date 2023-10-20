@@ -6,7 +6,7 @@
 /*   By: obouhlel <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/18 09:40:28 by obouhlel          #+#    #+#             */
-/*   Updated: 2023/10/20 10:55:16 by obouhlel         ###   ########.fr       */
+/*   Updated: 2023/10/20 12:32:16 by obouhlel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,14 +14,14 @@
 #include "utils.h"
 
 static
-void	push(t_stack *to_push, t_stack *to_receve, int *size_tp, int *size_tr)
+void	push(int *to_push, int *to_receve, int *size_tp, int *size_tr)
 {
 	const int	size = *size_tp + *size_tr;
-	t_stack		tmp_top;
+	int			tmp_top;
 	int			i;
 
 	tmp_top = to_push[0];
-	to_push[0] = (t_stack){0, 0};
+	to_push[0] = 0;
 	i = -1;
 	while (++i < *size_tp)
 		if (i + 1 < size)
@@ -35,18 +35,22 @@ void	push(t_stack *to_push, t_stack *to_receve, int *size_tp, int *size_tr)
 	to_receve[0] = tmp_top;
 }
 
-void	pa(t_data *data, bool print)
+void	pa(t_stack *stack, bool print)
 {
-	if (data->size_b > 0)
-		push(data->b, data->a, &data->size_b, &data->size_a);
-	if (print)
-		ft_putendl("pa");
+	if (stack->info_b.size > 0)
+	{
+		push(stack->b, stack->a, &stack->info_b.size, &stack->info_a.size);
+		if (print)
+			ft_putendl("pa");
+	}
 }
 
-void	pb(t_data *data, bool print)
+void	pb(t_stack *stack, bool print)
 {
-	if (data->size_a > 0)
-		push(data->a, data->b, &data->size_a, &data->size_b);
-	if (print)
-		ft_putendl("pb");
+	if (stack->info_a.size > 0)
+	{
+		push(stack->a, stack->b, &stack->info_a.size, &stack->info_b.size);
+		if (print)
+			ft_putendl("pb");
+	}
 }

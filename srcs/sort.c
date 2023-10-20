@@ -6,23 +6,23 @@
 /*   By: obouhlel <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/18 10:22:59 by obouhlel          #+#    #+#             */
-/*   Updated: 2023/10/20 11:11:43 by obouhlel         ###   ########.fr       */
+/*   Updated: 2023/10/20 14:44:16 by obouhlel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
 static
-int	is_sorted(t_data *data)
+int	is_sorted(t_stack *stack)
 {
 	int	i;
 
-	if (data->size_b != 0)
+	if (stack->info_b.size != 0)
 		return (FALSE);
 	i = 0;
-	while (i < data->size_a)
+	while (i < stack->info_a.size)
 	{
-		if (data->a[i].pos != i)
+		if (stack->a[i] != i + 1)
 			return (FALSE);
 		i++;
 	}
@@ -30,71 +30,70 @@ int	is_sorted(t_data *data)
 }
 
 static
-void	sort_size_3(t_data *data)
+void	sort_size_3(t_stack *stack)
 {
-	if (data->a[0].val == data->info_a.min.val)
+	if (stack->a[0] == stack->info_a.min)
 	{
-		if (data->a[1].val == data->info_a.max.val)
+		if (stack->a[1] == stack->info_a.max)
 		{
-			sa(data, TRUE);
-			ra(data, TRUE);
+			sa(stack, TRUE);
+			ra(stack, TRUE);
 		}
 	}
-	else if (data->a[0].val == data->info_a.med.val)
+	else if (stack->a[0] == stack->info_a.max)
 	{
-		if (data->a[1].val == data->info_a.min.val)
-			sa(data, TRUE);
+		if (stack->a[1] == stack->info_a.min)
+			ra(stack, TRUE);
 		else
-			rra(data, TRUE);
+		{
+			sa(stack, TRUE);
+			rra(stack, TRUE);
+		}
 	}
 	else
 	{
-		if (data->a[1].val == data->info_a.min.val)
-			ra(data, TRUE);
+		if (stack->a[1] == stack->info_a.min)
+			sa(stack, TRUE);
 		else
-		{
-			sa(data, TRUE);
-			rra(data, TRUE);
-		}
+			rra(stack, TRUE);
 	}
 }
 
 static
-void	sort_size_5(t_data *data)
+void	sort_size_5(t_stack *stack)
 {
-	sort_algo_5_bis(data);
-	data->info_a = init_info(data->a, data->size_a, data);
-	sort_size_3(data);
-	while (data->size_b != 0)
-		pa(data, TRUE);
+	sort_algo_5_bis(stack);
+	update_info(stack);
+	sort_size_3(stack);
+	while (stack->info_b.size != 0)
+		pa(stack, TRUE);
 }
 
 static
-void	sort_size_n(t_data *data)
+void	sort_size_n(t_stack *stack)
 {
-	sort_with_mediane(data);
-	data->info_a = init_info(data->a, data->size_a, data);
-	data->info_b = init_info(data->b, data->size_b, data);
-	sort_size_3(data);
+	sort_with_mediane(stack);
+	update_info(stack);
+	sort_size_3(stack);
 	ft_putendl("Stack A:");
-	print_stack(data->a, data->size_a);
+	print_stack(stack->a, stack->info_a.size);
 	ft_putendl("Stack B:");
-	print_stack(data->b, data->size_b);
+	print_stack(stack->b, stack->info_b.size);
 }
 
-int	sort(t_data *data)
+int	sort(t_stack *stack)
 {
-	if (is_sorted(data) == TRUE)
+	if (is_sorted(stack) == TRUE)
 		return (EXIT_SUCCESS);
-	if (data->size == 2)
-		sa(data, TRUE);
-	else if (data->size <= 3)
-		sort_size_3(data);
-	else if (data->size <= 5)
-		sort_size_5(data);
+	if (stack->info.size == 2)
+		sa(stack, TRUE);
+	else if (stack->info.size <= 3)
+		sort_size_3(stack);
+	else if (stack->info.size <= 5)
+		sort_size_5(stack);
 	else
-		sort_size_n(data);
-	if (is_sorted(data) == TRUE)
+		sort_size_n(stack);
+	if (is_sorted(stack) == TRUE)
 		return (EXIT_SUCCESS);
 	return (EXIT_FAILURE);
 }

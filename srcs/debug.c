@@ -6,7 +6,7 @@
 /*   By: obouhlel <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/17 19:48:40 by obouhlel          #+#    #+#             */
-/*   Updated: 2023/10/20 10:46:44 by obouhlel         ###   ########.fr       */
+/*   Updated: 2023/10/20 12:08:23 by obouhlel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,33 +14,25 @@
 #include "utils.h"
 #include <stdio.h>
 
-void	print_stack(t_stack *stack, int size)
+void	print_stack(int *tab, int size)
 {
 	int		i;
 
-	printf("size = %d\n", size);
-	if (size == 0)
-		return ((void)ft_putendl("Stack is empty"));
-	i = 0;
-	printf("val =\t\t");
-	while (i < size)
-	{
-		printf("%d\t", stack[i].val);
-		i++;
-	}
-	printf("\npos =\t\t");
 	i = 0;
 	while (i < size)
 	{
-		printf("%d\t", stack[i].pos);
+		if (i + 1 < size)
+			printf("%d ", tab[i]);
+		else
+			printf("%d\n", tab[i]);
 		i++;
 	}
-	printf("\n");
 }
 
 void	print_info(t_info info)
 {
-	printf("min = %d\n", info.min.val);
-	printf("max = %d\n", info.max.val);
-	printf("median = %d\n", info.med.val);
+	printf("size: %d\n", info.size);
+	printf("min: %d\n", info.min);
+	printf("max: %d\n", info.max);
+	printf("med: %d\n", info.med);
 }
