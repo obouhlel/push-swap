@@ -1,3 +1,6 @@
 [submodule "visualizer"]
 	path = visualizer
 	url = https://github.com/o-reo/push_swap_visualizer.git
+[submodule "tester"]
+	path = tester
+	url = https://github.com/SimonCROS/push_swap_tester
