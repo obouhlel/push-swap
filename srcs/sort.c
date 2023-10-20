@@ -6,7 +6,7 @@
 /*   By: obouhlel <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/18 10:22:59 by obouhlel          #+#    #+#             */
-/*   Updated: 2023/10/20 23:46:17 by obouhlel         ###   ########.fr       */
+/*   Updated: 2023/10/21 00:33:29 by obouhlel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -111,8 +111,9 @@ void	sort_size_n(t_stack *stack)
 		update_info(stack, NO_MEDIAN);
 		choose_move(stack);
 	}
+	update_info(stack, MEDIAN);
 	if (found_index(stack->info.min, stack->a, stack->info_a.size)
-		> stack->info_a.med)
+		< stack->info_a.med)
 		mode = RA;
 	else
 		mode = RRA;
