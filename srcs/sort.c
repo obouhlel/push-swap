@@ -6,7 +6,7 @@
 /*   By: obouhlel <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/18 10:22:59 by obouhlel          #+#    #+#             */
-/*   Updated: 2023/10/20 14:44:16 by obouhlel         ###   ########.fr       */
+/*   Updated: 2023/10/20 19:27:06 by obouhlel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -72,13 +72,28 @@ void	sort_size_5(t_stack *stack)
 static
 void	sort_size_n(t_stack *stack)
 {
+	int	mode;
+
 	sort_with_mediane(stack);
 	update_info(stack);
 	sort_size_3(stack);
-	ft_putendl("Stack A:");
-	print_stack(stack->a, stack->info_a.size);
-	ft_putendl("Stack B:");
-	print_stack(stack->b, stack->info_b.size);
+	while (stack->info_b.size != 0)
+	{
+		update_info(stack);
+		choose_move(stack);
+	}
+	if (found_index(stack->info.min, stack->a, stack->info_a.size)
+		> stack->info_a.med)
+		mode = RA;
+	else
+		mode = RRA;
+	while (stack->a[0] != stack->info_a.min)
+	{
+		if (mode == RA)
+			ra(stack, TRUE);
+		else
+			rra(stack, TRUE);
+	}
 }
 
 int	sort(t_stack *stack)

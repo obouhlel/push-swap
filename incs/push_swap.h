@@ -6,7 +6,7 @@
 /*   By: obouhlel <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/03 14:10:03 by obouhlel          #+#    #+#             */
-/*   Updated: 2023/10/20 12:22:56 by obouhlel         ###   ########.fr       */
+/*   Updated: 2023/10/20 16:24:21 by obouhlel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,8 +42,9 @@ void	update_info(t_stack *stack);
 int		sort(t_stack *stack);
 
 // sort_utils.c	3/5
-int		get_i_pos(int value, int *tab, int size);
+int		found_index(int value, int *tab, int size);
 void	sort_algo_5_bis(t_stack *stack);
 void	sort_with_mediane(t_stack *stack);
+void	choose_move(t_stack *stack);
 
 #endif

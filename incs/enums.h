@@ -6,7 +6,7 @@
 /*   By: obouhlel <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/20 09:58:41 by obouhlel          #+#    #+#             */
-/*   Updated: 2023/10/20 12:12:59 by obouhlel         ###   ########.fr       */
+/*   Updated: 2023/10/20 18:44:31 by obouhlel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,6 +30,12 @@ enum e_type
 	RRA_RRB,
 	RA_RRB,
 	RRA_RB
+};
+
+enum e_mode
+{
+	RA,
+	RRA
 };
 
 #endif
