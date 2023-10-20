@@ -6,7 +6,7 @@
 /*   By: obouhlel <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/03 14:10:03 by obouhlel          #+#    #+#             */
-/*   Updated: 2023/10/20 22:52:12 by obouhlel         ###   ########.fr       */
+/*   Updated: 2023/10/20 23:25:02 by obouhlel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,10 +24,12 @@
 
 # define TRUE 1
 # define FALSE 0
+# define MAX_VALUE 501
 # define MAX 100000
 
 int		*parsing(int ac, char **strs_nbrs, int *nb_nbrs);
 
+void	bubble_sort(int *tab, int size, int sorted_tab[MAX_VALUE]);
 int		init_stack(t_stack *stack, int *tab, int nb_nbrs);
 void	destroy_stack(t_stack *stack);
 

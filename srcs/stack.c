@@ -6,7 +6,7 @@
 /*   By: obouhlel <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/17 17:36:56 by obouhlel          #+#    #+#             */
-/*   Updated: 2023/10/20 22:29:03 by obouhlel         ###   ########.fr       */
+/*   Updated: 2023/10/20 23:24:06 by obouhlel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -62,32 +62,26 @@ int	found_pos(int *sorted_tab, int val, int size)
  * @return A new array containing the sorted integers, 
  *         or NULL if memory allocation fails.
  */
-static
-int	*bubble_sort(int *tab, int size)
+void	bubble_sort(int *tab, int size, int sorted_tab[MAX_VALUE])
 {
-	int	*new_tab;
 	int	i;
 	int	j;
 
-	new_tab = ft_calloc(size, sizeof(int));
-	if (!new_tab)
-		return (NULL);
 	i = -1;
 	while (++i < size)
-		new_tab[i] = tab[i];
+		sorted_tab[i] = tab[i];
 	i = 0;
 	while (i < size - 1)
 	{
 		j = size - 1;
 		while (j > i)
 		{
-			if (new_tab[j] < new_tab[j - 1])
-				swap_int(&new_tab[j], &new_tab[j - 1]);
+			if (sorted_tab[j] < sorted_tab[j - 1])
+				swap_int(&sorted_tab[j], &sorted_tab[j - 1]);
 			j--;
 		}
 		i++;
 	}
-	return (new_tab);
 }
 
 /**
@@ -103,7 +97,7 @@ int	*bubble_sort(int *tab, int size)
 int	init_stack(t_stack *stack, int *tab, int nb_nbrs)
 {
 	int	i;
-	int	*sorted_tab;
+	int	sorted_tab[MAX_VALUE];
 
 	stack->a = ft_calloc(nb_nbrs, sizeof(t_stack));
 	if (!stack->a)
@@ -111,9 +105,10 @@ int	init_stack(t_stack *stack, int *tab, int nb_nbrs)
 	stack->b = ft_calloc(nb_nbrs, sizeof(t_stack));
 	if (!stack->b)
 		return (EXIT_FAILURE);
-	sorted_tab = bubble_sort(tab, nb_nbrs);
-	if (!sorted_tab)
+	if (nb_nbrs >= MAX_VALUE)
 		return (EXIT_FAILURE);
+	ft_bzero(sorted_tab, MAX_VALUE);
+	bubble_sort(tab, nb_nbrs, sorted_tab);
 	i = -1;
 	while (++i < nb_nbrs)
 		stack->a[i] = found_pos(sorted_tab, tab[i], nb_nbrs);
@@ -122,7 +117,7 @@ int	init_stack(t_stack *stack, int *tab, int nb_nbrs)
 	stack->info_a = (t_info){.size = nb_nbrs, .min = 1, .max = nb_nbrs,
 		.med = sorted_tab[nb_nbrs / 2]};
 	stack->info_b = (t_info){.size = 0, .min = 0, .max = 0, .med = 0};
-	return (free(tab), free(sorted_tab), EXIT_SUCCESS);
+	return (free(tab), EXIT_SUCCESS);
 }
 
 /**

@@ -6,14 +6,12 @@
 /*   By: obouhlel <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/20 09:57:34 by obouhlel          #+#    #+#             */
-/*   Updated: 2023/10/20 20:25:26 by obouhlel         ###   ########.fr       */
+/*   Updated: 2023/10/20 23:05:50 by obouhlel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef STRUCTS_H
 # define STRUCTS_H
-
-# define SIZE_MOVE 5
 
 typedef struct s_info
 {
