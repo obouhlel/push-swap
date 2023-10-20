@@ -6,7 +6,7 @@
 /*   By: obouhlel <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/20 09:58:41 by obouhlel          #+#    #+#             */
-/*   Updated: 2023/10/20 23:14:15 by obouhlel         ###   ########.fr       */
+/*   Updated: 2023/10/20 23:44:33 by obouhlel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,6 +37,18 @@ enum e_mode
 {
 	RA,
 	RRA
+};
+
+enum e_bool
+{
+	FALSE = 0,
+	TRUE = 1
+};
+
+enum e_median
+{
+	NO_MEDIAN = 0,
+	MEDIAN = 1
 };
 
 #endif

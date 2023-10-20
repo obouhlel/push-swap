@@ -90,7 +90,7 @@ void	sort_with_mediane(t_stack *stack)
 		{
 			pb(stack, TRUE);
 			if (stack->info_a.med == stack->b[0])
-				update_info(stack);
+				update_info(stack, MEDIAN);
 		}
 		else
 			ra(stack, TRUE);

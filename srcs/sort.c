@@ -6,7 +6,7 @@
 /*   By: obouhlel <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/18 10:22:59 by obouhlel          #+#    #+#             */
-/*   Updated: 2023/10/20 22:33:47 by obouhlel         ###   ########.fr       */
+/*   Updated: 2023/10/20 23:46:17 by obouhlel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -82,7 +82,7 @@ static
 void	sort_size_5(t_stack *stack)
 {
 	sort_algo_5_bis(stack);
-	update_info(stack);
+	update_info(stack, MEDIAN);
 	sort_size_3(stack);
 	while (stack->info_b.size != 0)
 		pa(stack, TRUE);
@@ -104,11 +104,11 @@ void	sort_size_n(t_stack *stack)
 	int	mode;
 
 	sort_with_mediane(stack);
-	update_info(stack);
+	update_info(stack, MEDIAN);
 	sort_size_3(stack);
 	while (stack->info_b.size != 0)
 	{
-		update_info(stack);
+		update_info(stack, NO_MEDIAN);
 		choose_move(stack);
 	}
 	if (found_index(stack->info.min, stack->a, stack->info_a.size)
