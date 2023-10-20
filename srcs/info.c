@@ -6,7 +6,7 @@
 /*   By: obouhlel <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/18 13:41:21 by obouhlel          #+#    #+#             */
-/*   Updated: 2023/10/20 23:46:32 by obouhlel         ###   ########.fr       */
+/*   Updated: 2023/10/21 00:07:28 by obouhlel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -60,7 +60,16 @@ int	max(int *tab, int size)
 	return (max);
 }
 
-
+/**
+ * Updates the information in the given t_info struct
+ * based on the given integer array.
+ * 
+ * @param info The t_info struct to update.
+ * @param tab The integer array to use for updating the t_info struct.
+ * @param size The size of the integer array.
+ * @param mode The mode to use for updating the t_info struct (MEDIAN or not).
+ * @return Returns EXIT_SUCCESS if the update was successful.
+ */
 static
 int	update_info_bis(t_info *info, int *tab, int size, bool mode)
 {
@@ -80,6 +89,16 @@ int	update_info_bis(t_info *info, int *tab, int size, bool mode)
 	return (EXIT_SUCCESS);
 }
 
+/**
+ * @brief Updates the information about the stacks.
+ * 
+ * @param stack The stack to update the information for.
+ * @param mode The mode to update the information in.
+ *              If mode is true, the function updates 
+ *              the median values. If mode is false,
+ *              the function update the min, max,
+ * 				and size values.
+ */
 void	update_info(t_stack *stack, bool mode)
 {
 	if (update_info_bis(&stack->info_a, stack->a, stack->info_a.size, mode))

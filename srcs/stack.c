@@ -6,7 +6,7 @@
 /*   By: obouhlel <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/17 17:36:56 by obouhlel          #+#    #+#             */
-/*   Updated: 2023/10/20 23:24:06 by obouhlel         ###   ########.fr       */
+/*   Updated: 2023/10/21 00:07:40 by obouhlel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,13 +54,11 @@ int	found_pos(int *sorted_tab, int val, int size)
 }
 
 /**
- * Sorts an array of integers using the bubble sort algorithm.
- *
- * @param tab The array of integers to sort.
+ * Sorts an array of integers using bubble sort algorithm.
+ * 
+ * @param tab The array of integers to be sorted.
  * @param size The size of the array.
- *
- * @return A new array containing the sorted integers, 
- *         or NULL if memory allocation fails.
+ * @param sorted_tab The sorted array of integers.
  */
 void	bubble_sort(int *tab, int size, int sorted_tab[MAX_VALUE])
 {
