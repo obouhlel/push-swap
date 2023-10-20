@@ -92,5 +92,3 @@ else
 fi
 echo $ARGS > 500
 echo "Check file 500 : $RES $NB $NOTE/5"
-
-# Teste boucle n fois
