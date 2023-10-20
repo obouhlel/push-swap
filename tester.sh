@@ -43,7 +43,12 @@ echo "Teste pour 5 valeurs"
 ARGS=$(./random.sh 5 1 5)
 NB=$(./push_swap $ARGS | wc -l)
 RES=$(./push_swap $ARGS | ./checker_linux $ARGS)
-echo "$ARGS : $RES $NB"
+if [ $NB -lt 12 ]; then
+	NOTE="SUCCESS"
+else
+	NOTE="FAIL"
+fi
+echo "$ARGS : $RES $NB $NOTE"
 
 # Teste pour 100 valeurs
 echo "Teste pour 100 valeurs"
@@ -73,7 +78,6 @@ echo "Teste pour 500 valeurs"
 ARGS=$(./random.sh 500 1 500)
 NB=$(./push_swap $ARGS | wc -l)
 RES=$(./push_swap $ARGS | ./checker_linux $ARGS)
-
 if [ $NB -lt 5500 ]; then
 	NOTE=5
 elif [ $NB -lt 7000 ]; then
@@ -87,6 +91,5 @@ elif [ $NB -lt 11500 ]; then
 else
 	NOTE=0
 fi
-
 echo $ARGS > 500
 echo "Check file 500 : $RES $NB $NOTE/5"
