@@ -6,7 +6,7 @@
 /*   By: obouhlel <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/17 16:05:10 by obouhlel          #+#    #+#             */
-/*   Updated: 2023/10/18 09:46:37 by obouhlel         ###   ########.fr       */
+/*   Updated: 2023/10/20 20:25:41 by obouhlel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,6 +40,5 @@ size_t	ft_strlen(char *str);
 void	ft_bzero(void *s, size_t n);
 void	ft_memcpy(void *dst, const void *src, size_t n);
 void	*ft_calloc(size_t nmemb, size_t size);
-void	*reallocarray(void *ptr, size_t nmemb, size_t size);
 
 #endif

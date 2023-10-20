@@ -6,7 +6,7 @@
 /*   By: obouhlel <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/17 18:41:57 by obouhlel          #+#    #+#             */
-/*   Updated: 2023/10/18 10:24:42 by obouhlel         ###   ########.fr       */
+/*   Updated: 2023/10/20 20:25:51 by obouhlel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,19 +41,4 @@ void	*ft_calloc(size_t nmemb, size_t size)
 		return (NULL);
 	ft_bzero(ptr, nmemb * size);
 	return (ptr);
-}
-
-void	*reallocarray(void *ptr, size_t nmemb, size_t size)
-{
-	void	*new_ptr;
-
-	new_ptr = ft_calloc(nmemb, size);
-	if (!new_ptr)
-		return (NULL);
-	if (ptr)
-	{
-		ft_memcpy(new_ptr, ptr, nmemb * size);
-		free(ptr);
-	}
-	return (new_ptr);
 }

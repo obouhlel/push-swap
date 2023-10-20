@@ -6,7 +6,7 @@
 /*   By: obouhlel <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/20 09:57:34 by obouhlel          #+#    #+#             */
-/*   Updated: 2023/10/20 20:14:46 by obouhlel         ###   ########.fr       */
+/*   Updated: 2023/10/20 20:25:26 by obouhlel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,12 +14,6 @@
 # define STRUCTS_H
 
 # define SIZE_MOVE 5
-
-typedef struct s_list
-{
-	char			move[SIZE_MOVE];
-	struct s_list	*next;
-}	t_list;
 
 typedef struct s_info
 {

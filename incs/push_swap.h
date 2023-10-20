@@ -6,7 +6,7 @@
 /*   By: obouhlel <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/03 14:10:03 by obouhlel          #+#    #+#             */
-/*   Updated: 2023/10/20 20:10:26 by obouhlel         ###   ########.fr       */
+/*   Updated: 2023/10/20 20:25:07 by obouhlel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,6 @@
 # include "api.h"
 # include "structs.h"
 # include "enums.h"
-# include "list.h"
 # include "debug.h"
 
 # define TRUE 1
