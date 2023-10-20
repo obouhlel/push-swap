@@ -6,11 +6,12 @@
 /*   By: obouhlel <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/17 19:48:40 by obouhlel          #+#    #+#             */
-/*   Updated: 2023/10/19 11:14:22 by obouhlel         ###   ########.fr       */
+/*   Updated: 2023/10/20 10:46:44 by obouhlel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "debug.h"
+#include "utils.h"
 #include <stdio.h>
 
 void	print_stack(t_stack *stack, int size)

@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   algo.c                                             :+:      :+:    :+:   */
+/*   sort.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: obouhlel <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/18 10:22:59 by obouhlel          #+#    #+#             */
-/*   Updated: 2023/10/19 13:02:22 by obouhlel         ###   ########.fr       */
+/*   Updated: 2023/10/20 10:56:02 by obouhlel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,25 +36,25 @@ void	sort_size_3(t_data *data)
 	{
 		if (data->a[1].val == data->info_a.max.val)
 		{
-			sa(data->a, data->size_a);
-			ra(data->a, data->size_a);
+			sa(data, TRUE);
+			ra(data, TRUE);
 		}
 	}
 	else if (data->a[0].val == data->info_a.med.val)
 	{
 		if (data->a[1].val == data->info_a.min.val)
-			sa(data->a, data->size_a);
+			sa(data, TRUE);
 		else
-			rra(data->a, data->size_a);
+			rra(data, TRUE);
 	}
 	else
 	{
 		if (data->a[1].val == data->info_a.min.val)
-			ra(data->a, data->size_a);
+			ra(data, TRUE);
 		else
 		{
-			sa(data->a, data->size_a);
-			rra(data->a, data->size_a);
+			sa(data, TRUE);
+			rra(data, TRUE);
 		}
 	}
 }
@@ -62,17 +62,17 @@ void	sort_size_3(t_data *data)
 static
 void	sort_size_5(t_data *data)
 {
-	push_to_b_5(data);
+	sort_algo_5_bis(data);
 	data->info_a = init_info(data->a, data->size_a, data);
 	sort_size_3(data);
 	while (data->size_b != 0)
-		pa(data->a, data->b, &data->size_a, &data->size_b);
+		pa(data, TRUE);
 }
 
 static
 void	sort_size_n(t_data *data)
 {
-	push_to_b_n(data, &data->size_a);
+	sort_with_mediane(data, &data->size_a);
 	data->info_a = init_info(data->a, data->size_a, data);
 	data->info_b = init_info(data->b, data->size_b, data);
 	sort_size_3(data);
@@ -82,12 +82,12 @@ void	sort_size_n(t_data *data)
 	print_stack(data->b, data->size_b);
 }
 
-int	algo(t_data *data)
+int	sort(t_data *data)
 {
 	if (is_sorted(data) == TRUE)
 		return (EXIT_SUCCESS);
 	if (data->size == 2)
-		sa(data->a, data->size_a);
+		sa(data, TRUE);
 	else if (data->size <= 3)
 		sort_size_3(data);
 	else if (data->size <= 5)

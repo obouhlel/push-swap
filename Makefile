@@ -7,9 +7,10 @@ OBJS_PATH	:= ./objs/
 INCS_PATH	:= ./incs/
 
 # Files
-SRCS		= main.c parsing.c data.c info.c algo.c algo_utils.c
+SRCS		= main.c parsing.c data.c info.c sort.c sort_utils.c utils.c
 SRCS		+= utils/convertion.c utils/string.c utils/print.c utils/split.c utils/free.c utils/memory.c
-SRCS		+= stack/swap.c stack/push.c stack/rotate.c stack/rotate_reverse.c
+SRCS		+= api/swap.c api/push.c api/rotate.c api/rotate_reverse.c
+SRCS		+= list/lst_new.c list/add_back.c list/last_node.c list/lst_size.c list/lst_clear.c
 SRCS		+= debug.c
 SRCS		:= $(addprefix $(SRCS_PATH), $(SRCS))
 OBJS		:= $(SRCS:$(SRCS_PATH)%.c=$(OBJS_PATH)%.o)

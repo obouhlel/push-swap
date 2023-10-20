@@ -6,11 +6,12 @@
 /*   By: obouhlel <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/18 09:40:28 by obouhlel          #+#    #+#             */
-/*   Updated: 2023/10/18 20:46:39 by obouhlel         ###   ########.fr       */
+/*   Updated: 2023/10/20 10:55:16 by obouhlel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "api.h"
+#include "utils.h"
 
 static
 void	push(t_stack *to_push, t_stack *to_receve, int *size_tp, int *size_tr)
@@ -34,16 +35,18 @@ void	push(t_stack *to_push, t_stack *to_receve, int *size_tp, int *size_tr)
 	to_receve[0] = tmp_top;
 }
 
-void	pa(t_stack *a, t_stack *b, int *size_a, int *size_b)
+void	pa(t_data *data, bool print)
 {
-	if (*size_b > 0)
-		push(b, a, size_b, size_a);
-	ft_putendl("pa");
+	if (data->size_b > 0)
+		push(data->b, data->a, &data->size_b, &data->size_a);
+	if (print)
+		ft_putendl("pa");
 }
 
-void	pb(t_stack *a, t_stack *b, int *size_a, int *size_b)
+void	pb(t_data *data, bool print)
 {
-	if (*size_a > 0)
-		push(a, b, size_a, size_b);
-	ft_putendl("pb");
+	if (data->size_a > 0)
+		push(data->a, data->b, &data->size_a, &data->size_b);
+	if (print)
+		ft_putendl("pb");
 }

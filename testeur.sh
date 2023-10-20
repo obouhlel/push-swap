@@ -55,7 +55,6 @@ NB=$(./push_swap $ARGS | wc -l)
 RES=$(./push_swap $ARGS | ./checker_linux $ARGS)
 echo $ARGS": "$RES" "$NB
 
-
 # # Teste pour 100 valeurs
 # echo "Teste pour 100 valeurs"
 # range=500

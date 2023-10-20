@@ -6,11 +6,12 @@
 /*   By: obouhlel <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/18 09:40:47 by obouhlel          #+#    #+#             */
-/*   Updated: 2023/10/18 20:46:39 by obouhlel         ###   ########.fr       */
+/*   Updated: 2023/10/20 10:03:25 by obouhlel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "api.h"
+#include "utils.h"
 
 static void	rotate_reverse(t_stack *stack, int size)
 {
@@ -27,25 +28,26 @@ static void	rotate_reverse(t_stack *stack, int size)
 	stack[0] = tmp;
 }
 
-void	rra(t_stack *a, int size_a)
+void	rra(t_data *data, bool print)
 {
-	if (size_a > 1)
-		rotate_reverse(a, size_a);
-	ft_putendl("rra");
+	if (data->size_a > 1)
+		rotate_reverse(data->a, data->size_a);
+	if (print)
+		ft_putendl("rra");
 }
 
-void	rrb(t_stack *b, int size_b)
+void	rrb(t_data *data, bool print)
 {
-	if (size_b > 1)
-		rotate_reverse(b, size_b);
-	ft_putendl("rrb");
+	if (data->size_b > 1)
+		rotate_reverse(data->b, data->size_b);
+	if (print)
+		ft_putendl("rra");
 }
 
-void	rrr(t_stack *a, t_stack *b, int size_a, int size_b)
+void	rrr(t_data *data, bool print)
 {
-	if (size_a > 1)
-		rotate_reverse(a, size_a);
-	if (size_b > 1)
-		rotate_reverse(b, size_b);
-	ft_putendl("rrr");
+	rra(data, FALSE);
+	rrb(data, FALSE);
+	if (print)
+		ft_putendl("rrr");
 }

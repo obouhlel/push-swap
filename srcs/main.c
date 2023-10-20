@@ -6,7 +6,7 @@
 /*   By: obouhlel <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/03 15:43:23 by obouhlel          #+#    #+#             */
-/*   Updated: 2023/10/18 17:35:56 by obouhlel         ###   ########.fr       */
+/*   Updated: 2023/10/20 10:27:37 by obouhlel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,7 +29,7 @@ int	main(int ac, char **av)
 		return (ft_putendl_err("Error"), ERROR_PARSING);
 	if (init_data(&data, tab, nb_nbrs) == EXIT_FAILURE)
 		return (destroy_data(&data), ft_putendl_err("Error"), ERROR_INIT);
-	if (algo(&data) == EXIT_FAILURE)
+	if (sort(&data) == EXIT_FAILURE)
 		return (destroy_data(&data), ft_putendl_err("Error"), ERROR_ALGO);
 	destroy_data(&data);
 	return (EXIT_SUCCESS);
