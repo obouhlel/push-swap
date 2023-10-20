@@ -6,7 +6,7 @@
 /*   By: obouhlel <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/17 17:36:56 by obouhlel          #+#    #+#             */
-/*   Updated: 2023/10/20 12:29:59 by obouhlel         ###   ########.fr       */
+/*   Updated: 2023/10/20 20:15:02 by obouhlel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -87,14 +87,11 @@ int	init_stack(t_stack *stack, int *tab, int nb_nbrs)
 	stack->info_a = (t_info){.size = nb_nbrs, .min = 1, .max = nb_nbrs,
 		.med = sorted_tab[nb_nbrs / 2]};
 	stack->info_b = (t_info){.size = 0, .min = 0, .max = 0, .med = 0};
-	stack->instruction = NULL;
 	return (free(tab), free(sorted_tab), EXIT_SUCCESS);
 }
 
 void	destroy_stack(t_stack *stack)
 {
-	if (stack->instruction)
-		lst_clear(&stack->instruction);
 	if (stack->a)
 		ft_free((void **)&stack->a);
 	if (stack->b)

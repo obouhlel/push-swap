@@ -6,7 +6,7 @@
 /*   By: obouhlel <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/20 09:57:34 by obouhlel          #+#    #+#             */
-/*   Updated: 2023/10/20 19:14:58 by obouhlel         ###   ########.fr       */
+/*   Updated: 2023/10/20 20:14:46 by obouhlel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,7 +36,6 @@ typedef struct s_stack
 	t_info	info;
 	t_info	info_a;
 	t_info	info_b;
-	t_list	*instruction;
 }	t_stack;
 
 typedef struct s_move
