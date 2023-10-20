@@ -6,14 +6,21 @@
 /*   By: obouhlel <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/17 16:31:15 by obouhlel          #+#    #+#             */
-/*   Updated: 2023/10/17 16:31:20 by obouhlel         ###   ########.fr       */
+/*   Updated: 2023/10/20 22:50:17 by obouhlel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "utils.h"
 
-//error
-static char	**error(char **strs, size_t j)
+/**
+ * Frees the memory allocated for the array of strings and returns NULL.
+ * 
+ * @param strs The array of strings to free.
+ * @param j The number of strings in the array.
+ * @return NULL.
+ */
+static
+char	**error(char **strs, size_t j)
 {
 	size_t	i;
 
@@ -27,8 +34,16 @@ static char	**error(char **strs, size_t j)
 	return (NULL);
 }
 
-//count the number of word
-static size_t	ft_nb_word(char const *s, char c)
+/**
+ * Counts the number of words in a string separated by a given character.
+ *
+ * @param s The string to count the words in.
+ * @param c The character used to separate the words.
+ *
+ * @return The number of words in the string.
+ */
+static
+size_t	ft_nb_word(char const *s, char c)
 {
 	size_t	nb_word;
 	size_t	i;
@@ -50,8 +65,16 @@ static size_t	ft_nb_word(char const *s, char c)
 	return (nb_word);
 }
 
-//len of word
-static size_t	ft_strlen_word(const char *s, char c)
+/**
+ * Returns the length of the word in the given string s
+ * until the character c is encountered or the end of the string is reached.
+ *
+ * @param s The string to search for the word.
+ * @param c The character to stop the search at.
+ * @return The length of the word in the string.
+ */
+static
+size_t	ft_strlen_word(const char *s, char c)
 {
 	size_t	i;
 	size_t	lettre;
@@ -66,8 +89,15 @@ static size_t	ft_strlen_word(const char *s, char c)
 	return (lettre);
 }
 
-//duplicate the word
-static char	*ft_strdup_split(const char *s, size_t len)
+/**
+ * @brief Duplicates a string of a given length.
+ *
+ * @param s The string to duplicate.
+ * @param len The length of the string to duplicate.
+ * @return A pointer to the duplicated string, or NULL if the allocation fails.
+ */
+static
+char	*ft_strdup_split(const char *s, size_t len)
 {
 	char	*dup;
 	size_t	i;
@@ -85,7 +115,14 @@ static char	*ft_strdup_split(const char *s, size_t len)
 	return (dup);
 }
 
-//split the str
+/**
+ * Splits a string into an array of substrings based on a delimiter character.
+ *
+ * @param s The string to split.
+ * @param c The delimiter character.
+ *
+ * @return An array of substrings, or NULL if memory allocation fails.
+ */
 char	**ft_split(char const *s, char c)
 {
 	char	**strs;

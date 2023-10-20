@@ -69,7 +69,6 @@ elif [ $NB -lt 1500 ]; then
 else
 	NOTE=0
 fi
-
 echo $ARGS > 100
 echo "Check file 100 : $RES $NB $NOTE/5"
 
@@ -93,3 +92,5 @@ else
 fi
 echo $ARGS > 500
 echo "Check file 500 : $RES $NB $NOTE/5"
+
+# Teste boucle n fois

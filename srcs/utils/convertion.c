@@ -6,13 +6,20 @@
 /*   By: obouhlel <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/17 15:39:18 by obouhlel          #+#    #+#             */
-/*   Updated: 2023/10/17 17:11:34 by obouhlel         ###   ########.fr       */
+/*   Updated: 2023/10/20 22:45:52 by obouhlel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "utils.h"
 
-static int	ft_is_white_space(char c)
+/**
+ * Checks if a character is a white space character.
+ *
+ * @param c The character to check.
+ * @return 1 if the character is a white space character, 0 otherwise.
+ */
+static
+int	ft_is_white_space(char c)
 {
 	if (c >= 9 && c <= 13)
 		return (1);
@@ -21,6 +28,13 @@ static int	ft_is_white_space(char c)
 	return (0);
 }
 
+/**
+ * Converts a string to an integer.
+ *
+ * @param nptr The string to convert.
+ *
+ * @return The integer representation of the string.
+ */
 int	ft_atoi(const char *nptr)
 {
 	int	i;

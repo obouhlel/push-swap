@@ -6,12 +6,18 @@
 /*   By: obouhlel <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/17 17:36:56 by obouhlel          #+#    #+#             */
-/*   Updated: 2023/10/20 20:24:25 by obouhlel         ###   ########.fr       */
+/*   Updated: 2023/10/20 22:29:03 by obouhlel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
+/**
+ * Swaps the values of two integers.
+ *
+ * @param a - Pointer to the first integer.
+ * @param b - Pointer to the second integer.
+ */
 static
 void	swap_int(int *a, int *b)
 {
@@ -22,6 +28,16 @@ void	swap_int(int *a, int *b)
 	*b = tmp;
 }
 
+/**
+ * Finds the position of a given value in a sorted integer array.
+ *
+ * @param sorted_tab The sorted integer array to search in.
+ * @param val The value to search for.
+ * @param size The size of the sorted integer array.
+ *
+ * @return The position of the value in the sorted 
+ *         integer array, or -1 if not found.
+ */
 static
 int	found_pos(int *sorted_tab, int val, int size)
 {
@@ -37,6 +53,15 @@ int	found_pos(int *sorted_tab, int val, int size)
 	return (-1);
 }
 
+/**
+ * Sorts an array of integers using the bubble sort algorithm.
+ *
+ * @param tab The array of integers to sort.
+ * @param size The size of the array.
+ *
+ * @return A new array containing the sorted integers, 
+ *         or NULL if memory allocation fails.
+ */
 static
 int	*bubble_sort(int *tab, int size)
 {
@@ -65,6 +90,16 @@ int	*bubble_sort(int *tab, int size)
 	return (new_tab);
 }
 
+/**
+ * Initializes a stack with the given array of integers.
+ *
+ * @param stack    The stack to initialize.
+ * @param tab      The array of integers to initialize the stack with.
+ * @param nb_nbrs  The number of integers in the array.
+ *
+ * @return         Returns EXIT_SUCCESS if the stack was successfully 
+ *                 initialized, or EXIT_FAILURE if an error occurred.
+ */
 int	init_stack(t_stack *stack, int *tab, int nb_nbrs)
 {
 	int	i;
@@ -90,6 +125,11 @@ int	init_stack(t_stack *stack, int *tab, int nb_nbrs)
 	return (free(tab), free(sorted_tab), EXIT_SUCCESS);
 }
 
+/**
+ * @brief Frees the memory allocated for the stack and sets all its values to 0.
+ * 
+ * @param stack The stack to destroy.
+ */
 void	destroy_stack(t_stack *stack)
 {
 	if (stack->a)

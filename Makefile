@@ -33,6 +33,9 @@ fclean	: clean
 
 re		: fclean all
 
+norme	:
+		norminette $(SRCS_PATH) $(INCS_PATH)
+
 .PHONY	: all clean fclean re
 
 # Rules for .o files

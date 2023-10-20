@@ -6,13 +6,20 @@
 /*   By: obouhlel <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/17 16:19:55 by obouhlel          #+#    #+#             */
-/*   Updated: 2023/10/17 18:38:04 by obouhlel         ###   ########.fr       */
+/*   Updated: 2023/10/20 22:43:10 by obouhlel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-static int	is_a_valid_char(char c)
+/**
+ * Checks if a given character is a valid character for parsing.
+ *
+ * @param c The character to check.
+ * @return TRUE if the character is valid, FALSE otherwise.
+ */
+static
+int	is_a_valid_char(char c)
 {
 	const char	valid_chars[] = "0123456789+-";
 	int			i;
@@ -27,7 +34,15 @@ static int	is_a_valid_char(char c)
 	return (FALSE);
 }
 
-static int	all_is_number(char **strs)
+/**
+ * Checks if all the strings in the given array are valid numbers.
+ * A valid number is a string that only contains digits and optional sign.
+ * 
+ * @param strs The array of strings to check.
+ * @return TRUE if all the strings are valid numbers, FALSE otherwise.
+ */
+static
+int	all_is_number(char **strs)
 {
 	int	i;
 	int	j;
@@ -47,7 +62,16 @@ static int	all_is_number(char **strs)
 	return (TRUE);
 }
 
-static int	*check_overflow_and_creat_tab(char **strs_nbrs, int nb_nbrs)
+/**
+ * Creates an integer array from an array of string 
+ * numbers after checking for overflow.
+ *
+ * @param strs_nbrs The array of string numbers to convert to integers.
+ * @param nb_nbrs The number of string numbers in the array.
+ * @return The integer array if successful, NULL otherwise.
+ */
+static
+int	*check_overflow_and_creat_tab(char **strs_nbrs, int nb_nbrs)
 {
 	long	tmp;
 	int		*tab;
@@ -71,6 +95,14 @@ static int	*check_overflow_and_creat_tab(char **strs_nbrs, int nb_nbrs)
 	return (tab);
 }
 
+/**
+ * Checks if there are any duplicate integers in an array.
+ * 
+ * @param tab The array of integers to check for duplicates.
+ * @param nb_nbrs The number of integers in the array.
+ * @return TRUE if there are duplicates, FALSE otherwise.
+ */
+static
 int	is_duplicate(int *tab, int nb_nbrs)
 {
 	int	i;
@@ -91,6 +123,15 @@ int	is_duplicate(int *tab, int nb_nbrs)
 	return (FALSE);
 }
 
+/**
+ * Parses the input arguments and returns an array of integers.
+ * If the input is invalid, returns NULL.
+ *
+ * @param ac The number of arguments.
+ * @param strs_nbrs The array of strings to be parsed.
+ * @param nb_nbrs A pointer to the number of integers in the resulting array.
+ * @return An array of integers, or NULL if the input is invalid.
+ */
 int	*parsing(int ac, char **strs_nbrs, int *nb_nbrs)
 {
 	int	*tab;

@@ -6,12 +6,20 @@
 /*   By: obouhlel <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/20 20:07:24 by obouhlel          #+#    #+#             */
-/*   Updated: 2023/10/20 20:11:24 by obouhlel         ###   ########.fr       */
+/*   Updated: 2023/10/20 22:40:54 by obouhlel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
+/**
+ * Calculates the minimum number of rotations needed to bring two integers
+ * to the top of a stack, either by performing rrr or rr operations.
+ *
+ * @param a The first integer.
+ * @param b The second integer.
+ * @return The minimum number of rotations needed.
+ */
 static
 int	calculate_rrr_or_rr(int a, int b)
 {
@@ -24,6 +32,16 @@ int	calculate_rrr_or_rr(int a, int b)
 	return (a + b);
 }
 
+/**
+ * Finds the smallest combo of moves from an array
+ * of combos and returns the corresponding move.
+ * 
+ * @param combo An array of 4 integers representing 
+ *              the number of moves for each combo.
+ * @param move The current move being evaluated.
+ * @param best_move The best move found so far.
+ * @return The move corresponding to the smallest combo of moves.
+ */
 static
 t_move	found_smallest_combo(int combo[4], t_move move, t_move best_move)
 {
@@ -53,6 +71,13 @@ t_move	found_smallest_combo(int combo[4], t_move move, t_move best_move)
 	return (best_move);
 }
 
+/**
+ * Finds the best move to perform on the stack based on the given moves.
+ * 
+ * @param stack The stack to perform the move on.
+ * @param move An array of moves to consider.
+ * @return The best move to perform.
+ */
 static
 t_move	found_best_move(t_stack *stack, t_move *move)
 {
@@ -76,6 +101,15 @@ t_move	found_best_move(t_stack *stack, t_move *move)
 	return (best_move);
 }
 
+/**
+ * Finds the index where a given value should be inserted in stack A
+ * in order to minimize the number of required rotations.
+ *
+ * @param stack The stack containing the values.
+ * @param value The value to be inserted.
+ *
+ * @return The index where the value should be inserted.
+ */
 static
 int	found_nb_ra(t_stack *stack, int value)
 {
@@ -93,6 +127,11 @@ int	found_nb_ra(t_stack *stack, int value)
 	return (found_index(stack->info_a.min, stack->a, stack->info_a.size));
 }
 
+/**
+ * Chooses the best move to perform on the stack B and performs it.
+ * 
+ * @param stack The stack structure containing both stacks A and B.
+ */
 void	choose_move(t_stack *stack)
 {
 	t_move		*move;

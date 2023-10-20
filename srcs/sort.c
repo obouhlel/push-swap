@@ -6,12 +6,18 @@
 /*   By: obouhlel <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/18 10:22:59 by obouhlel          #+#    #+#             */
-/*   Updated: 2023/10/20 19:27:06 by obouhlel         ###   ########.fr       */
+/*   Updated: 2023/10/20 22:33:47 by obouhlel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
+/**
+ * Checks if the stack is sorted in ascending order.
+ * 
+ * @param stack The stack to check.
+ * @return TRUE if the stack is sorted, FALSE otherwise.
+ */
 static
 int	is_sorted(t_stack *stack)
 {
@@ -29,6 +35,12 @@ int	is_sorted(t_stack *stack)
 	return (TRUE);
 }
 
+/**
+ * Sorts a stack of size 3 in ascending order.
+ * Assumes that the stack is not empty and
+ * contains exactly 3 elements.
+ * @param stack The stack to sort.
+ */
 static
 void	sort_size_3(t_stack *stack)
 {
@@ -59,6 +71,13 @@ void	sort_size_3(t_stack *stack)
 	}
 }
 
+/**
+ * Sorts a stack of size 5 or 4 using a combination 
+ * of the sort_algo_5_bis,
+ * sort_size_3, and pa functions.
+ *
+ * @param stack The stack to be sorted.
+ */
 static
 void	sort_size_5(t_stack *stack)
 {
@@ -69,6 +88,16 @@ void	sort_size_5(t_stack *stack)
 		pa(stack, TRUE);
 }
 
+/**
+ * Sorts the stack when its size is greater than 3.
+ * Uses the median value to split the stack into
+ * two parts and sorts them separately.
+ * Then, moves all elements from stack B 
+ * to stack A and sorts them.
+ * Finally, moves the smallest element 
+ * to the top of stack A.
+ * @param stack The stack to be sorted.
+ */
 static
 void	sort_size_n(t_stack *stack)
 {
@@ -96,6 +125,14 @@ void	sort_size_n(t_stack *stack)
 	}
 }
 
+/**
+ * Sorts the given stack in ascending order using various sorting algorithms
+ * depending on the size of the stack.
+ *
+ * @param stack The stack to be sorted.
+ *
+ * @return EXIT_SUCCESS if the stack is sorted, EXIT_FAILURE otherwise.
+ */
 int	sort(t_stack *stack)
 {
 	if (is_sorted(stack) == TRUE)
