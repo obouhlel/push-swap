@@ -66,7 +66,7 @@ else
 fi
 
 echo $ARGS > 100
-echo "Check file 100 : $RES $NB $NOTE"
+echo "Check file 100 : $RES $NB $NOTE/5"
 
 # Teste pour 500 valeurs
 echo "Teste pour 500 valeurs"
@@ -89,4 +89,4 @@ else
 fi
 
 echo $ARGS > 500
-echo "Check file 500 : $RES $NB $NOTE"
+echo "Check file 500 : $RES $NB $NOTE/5"
