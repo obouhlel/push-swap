@@ -6,7 +6,7 @@
 /*   By: obouhlel <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/18 15:43:31 by obouhlel          #+#    #+#             */
-/*   Updated: 2023/10/20 10:45:26 by obouhlel         ###   ########.fr       */
+/*   Updated: 2023/10/20 11:12:20 by obouhlel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,16 +44,15 @@ void	sort_algo_5_bis(t_data *data)
 	}
 }
 
-void	sort_with_mediane(t_data *data, int *size_a)
+void	sort_with_mediane(t_data *data)
 {
-	while (*size_a != 3)
+	while (data->size_a != 3)
 	{
 		if (data->info_a.med.val <= data->a[0].val)
 		{
 			pb(data, TRUE);
-			(*size_a)--;
 			if (data->info_a.med.val == data->b[0].val)
-				data->info_a = init_info(data->a, *size_a, data);
+				data->info_a = init_info(data->a, data->size_a, data);
 		}
 		else
 			rra(data, TRUE);

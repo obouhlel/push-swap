@@ -6,7 +6,7 @@
 /*   By: obouhlel <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/03 14:10:03 by obouhlel          #+#    #+#             */
-/*   Updated: 2023/10/20 10:44:04 by obouhlel         ###   ########.fr       */
+/*   Updated: 2023/10/20 11:11:31 by obouhlel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,6 +46,6 @@ int		sort(t_data *data);
 
 // sort_utils.c	2/5
 void	sort_algo_5_bis(t_data *data);
-void	sort_with_mediane(t_data *data, int *size_a);
+void	sort_with_mediane(t_data *data);
 
 #endif

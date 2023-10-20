@@ -41,19 +41,10 @@ echo $ARGS" : "$RES" "$NB
 
 # Teste pour 5 valeurs
 echo "Teste pour 5 valeurs"
-range=5
-declare -a arr
-while [ ${#arr[@]} -lt 5 ]
-do
-	num=$((RANDOM % 5 + 1))
-	if [[ ! " ${arr[@]} " =~ " ${num} " ]]; then
-		arr+=($num)
-	fi
-done
-ARGS=$(echo ${arr[@]} | tr ' ' '\n' | tr '\n' ' ')
+ARGS=$(./random.sh 5 1 5)
 NB=$(./push_swap $ARGS | wc -l)
 RES=$(./push_swap $ARGS | ./checker_linux $ARGS)
-echo $ARGS": "$RES" "$NB
+echo "$ARGS : $RES $NB"
 
 # # Teste pour 100 valeurs
 # echo "Teste pour 100 valeurs"

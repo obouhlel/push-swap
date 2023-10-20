@@ -6,7 +6,7 @@
 /*   By: obouhlel <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/18 10:22:59 by obouhlel          #+#    #+#             */
-/*   Updated: 2023/10/20 10:56:02 by obouhlel         ###   ########.fr       */
+/*   Updated: 2023/10/20 11:11:43 by obouhlel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -72,7 +72,7 @@ void	sort_size_5(t_data *data)
 static
 void	sort_size_n(t_data *data)
 {
-	sort_with_mediane(data, &data->size_a);
+	sort_with_mediane(data);
 	data->info_a = init_info(data->a, data->size_a, data);
 	data->info_b = init_info(data->b, data->size_b, data);
 	sort_size_3(data);
