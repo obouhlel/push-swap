@@ -28,7 +28,7 @@
 The "push swap" algorithm is used to sort an array of integers using two stacks, which we'll refer to as A and B. The possible moves are as follows:
 
 
-| Commande | Full Name | Description |
+| Move | Full Name | Description |
 | --- | --- | --- |
 | `sa` | Swap A | Swap the first two elements of stack A. |
 | `sb` | Swap B | Swap the first two elements of stack B. |
