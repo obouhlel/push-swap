@@ -10,7 +10,7 @@
     - [4. Conversion of Numbers by Position](#4-conversion-of-numbers-by-position)
     - [5. Update of Stack A and B Information](#5-update-of-stack-a-and-b-information)
     - [6. Sorting Algorithm for Three Elements](#6-sorting-algorithm-for-three-elements)
-    - [7. Algorithm for Sorting Five or More Elements](#7-algorithm-for-sorting-five-or-more-elements)
+    - [7. Algorithm for Sorting Five or Four Elements](#7-algorithm-for-sorting-five-or-more-elements)
     - [8. Algorithm for Sorting Any Number of Values (N)](#8-algorithm-for-sorting-any-number-of-values-n)
     - [9. Optimization of Movements](#9-optimization-of-movements)
     - [10. Finalization](#10-finalization)
