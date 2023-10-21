@@ -2,17 +2,20 @@
 
 The "push swap" algorithm is used to sort an array of integers using two stacks, which we'll refer to as A and B. The possible moves are as follows:
 
-- `sa`: Swap A - Swap the first two elements of stack A.
-- `sb`: Swap B - Swap the first two elements of stack B.
-- `ss`: Swap A and B - Perform a `sa` followed by an `sb`.
-- `ra`: Rotate A - Move the first element of stack A to the end.
-- `rb`: Rotate B - Move the first element of stack B to the end.
-- `rr`: Rotate A and B - Perform an `ra` followed by an `rb`.
-- `rra`: Reverse Rotate A - Move the last element of stack A to the beginning.
-- `rrb`: Reverse Rotate B - Move the last element of stack B to the beginning.
-- `rrr`: Reverse Rotate A and B - Perform an `rra` followed by an `rrb`.
-- `pa`: Push A - Take the first element from stack B and place it at the beginning of stack A.
-- `pb`: Push B - Take the first element from stack A and place it at the beginning of stack B.
+
+| Commande | Full Name | Description |
+| --- | --- | --- |
+| `sa` | Swap A | Swap the first two elements of stack A. |
+| `sb` | Swap B | Swap the first two elements of stack B. |
+| `ss` | Swap A and B | Perform a `sa` followed by an `sb`. |
+| `ra` | Rotate A | Move the first element of stack A to the end. |
+| `rb` | Rotate B | Move the first element of stack B to the end. |
+| `rr` | Rotate A and B | Perform an `ra` followed by an `rb`. |
+| `rra` | Reverse Rotate A | Move the last element of stack A to the beginning. |
+| `rrb` | Reverse Rotate B | Move the last element of stack B to the beginning. |
+| `rrr` | Reverse Rotate A and B | Perform an `rra` followed by an `rrb`. |
+| `pa` | Push A | Take the first element from stack B and place it at the beginning of stack A. |
+| `pb` | Push B | Take the first element from stack A and place it at the beginning of stack B. |
 
 ## Project Implementation
 
