@@ -58,7 +58,7 @@ At the beginning of the "push swap" project, you followed these steps:
 
 6. **Sorting Algorithm for Three Elements**: You implemented an algorithm that found the minimum and maximum in stack A, then placed them in the correct order using movements.
 
-7. **Algorithm for Sorting Five or More Elements**: You used a pivot algorithm to send the minimum elements from stack A to stack B. This process was repeated until three elements remained in stack A, at which point you applied the three-element sorting algorithm.
+7. **Algorithm for Sorting Five or Four Elements**: You used a pivot algorithm to send the minimum elements from stack A to stack B. This process was repeated until three elements remained in stack A, at which point you applied the three-element sorting algorithm.
 
 8. **Algorithm for Sorting Any Number of Values (N)**: You utilized a pivot algorithm based on the median. If an element was the median, it was "pushed" to stack B. This process was repeated until three elements remained in stack A, at which point you applied the three-element sorting algorithm.
 
