@@ -81,7 +81,7 @@ This will display the total count of instructions.
 To verify the correctness of the sorting instructions, you can use the `checker` program. Execute the following command:
 
 ```shell
-./push_swap $ARGS | ./checker $ARGS
+$ARGS="3 5 1 2 4";./push_swap $ARGS | ./checker $ARGS
 ```
 
 If the input was sorted correctly, the `checker` program will output "OK." Otherwise, it will display "KO."
