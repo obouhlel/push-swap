@@ -1,5 +1,6 @@
 # Name
 NAME		= push_swap
+BONUS		= checker
 
 # Directories
 SRCS_PATH	:= ./srcs/
@@ -22,8 +23,13 @@ CFLAGS		= -Wall -Wextra -Werror -MMD -g3 -I $(INCS_PATH)
 # Rules
 all		: $(NAME)
 
+bonus	: $(BONUS)
+
 $(NAME)	: $(OBJS)
 		$(CC) $(OBJS) -o $(NAME)
+
+$(BONUS): $(OBJS_BONUS)
+		$(CC) $(OBJS_BONUS) -o $(BONUS)
 
 clean	:
 		rm -rf $(OBJS_PATH)

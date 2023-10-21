@@ -59,7 +59,7 @@ void	sort_algo_5_bis(t_stack *stack)
 		mode = RA;
 	else
 		mode = RRA;
-	while (i < 2)
+	while (stack->info_a.size != 3)
 	{
 		if (stack->a[0] == i + 1)
 		{
