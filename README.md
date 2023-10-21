@@ -1,3 +1,28 @@
+#PUSH SWAP
+
+# Table of Contents
+
+- [Explanation of the "push swap" algorithm](#explanation-of-the-push-swap-algorithm)
+  - [Project Implementation](#project-implementation)
+    - [1. Parsing of Arguments](#1-parsing-of-arguments)
+    - [2. Overflow Check](#2-overflow-check)
+    - [3. Elimination of Duplicates](#3-elimination-of-duplicates)
+    - [4. Conversion of Numbers by Position](#4-conversion-of-numbers-by-position)
+    - [5. Update of Stack A and B Information](#5-update-of-stack-a-and-b-information)
+    - [6. Sorting Algorithm for Three Elements](#6-sorting-algorithm-for-three-elements)
+    - [7. Algorithm for Sorting Five or More Elements](#7-algorithm-for-sorting-five-or-more-elements)
+    - [8. Algorithm for Sorting Any Number of Values (N)](#8-algorithm-for-sorting-any-number-of-values-n)
+    - [9. Optimization of Movements](#9-optimization-of-movements)
+    - [10. Finalization](#10-finalization)
+- [Running the Push Swap Program](#running-the-push-swap-program)
+  - [Prerequisites](#prerequisites)
+  - [Building the Program](#building-the-program)
+  - [Using the Program](#using-the-program)
+  - [Counting the Number of Instructions](#counting-the-number-of-instructions)
+  - [Checking the Sorting](#checking-the-sorting)
+  - [Platform Compatibility](#platform-compatibility)
+- [Thank you](#thank-you)
+
 # Explanation of the "push swap" algorithm
 
 The "push swap" algorithm is used to sort an array of integers using two stacks, which we'll refer to as A and B. The possible moves are as follows:
