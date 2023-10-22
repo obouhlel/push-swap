@@ -1,4 +1,4 @@
-#PUSH SWAP
+# PUSH SWAP
 
 # Table of Contents
 
@@ -10,7 +10,7 @@
     - [4. Conversion of Numbers by Position](#4-conversion-of-numbers-by-position)
     - [5. Update of Stack A and B Information](#5-update-of-stack-a-and-b-information)
     - [6. Sorting Algorithm for Three Elements](#6-sorting-algorithm-for-three-elements)
-    - [7. Algorithm for Sorting Five or More Elements](#7-algorithm-for-sorting-five-or-more-elements)
+    - [7. Algorithm for Sorting Five or Four Elements](#7-algorithm-for-sorting-five-or-more-elements)
     - [8. Algorithm for Sorting Any Number of Values (N)](#8-algorithm-for-sorting-any-number-of-values-n)
     - [9. Optimization of Movements](#9-optimization-of-movements)
     - [10. Finalization](#10-finalization)
@@ -28,7 +28,7 @@
 The "push swap" algorithm is used to sort an array of integers using two stacks, which we'll refer to as A and B. The possible moves are as follows:
 
 
-| Commande | Full Name | Description |
+| Move | Full Name | Description |
 | --- | --- | --- |
 | `sa` | Swap A | Swap the first two elements of stack A. |
 | `sb` | Swap B | Swap the first two elements of stack B. |
@@ -58,7 +58,7 @@ At the beginning of the "push swap" project, you followed these steps:
 
 6. **Sorting Algorithm for Three Elements**: You implemented an algorithm that found the minimum and maximum in stack A, then placed them in the correct order using movements.
 
-7. **Algorithm for Sorting Five or More Elements**: You used a pivot algorithm to send the minimum elements from stack A to stack B. This process was repeated until three elements remained in stack A, at which point you applied the three-element sorting algorithm.
+7. **Algorithm for Sorting Five or Four Elements**: You used a pivot algorithm to send the minimum elements from stack A to stack B. This process was repeated until three elements remained in stack A, at which point you applied the three-element sorting algorithm.
 
 8. **Algorithm for Sorting Any Number of Values (N)**: You utilized a pivot algorithm based on the median. If an element was the median, it was "pushed" to stack B. This process was repeated until three elements remained in stack A, at which point you applied the three-element sorting algorithm.
 
