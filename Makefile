@@ -3,18 +3,23 @@ NAME		= push_swap
 BONUS		= checker
 
 # Directories
-SRCS_PATH	:= ./srcs/
-OBJS_PATH	:= ./objs/
-INCS_PATH	:= ./incs/
+SRCS_PATH	:= srcs/
+OBJS_PATH	:= objs/
+INCS_PATH	:= incs/
 
 # Files
-SRCS		= main.c parsing.c stack.c info.c sort.c sort_utils.c sort_utils_bis.c
-SRCS		+= utils/convertion.c utils/string.c utils/print.c utils/split.c utils/free.c utils/memory.c
-SRCS		+= api/swap.c api/push.c api/rotate.c api/rotate_reverse.c
-SRCS		+= debug.c
+UTILS		= utils/convertion.c utils/string.c utils/print.c utils/split.c utils/free.c utils/memory.c utils/get_next_line.c utils/get_next_line_utils.c
+MOVE		= move/swap.c move/push.c move/rotate.c move/rotate_reverse.c
+SORT		= sort/sort.c sort/sort_utils.c sort/sort_utils_bis.c
+STACK		= parsing.c stack.c info.c
+SRCS		= main.c $(STACK) $(SORT) $(MOVE) $(UTILS)
+SRCS_BONUS	= bonus/main.c bonus/checker.c $(STACK) $(MOVE) $(UTILS)
 SRCS		:= $(addprefix $(SRCS_PATH), $(SRCS))
-OBJS		:= $(SRCS:$(SRCS_PATH)%.c=$(OBJS_PATH)%.o)
+SRCS_BONUS	:= $(addprefix $(SRCS_PATH), $(SRCS_BONUS))
+OBJS		:= $(subst $(SRCS_PATH), $(OBJS_PATH), $(SRCS:.c=.o))
+OBJS_BONUS	:= $(subst $(SRCS_PATH), $(OBJS_PATH), $(SRCS_BONUS:.c=.o))
 DEPS		:= $(OBJS:.o=.d)
+DEPS_BONUS	:= $(OBJS_BONUS:.o=.d)
 
 # Compilator
 CC			= gcc
@@ -31,11 +36,14 @@ $(NAME)	: $(OBJS)
 $(BONUS): $(OBJS_BONUS)
 		$(CC) $(OBJS_BONUS) -o $(BONUS)
 
+test	: $(NAME) $(BONUS)
+		./tester.sh
+
 clean	:
-		rm -rf $(OBJS_PATH)
+		rm -rf $(OBJS_PATH) $(DEPS) $(OBJS) $(OBJS_BONUS) $(DEPS_BONUS)
 
 fclean	: clean
-		rm -f $(NAME)
+		rm -f $(NAME) $(BONUS)
 
 re		: fclean all
 
@@ -50,4 +58,4 @@ $(OBJS_PATH)%.o : $(SRCS_PATH)%.c
 		$(CC) $(CFLAGS) -c $< -o $@
 
 # Dependencies
--include $(DEPS)
+-include $(DEPS) $(DEPS_BONUS)

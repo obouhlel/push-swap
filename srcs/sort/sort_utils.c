@@ -39,8 +39,8 @@ int	found_index(int value, int *tab, int size)
  * Sorts the top 5 elements of stack A using a specific algorithm.
  * If the index of the first element to push to stack B is less 
  * than the size of stack A divided by 2,
- * the mode is set to RA (rotate A).
- * Otherwise, the mode is set to RRA (reverse rotate A).
+ * the mode is set to MODE_RA (rotate A).
+ * Otherwise, the mode is set to MODE_RRA (reverse rotate A).
  * The function then iterates twice over the top 2 elements of stack A.
  * If the first element is equal to i + 1 
  * (where i is the current iteration index),
@@ -56,9 +56,9 @@ void	sort_algo_5_bis(t_stack *stack)
 	i = 0;
 	if (found_index(1, stack->a, stack->info_a.size) < \
 		stack->info_a.size / 2)
-		mode = RA;
+		mode = MODE_RA;
 	else
-		mode = RRA;
+		mode = MODE_RRA;
 	while (stack->info_a.size != 3)
 	{
 		if (stack->a[0] == i + 1)
@@ -66,11 +66,11 @@ void	sort_algo_5_bis(t_stack *stack)
 			pb(stack, TRUE);
 			if (found_index(++i + 1, stack->a, stack->info_a.size) < \
 				stack->info_a.size / 2)
-				mode = RA;
+				mode = MODE_RA;
 			else
-				mode = RRA;
+				mode = MODE_RRA;
 		}
-		else if (mode == RA)
+		else if (mode == MODE_RA)
 			ra(stack, TRUE);
 		else
 			rra(stack, TRUE);

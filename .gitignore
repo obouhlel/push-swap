@@ -4,6 +4,6 @@
 *.a
 ./objs/
 push_swap
-./visualizer
+checker
 100
 500

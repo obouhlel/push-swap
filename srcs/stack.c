@@ -6,7 +6,7 @@
 /*   By: obouhlel <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/17 17:36:56 by obouhlel          #+#    #+#             */
-/*   Updated: 2023/10/21 00:07:40 by obouhlel         ###   ########.fr       */
+/*   Updated: 2023/10/22 11:48:05 by obouhlel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -99,12 +99,12 @@ int	init_stack(t_stack *stack, int *tab, int nb_nbrs)
 
 	stack->a = ft_calloc(nb_nbrs, sizeof(t_stack));
 	if (!stack->a)
-		return (EXIT_FAILURE);
+		return (free(tab), EXIT_FAILURE);
 	stack->b = ft_calloc(nb_nbrs, sizeof(t_stack));
 	if (!stack->b)
-		return (EXIT_FAILURE);
-	if (nb_nbrs >= MAX_VALUE)
-		return (EXIT_FAILURE);
+		return (free(tab), EXIT_FAILURE);
+	if (nb_nbrs > MAX_VALUE)
+		return (free(tab), EXIT_FAILURE);
 	ft_bzero(sorted_tab, MAX_VALUE);
 	bubble_sort(tab, nb_nbrs, sorted_tab);
 	i = -1;

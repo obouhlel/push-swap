@@ -1,28 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   push_swap.h                                        :+:      :+:    :+:   */
+/*   push_swap_bonus.h                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: obouhlel <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/12/03 14:10:03 by obouhlel          #+#    #+#             */
-/*   Updated: 2023/10/22 11:49:38 by obouhlel         ###   ########.fr       */
+/*   Created: 2023/10/21 12:54:17 by obouhlel          #+#    #+#             */
+/*   Updated: 2023/10/22 11:44:21 by obouhlel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef PUSH_SWAP_H
-# define PUSH_SWAP_H
+#ifndef PUSH_SWAP_BONUS_H
+# define PUSH_SWAP_BONUS_H
 
-# include <stdlib.h>
 # include <unistd.h>
+# include <stdlib.h>
 
 # include "utils.h"
-# include "api.h"
 # include "structs.h"
 # include "enums.h"
+# include "api.h"
 
-# define MAX_VALUE	500
-# define MAX		100000
+# define OK			"\e[32mOK\e[0m"
+# define KO			"\e[31mKO\e[0m"
 
 int		*parsing(int ac, char **strs_nbrs, int *nb_nbrs);
 
@@ -32,13 +32,6 @@ void	destroy_stack(t_stack *stack);
 
 void	update_info(t_stack *stack, bool mode);
 
-int		sort(t_stack *stack);
-
-int		found_index(int value, int *tab, int size);
-void	sort_algo_5_bis(t_stack *stack);
-void	sort_with_mediane(t_stack *stack);
-void	do_move(t_stack *stack, t_move move);
-
-void	choose_move(t_stack *stack);
+int		checker(t_stack *stack);
 
 #endif
