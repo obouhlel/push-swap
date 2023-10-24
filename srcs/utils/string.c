@@ -6,7 +6,7 @@
 /*   By: obouhlel <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/17 16:07:49 by obouhlel          #+#    #+#             */
-/*   Updated: 2023/10/22 11:21:18 by obouhlel         ###   ########.fr       */
+/*   Updated: 2023/10/24 13:26:56 by obouhlel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,6 @@ size_t	ft_strlen(char *str)
 		i++;
 	return (i);
 }
-
 
 /**
  * Compares two strings lexicographically.
